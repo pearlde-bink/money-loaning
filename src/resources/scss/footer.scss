@@ -1,0 +1,86 @@
+// footer
+.footer {
+  background-color: #1d0136;
+  .container {
+    .footer-head {
+      margin-top: 0 !important;
+      img {
+        width: 100px;
+        height: 50px;
+        margin-top: 20px;
+      }
+      .d-flex {
+        .footer-head-button {
+          width: 200px;
+          height: 50px;
+          background-color: blueviolet;
+          border: none;
+          margin-right: 100px;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .row {
+      .information {
+        .footer-link {
+          position: relative;
+          .footer-link-up1 {
+            position: absolute;
+            top: 1%;
+            left: 70%;
+          }
+
+          .footer-link-up2 {
+            position: absolute;
+            top: 35%;
+            left: 70%;
+          }
+        }
+      }
+
+      .download {
+        .download-app {
+          flex-direction: row;
+          margin-left: -10px;
+          margin-top: -20px;
+          button {
+            background-color: transparent;
+            border: none;
+          }
+        }
+      }
+
+      .contact {
+        .contact-sdt {
+          .fa-square-phone {
+            transform: translateY(-15px);
+          }
+        }
+      }
+
+      .schedule {
+        p {
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+
+  .separate {
+    margin-top: 100px;
+    height: 0.3px;
+    width: 90%;
+    background-color: rgba(255, 251, 246, 0.5);
+    margin: 0 auto;
+  }
+
+  .social {
+    .fa-brands {
+      color: white;
+      font-size: 27px;
+      margin-right: 20px;
+      margin-top: 16px;
+    }
+  }
+}

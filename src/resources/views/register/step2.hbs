@@ -1,0 +1,73 @@
+<div class="app step2">
+    <div class="range text-center">
+        <p>Nhận +15% cơ hội được phê duyệt bằng cách hoàn thành tất cả các trường</p>
+    </div>
+
+    <!-- address -->
+    <form action="" class="d-flex justify-content-center align-items-center">
+        <div class="address">
+            <h5>Địa chỉ cư trú</h5>
+            <div class="address__city mt-4">
+                <label for="">Thành phố*</label>
+                <input type="text" id="city" name="city" class="cityInput" required>
+            </div>
+
+            <div class="address__location mt-4 d-flex justify-content-between align-items-center">
+                <div class="address__location--province">
+                    <label for="">Tỉnh*</label>
+                    <select class="form-select form-select-sm provinceInput" id="province" aria-label=".form-select-sm">
+                        <option value="" selected>Chọn tỉnh thành</option>
+                    </select>
+                </div>
+
+                <div class="address__location--district">
+                    <label for="">Quận huyện*</label>
+                    <select class="form-select form-select-sm districtInput" id="district" aria-label=".form-select-sm">
+                        <option value="" selected>Chọn quận huyện</option>
+                    </select>
+                </div>
+
+                <div class="address__location--village">
+                    <label for="">Phường xã*</label>
+                    <select class="form-select form-select-sm villageInput" id="village" aria-label=".form-select-sm">
+                        <option value="" selected>Chọn phường xã</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="address__road mt-4">
+                <label for="">Đường*</label>
+                <input type="text" id="road" name="road" class="roadInput" required>
+            </div>
+
+            <div class="address__homeTime mt-4 d-flex justify-content-between align-items-center">
+                <div class="address__home">
+                    <label for="">Số nhà*</label>
+                    <input type="text" id="home" name="home" class="homeInput" required>
+                </div>
+
+                <div class="address__time">
+                    <label for="">Thời gian cư trú*</label>
+                    <select id="time" name="time" class="timeInput">
+                        <option class="timeOption" value="docthan">Dưới 1 năm</option>
+                        <option class="timeOption" value="1nam">1 năm</option>
+                        <option class="timeOption" value="2nam">2 năm</option>
+                        <option class="timeOption" value="3nam">3 năm</option>
+                        <option class="timeOption" value="4nam">4 năm</option>
+                        <option class="timeOption" value="5nam">5 năm</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- button -->
+    <div class="button d-flex flex-row justify-content-center">
+        <a href="/register">
+            <button class="fw-bold text-light">Quay lại</button>
+        </a>
+        <a href="/register/step3">
+            <button class="fw-bold text-light">Tiếp theo</button>
+        </a>
+    </div>
+</div>

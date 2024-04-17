@@ -1,0 +1,132 @@
+@import "variables";
+.app {
+  background-color: white;
+  /* banner */
+  #banner {
+    background: #{$violet};
+    overflow: hidden;
+    height: 330px;
+    .banner {
+      width: 100%;
+      h1 {
+        font-size: 60px;
+        font-weight: 500;
+        width: 220px;
+        margin: 120px auto 0px;
+      }
+    }
+  }
+  /* news */
+  .news {
+    margin-top: 50px;
+    .row {
+      .col-xs-11 {
+        .news__post {
+          margin-top: 50px;
+          .news__title {
+            p {
+              color: #{$text};
+            }
+            h4 {
+              a {
+                text-decoration: none;
+                color: black;
+              }
+            }
+          }
+          .news__preview {
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+  .sep {
+    width: 80%;
+    height: 1px;
+    margin: 50px auto;
+    background-color: rgb(230, 230, 230);
+  }
+  /* pagination */
+  .pagination {
+    .page-item {
+      .page-link {
+        border: none !important;
+        color: #{$text} !important;
+        border-radius: 10px;
+        &:hover {
+          background-color: #{$bgText} !important;
+        }
+      }
+      &.acive {
+        .page-link {
+          background-color: #{$bgText} !important;
+          color: #{$text} !important;
+        }
+      }
+    }
+  }
+  /* banner 2 */
+  #banner2 {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 150px !important;
+    .banner2__img {
+      width: 95%;
+      height: 300px;
+      margin: 0 auto;
+      background: linear-gradient(
+        to right bottom,
+        #{$violet} 65%,
+        rgb(137, 0, 195) 85%
+      );
+      border-radius: 20px;
+      display: flex;
+      position: relative;
+      .banner2__img-left {
+        margin-left: 30px;
+        white-space: pre-line;
+        h3 {
+          margin: 0;
+        }
+        p {
+          font-size: 16px;
+          margin-top: -5px;
+        }
+        .loaning-intro_download {
+          margin-top: -30px;
+          .loaning-intro_download-app {
+            margin-top: -40px;
+            margin-left: -10px;
+            button {
+              margin-top: -10px;
+              background-color: transparent;
+              border: none;
+            }
+          }
+        }
+      }
+      .banner2__img-phone {
+        .banner2__img-phone--img1 {
+          position: absolute;
+          left: 50%;
+          width: 260px;
+          height: 300px;
+        }
+        .banner2__img-phone--img2 {
+          position: absolute;
+          height: 400px;
+          width: 245px;
+          left: 74%;
+          top: -33%;
+        }
+      }
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}

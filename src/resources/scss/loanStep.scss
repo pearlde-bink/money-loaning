@@ -1,0 +1,107 @@
+@import "variables";
+.app {
+  background-color: white;
+  /* banner */
+  #banner {
+    background: linear-gradient(to top right, #8512e7 30%, #{$violet} 55%);
+    overflow: hidden;
+    .banner {
+      width: 80%;
+      margin-left: 150px !important;
+      .banner-intro {
+        width: 515px !important;
+        margin-top: 25px !important;
+        p {
+          white-space: pre-line;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        h1 {
+          font-weight: 500;
+          font-size: 51px;
+          letter-spacing: -2px;
+        }
+        .banner-intro_download {
+          .banner-intro_download-app {
+            flex-direction: row;
+            margin-left: -10px;
+            margin-top: -20px;
+            button {
+              background-color: transparent;
+              border: none;
+            }
+          }
+        }
+      }
+      .banner-image {
+        width: 600px !important;
+        img {
+          width: 700px !important;
+          margin-left: 78px;
+          margin-top: 220px;
+        }
+      }
+    }
+  }
+  /* steps */
+  .steps {
+    width: 670px;
+    padding: 30px;
+    margin: 0 auto;
+    .steps__note {
+      background-color: #fdf6b2;
+      padding: 25px;
+      border-radius: 10px;
+      .fw-semibold {
+        margin-top: 5px;
+      }
+      p {
+        font-size: 17px;
+        color: #8e4b10;
+        margin-bottom: 0;
+      }
+    }
+    .steps__main {
+      h2 {
+        font-size: 40px;
+      }
+      .steps__main--detail {
+        .steps__main--detail__item {
+          background-color: #f9f5ff;
+          border-radius: 20px;
+          padding: 30px;
+          .steps__main--detail__item--header {
+            height: 75px;
+            position: relative;
+            span {
+              font-size: 17px;
+              color: #6941c6;
+              background-color: #e9d7fe;
+              border-radius: 15px;
+              padding: 10px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 78px;
+              height: auto;
+              font-weight: 600;
+              margin: 0 auto;
+            }
+          }
+          p {
+            margin-bottom: 0;
+          }
+          .steps__main--detail__item--main {
+            font-size: 17px;
+            span {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    .steps__footer {
+      font-size: 17px;
+    }
+  }
+}

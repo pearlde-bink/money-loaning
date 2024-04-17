@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../asset/css/step6.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app text-center">
+        <div class="range">
+            <p>Nhận +15% cơ hội được phê duyệt bằng cách hoàn thành tất cả các trường</p>
+        </div>
+
+        <!-- cccd authen -->
+        <div class="ccAuthen mt-5">
+            <div class="ccAuthen__header">
+                <h4>Xác minh CMND/CCCD</h4>
+                <p class="mt-5">Quý khách kính mến NGUYỄN NGỌC TUẤN BÌNH , Để tiếp tục xử lý khoản vay,vui lòng tải lên
+                    hình ảnh
+                    CMND/CCCD của bạn</p>
+                <div class="ccAuthen__header--note">
+                    <p>Tất cả các bức ảnh được chụp phải rõ nét, không được mờ và thiếu chi tiết!</p>
+                </div>
+            </div>
+
+            <div class="ccAuthen__form my-4">
+                <!-- cccd -->
+                <label for="cccd">Ảnh CMND</label>
+                <div id="drop-zone">
+                    <h6>Bạn hãy kéo hoặc tải file lên</h6>
+                    <input type="file" id="file-uploader" accept=".jpg, .png" multiple>
+                    <div id="content"></div>
+                </div>
+
+                <!-- selfie cccd -->
+                <label for="cccd">Chụp ảnh selfie cùng CMND</label>
+                <div id="drop-zone2">
+                    <h6>Bạn hãy kéo hoặc tải file lên</h6>
+                    <input type="file" id="file-uploader2" accept=".jpg, .png" multiple>
+                    <div id="content2"></div>
+                </div>
+
+                <!-- cccd back -->
+                <label for="cccd">Ảnh CMND (mặt sau) </label>
+                <div id="drop-zone3">
+                    <h6>Bạn hãy kéo hoặc tải file lên</h6>
+                    <input type="file" id="file-uploader3" accept=".jpg, .png" multiple>
+                    <div id="content3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- button -->
+        <div class="button">
+            <button class="fw-bold text-light">Quay lại</button>
+            <button class="fw-bold text-light">Tiếp theo</button>
+        </div>
+    </div>
+
+
+    <script>
+        // Upload file
+        const fileUploaders = document.querySelectorAll('[id^="file-uploader"]');
+        const dropZones = document.querySelectorAll('[id^="drop-zone"]');
+        const readers = [];
+
+        fileUploaders.forEach((fileUploader, index) => {
+            const reader = new FileReader();
+            readers.push(reader);
+
+            fileUploader.addEventListener('change', (event) => {
+                const files = event.target.files;
+                console.log('files', files);
+            });
+
+            const dropZone = dropZones[index];
+            const content = dropZone.querySelector('[id^="content"]');
+
+            dropZone.addEventListener('dragover', event => {
+                event.stopPropagation();
+                event.preventDefault();
+                event.dataTransfer.dropEffect = 'copy';
+            });
+
+            dropZone.addEventListener('drop', event => {
+                content.innerHTML = '';
+                event.stopPropagation();
+                event.preventDefault();
+                const files = event.dataTransfer.files;
+                console.log(files);
+
+                reader.readAsDataURL(files[0]);
+
+                reader.addEventListener('load', (event) => {
+                    content.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.style.height = '400px';
+                    img.style.width = '400px';
+                    content.appendChild(img);
+                    img.src = event.target.result;
+                    img.alt = files[0].name;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

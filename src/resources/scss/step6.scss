@@ -1,0 +1,115 @@
+@import "variables";
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app.step6 {
+  background-color: white;
+  height: 100vh;
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 150px !important;
+}
+
+.range,
+.ccAuthen {
+  width: 670px;
+  margin: auto;
+}
+
+.range p {
+  font-size: 13px;
+  padding: 10px;
+  background-color: #ffbde7;
+  border-radius: 10px;
+}
+
+.ccAuthen {
+  margin-bottom: 30px Im !important;
+}
+
+.ccAuthen__header h4 {
+  font-size: 18px;
+}
+
+.ccAuthen__header--note p {
+  font-size: 16px;
+  padding: 15px;
+  background-color: #e1caea;
+  border-radius: 10px;
+  font-weight: 400;
+}
+
+.ccAuthen__form label {
+  font-weight: 700;
+  text-align: start !important;
+  margin-top: 30px;
+}
+
+#drop-zone,
+#drop-zone2,
+#drop-zone3 {
+  height: 80px;
+  width: 650px;
+  margin: auto;
+  border: 2px dotted var(--violet);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#drop-zone:after,
+#drop-zone2:after,
+#drop-zone3:after {
+  content: "";
+  display: block;
+  border: 1px rgb(223, 223, 223) solid;
+  width: 100%;
+  position: absolute;
+  top: 130%;
+}
+
+#drop-zone h6,
+#drop-zone2 h6,
+#drop-zone3 h6 {
+  display: inline;
+  margin-right: 20px;
+}
+
+#drop-zone:hover,
+#drop-zone2:hover,
+#drop-zone3:hover {
+  cursor: move;
+  background-color: #f2e4f7;
+}
+
+div#content {
+  border: 1px solid #fff;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.button {
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+}
+
+.button button {
+  border: none;
+  background-color: #b582d9;
+  padding: 20px 30px 20px 30px;
+  border-radius: 40px;
+  margin-left: 30px;
+}
+
+.button button:hover {
+  background-color: #ac5de4;
+}
+
+.button button:nth-child(2):hover {
+  cursor: default;
+  background-color: rgba(181, 130, 217, 0.9);
+}

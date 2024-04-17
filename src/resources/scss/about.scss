@@ -1,0 +1,101 @@
+// :root {
+// #{$violet} #5536A2;
+// }
+@import "variables";
+
+.app {
+  background-color: white;
+  // term
+  .term {
+    overflow: hidden;
+    background: linear-gradient(to top right, #8611ea 15%, #{$violet} 52%);
+    .term__text {
+      width: 440px !important;
+      margin-top: 50px !important;
+      margin-left: 150px;
+      margin-right: 133px;
+      h2 {
+        font-size: 60px;
+      }
+      .term__text--explain {
+        color: rgba(225, 225, 225, 0.8);
+        font-size: 17px;
+        line-height: 29px;
+      }
+    }
+    .term__image {
+      margin-bottom: 100px;
+      width: 600px !important;
+      img {
+        border-radius: 40px 0 0 40px;
+      }
+    }
+  }
+  /* feature */
+  .feature {
+    .feature__header {
+      width: auto;
+      text-align: left;
+      margin-left: 90px !important;
+    }
+    .feature__item {
+      margin: auto 130px;
+      gap: 20px;
+      .feature__item--sub {
+        background-color: #f4ebff;
+        border-radius: 10px;
+        // margin-bottom: 10px;
+        // margin-right: 10px;
+        div {
+          h6 {
+            color: indigo;
+            margin-bottom: 20px;
+            margin-top: 5px;
+          }
+          p {
+            font-size: 16px;
+            color: #6941c6;
+          }
+        }
+      }
+    }
+  }
+  /* contactInfo */
+  .contactInfo {
+    margin-top: 100px !important;
+    .contactInfo__header {
+      margin-left: 130px !important;
+    }
+    .contactInfo__body {
+      margin: auto 130px;
+      .contactInfo__item {
+        background-color: #f4ebff;
+        border-radius: 10px;
+        .contactInfo__item--header {
+          width: 100px;
+          height: 100px;
+          position: relative;
+          i {
+            font-size: 20px;
+            color: white;
+            background-color: #9e77ed;
+            border-radius: 24%;
+            padding: 15px;
+            position: absolute;
+            top: 15%;
+            left: 20px;
+          }
+        }
+        .contactInfo__item--main {
+          margin-left: 20px;
+          color: rgb(81, 11, 148);
+          font-size: 16px;
+        }
+        .contactInfo__item--footer {
+          color: #6941c6;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

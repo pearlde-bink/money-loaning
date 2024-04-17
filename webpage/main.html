@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../asset/css/main.css">
+    <script src="../js/main.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- loaning -->
+        <div class="container-fluid" id="loaning">
+            <div class="row d-flex justify-content-between align-items-center loaning">
+                <!-- left -->
+                <div class="col-sm-9 col-md-6 loaning-intro">
+                    <h1 class="text-light mb-4"><span class="fw-semibold mb-4" style="font-size: 80px;">0%</span>
+                        lãi suất cho
+                        khoản vay đầu tiên
+                    </h1>
+                    <h3 class="text-light">Trong 7 ngày đầu với hạn mức lên đến <span class="fw-bold">10.000.000
+                            đồng</span>
+                    </h3>
+                    <div class="loaning-intro_download mt-5">
+                        <h2 class="inline-block font-medium text-white mb-4">Sắp ra mắt</h2>
+                        <div class="d-flex loaning-intro_download-app gap-1 mb-8 md:mb-0">
+                            <button aria-label="Mở kho ứng dụng" class="border-none opacity-50 cursor-not-allowed">
+                                <img width="150" height="44" src="../asset/img/appstore.jpg" class="" alt="appstore">
+                            </button>
+                            <button aria-label="Mở kho ứng dụng" class="border-none opacity-50 cursor-not-allowed">
+                                <img width="170" height="68" src="../asset/img/ggplay.jpg" class="" alt="ggplay">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right -->
+                <div class="col-sm-9 col-md-6 loaning-form">
+                    <div class="loaning-form_max d-flex justify-content-between">
+                        <h3 class="">Hạn mức</h3>
+                        <h3 class="fw-bold money-loan">2 000 000đ</h3>
+                    </div>
+                    <div class="loaning-form-range text-secondary">
+                        <input type="range" id="range1" min="0" max="20000000" step="500000" value="2000000"
+                            onchange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)" />
+                        <div class="loaning-form-range_number">
+                            <h4>500 000đ </h4>
+                            <h4>20 000 000đ</h4>
+                        </div>
+                    </div>
+                    <div class="loaning-form-date d-flex justify-content-between mt-4">
+                        <h4 class="text-secondary">Số tiền thanh toán</h4>
+                        <div>
+                            <h4 class="text-danger" id="money-loan-red">2 273 000đ</h4>
+                            <h4 class="money-loan">2 000 000đ</h4>
+                        </div>
+                    </div>
+                    <div class="loaning-form-date d-flex justify-content-between">
+                        <h4 class="text-secondary">Ngày thanh toán</h4>
+                        <h4>27/03/2024</h4>
+                    </div>
+
+                    <div class="loaning-form-benefit">
+                        <p class="loaning-form-benefit-p">- Hạn mức ưu đãi dành cho KH cũ -</p>
+                    </div>
+
+                    <div class="mb-4 loaning-form_input">
+                        <input type="text" placeholder="Nhập số điện thoại *">
+                    </div>
+
+                    <button class="loaning-form_button mb-3">Đăng ký</button>
+
+                    <div class="loaning-form_policy text-secondary mb-4">Bằng việc “Đăng ký”, Bạn đồng ý với <a
+                            href="">Điều
+                            khoản</a> và <a href="">Điều kiện</a> của Hợp
+                        đồng vay và <a href="">Chính sách bảo mật</a>
+                    </div>
+                </div>
+            </div>
+            <!-- banner 1 -->
+            <div class="banner_mot align-items-center justify-content-center mb-2">
+                <img src="../asset/img/banner1.png" alt="banner" class="img-fluid banner__mot-img">
+                <div class="text-center justify-content-center align-items-center">
+                    <h3 class="text-light fw-bold">Vay tiền online Takomo chuyển khoản nhanh 24/7</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- reason -->
+        <div class="container my-5" id="reason">
+            <div class="row text-center reason__header">
+                <div class="reason__outstand">
+                    <p>Điểm nổi bật tại Takomo</p>
+                </div>
+                <h3 class="text-dark mb-5 mt-4">Tại sao nên vay tiền nhanh tại Takomo</h3>
+            </div>
+            <div class="row mt-2 reason__img my-2"></div>
+            <div class="row reason__item my-5">
+                <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+                    <h5>Đăng ký vay nhanh trực tuyến</h5>
+                    <p class="text-secondary">Quá trình đăng ký chỉ mất 5 phút ở mọi lúc, mọi nơi</p>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+                    <h5>Phê duyệt nhanh chóng </h5>
+                    <p class="text-secondary">Nhận kết quả xét duyệt nhanh trong vòng 15 phút, kể cả cuối tuần</p>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+                    <h5>Nhận tiền tức thì</h5>
+                    <p class="text-secondary">Nhận tiền trong ngày qua tài khoản ngân hàng đã đăng ký. Có thể tất toán
+                        khoản vay bất cứ lúc
+                        nào bằng cách thanh toán toàn bộ số tiền vay trong vòng 2 ngày kể từ ngày được giải ngân</p>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+                    <h5>Thanh toán dễ dàng</h5>
+                    <p class="text-secondary">Phương thức thanh toán đa dạng hoặc tùy chọn gia hạn khoản vay linh hoạt
+                        theo nhu cầu</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- client -->
+        <div class="container-fluid mt-2 mb-5" id="client">
+            <div class="row text-center text-light my-4 client__header">
+                <h3 class="fw-semibold">Khách hàng sử dụng sản phẩm vay online</h3>
+            </div>
+            <div class="row text-left client__item">
+                <p class="text-light">Nằm trong độ tuổi từ 23 - 65 tuổi </p>
+                <p class="text-light">Là công dân Việt Nam đã có CCCD/ CMND hợp lệ</p>
+                <p class="text-light">Có thu nhập từ 4 triệu đồng/tháng</p>
+            </div>
+            <div class="row client__button">
+                <button>Đăng ký ngay</button>
+            </div>
+        </div>
+
+        <!-- mortage -->
+        <div class="container my-5" id="mortage">
+            <div class="text-dark mortage__header">
+                <h3>Khoản vay trả góp linh hoạt tại Takomo</h3>
+            </div>
+
+            <div class="row mortage__item my-5">
+                <div class="col-sm-10 col-md-4">
+                    <div class="mortage__item-content">
+                        <div class="mortage__item-content--header">
+                            <h6>Kỳ hạn vay</h6>
+                        </div>
+                        <div class="mortage__item-content--detail">
+                            <p>Thời gian tối thiểu 91 ngày - Thời gian tối đa 120 ngày</p>
+                        </div>
+                    </div>
+                    <div class="mortage__item-example my-3 text-secondary">
+                        <div class="mortage__item-example--header">
+                            <p>Ví dụ cho khoản vay đầu tiên:</p>
+                        </div>
+                        <p>Vay 2.000.000 đồng và trả toàn bộ sau 91 ngày. Lãi suất 0% và Phí dịch vụ phải trả là 0
+                            đồng. Tổng số tiền phải thanh toán = 2.000.000 đồng.</p>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-md-4">
+                    <div class="mortage__item-content">
+                        <div class="mortage__item-content--header">
+                            <h6>Hạn mức vay</h6>
+                        </div>
+                        <div class="mortage__item-content--detail">
+                            <p>-Tối thiểu 500.000 đồng</p>
+                            <p>-Tối đa 15.000.000 đồng</p>
+                        </div>
+
+                    </div>
+                    <div class="mortage__item-example my-3 text-secondary">
+                        <div class="mortage__item-example--header">
+                            <p>Ví dụ cho khoản vay lại:</p>
+                        </div>
+                        <p>Vay 2.000.000 đồng và trả toàn bộ sau 91 ngày. Lãi suất là 18,25%/ năm và Phí dịch vụ phải
+                            trả là 477.188 đồng. Tổng cộng phải thanh toán = 2.568.188 đồng.</p>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-md-4">
+                    <div class="mortage__item-content">
+                        <div class="mortage__item-content--header">
+                            <h6>Lãi suất</h6>
+                        </div>
+                        <div class="mortage__item-content--detail">
+                            <p>- Lãi suất tối thiểu 12%/năm</p>
+                            <p>- Lãi suất tối đa 18,25%/năm</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mortage__img my-5 ">
+                <div class="mortage__img-left text-light">
+                    <h3 class="">Hoàn tất hồ sơ
+                        nhanh chóng tại Takomo</h3>
+                    <p>Tải app ngay.
+                        Hồ sơ duyệt nhanh hơn 50%.</p>
+                    <div class="loaning-intro_download">
+                        <h5 class="inline-block font-medium text-white">Sắp ra mắt</h5>
+                        <div class="d-flex loaning-intro_download-app gap-1 mb-8 md:mb-0">
+                            <button aria-label="Mở kho ứng dụng" class="border-none opacity-50 cursor-not-allowed">
+                                <img width="150" height="44" src="../asset/img/appstore.jpg" class="" alt="appstore">
+                            </button>
+                            <button aria-label="Mở kho ứng dụng" class="border-none opacity-50 cursor-not-allowed">
+                                <img width="170" height="68" src="../asset/img/ggplay.jpg" class="" alt="ggplay">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mortage__img-phone">
+                    <img src="../asset/img/phone1.jpg" alt="phone1" class="mortage__img-phone--img1">
+                    <img src="../asset/img/phone2.jpg" alt="" class="mortage__img-phone--img2">
+                </div>
+            </div>
+        </div>
+        <!-- question -->
+        <div class="container question" id="question my-5">
+            <div class="text-center">
+                <h2>Câu hỏi</h2>
+            </div>
+            <div class="question__content my-5">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header display-2" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Vay tiền nhanh trực tuyến có lừa đảo không?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-secondary">Trên thực tế, các đơn vị cho vay vốn hoạt động
+                                công khai, minh
+                                bạch theo quy định của Pháp luật. Tuy nhiên, có rất nhiều tổ chức tín dụng đen trá hình,
+                                do vậy bạn nên tìm hiểu kỹ thông tin trước khi lựa chọn đăng ký khoản vay.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header display-2" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Có nợ xấu có thể vay online không?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-secondary">Được, tuy nhiên thời gian xét duyệt có thể lâu
+                                hơn, đồng thời
+                                hạn mức sẽ bị hạn chế và tỷ lệ duyệt vay tương đối thấp.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Có thể vay nhiều tổ chức tín dụng cùng một thời điểm không?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-secondary">Được, tuy nhiên điều này sẽ làm giảm tỷ lệ phê
+                                duyệt ở các tổ
+                                chức tín dụng.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                aria-controls="flush-collapseFour">
+                                Tại sao khoản vay bị từ chối?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-secondary">Hồ sơ cho vay bị từ chối có thể xuất phát từ
+                                nhiều nguyên nhân
+                                khác nhau như khách hàng có lịch sử tín dụng xấu, thông tin chưa chính xác hoặc sở hữu
+                                nhiều khoản vay tại cùng một thời điểm.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                aria-controls="flush-collapseFive">
+                                Vay tiền online qua app không trả có sao không?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-secondary">Nợ quá hạn kéo dài sẽ ảnh hưởng đến lịch sử tín
+                                dụng, có nguy cơ
+                                rơi vào trường hợp nợ xấu và mất khả năng vay vốn trong tương lai.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                aria-controls="flush-collapseSix">
+                                Có thể thanh toán khoản vay trước hạn được không?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSix" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-secondary">Có. Điều này sẽ giúp bạn nâng cao điểm tín dụng
+                                và được hưởng
+                                nhiều chương trình ưu đãi ở các lần vay tiếp theo.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="">Đọc thêm</a>
+        </div>
+
+        <!-- docs -->
+        <div class="container-fluid mt-2" id="docs">
+            <div class="row text-light my-4 docs__header">
+                <h3 class="fw-semibold">VAY NHANH ONLINE </h3>
+            </div>
+            <div class="row docs__item container-fluid text-light">
+                <h4> Sự ra đời của loại hình vay tiền online nhanh?</h4>
+                <p>
+                    Xã hội ngày càng phát triển, cuộc sống ngày càng hiện đại và được nâng cao nhưng đồng thời cũng mang
+                    đến áp lực nhiều hơn cho chúng ta. Đặc biệt là về vấn đề tài chính. </p>
+                <p>Sẽ có đôi lúc bạn cần những khoản tiền gấp để trang trải và chi tiêu cho sinh
+                    hoạt
+                    hàng ngày. Thế
+                    nhưng, không phải lúc nào cũng có thể vay mượn từ bạn bè hoặc người thân. Còn tìm đến ngân hàng
+                    thì
+                    lại mất nhiều thời gian và thủ tục.</p>
+            </div>
+            <a href="">Đọc thêm</a>
+        </div>
+    </div>
+
+
+    <script>
+        function rangeSlide(value) {
+            const formattedValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            const moneyLoans = document.querySelectorAll(".money-loan");
+            moneyLoans.forEach(function (element) {
+                element.innerHTML = formattedValue + "đ";
+            });
+            const moneyLoanRed = document.getElementById("money-loan-red");
+            if (!isNaN(value)) {
+                moneyLoanRed.innerHTML = (value * 1.135).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
+            } else {
+                moneyLoanRed.innerHTML = "0đ";
+            }
+
+            const loanBenefit = document.getElementsByClassName("loaning-form-benefit-p")[0];
+            if (value >= 10000000) {
+                loanBenefit.style.display = "block";
+            } else {
+                loanBenefit.style.display = "none"
+            }
+        }
+    </script>
+</body>
+
+</html>

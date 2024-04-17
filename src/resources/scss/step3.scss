@@ -1,0 +1,123 @@
+@import "variables";
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app.step3 {
+  background-color: white;
+  position: relative;
+  margin-top: 100px;
+}
+
+.range {
+  width: 670px;
+  margin: auto;
+  p {
+    font-size: 13px;
+    padding: 10px;
+    background-color: #ffbde7;
+    border-radius: 10px;
+  }
+}
+
+.job {
+  width: 670px;
+  margin-top: 50px;
+  div {
+    input {
+      padding-left: 20px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
+  }
+}
+
+.job__jobType,
+.job__field,
+.job__com,
+.job__income,
+.job__badge,
+.job__exp {
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  line-height: 1;
+  border: 0.5px solid #b3b8c3;
+}
+
+.job__jobType label,
+.job__field label,
+.job__com label,
+.job__income label,
+.job__badge label,
+.job__exp label {
+  z-index: 1;
+  pointer-events: none;
+  position: absolute;
+  top: calc(20% - 3px);
+  left: 10px;
+  transform: scale(0.75);
+  font-size: 16px;
+  padding-right: 10px;
+  color: #8ea0b8;
+}
+
+.job__jobType .jobTypeInput,
+.job__field .fieldInput,
+.job__com .comInput,
+.job__income .incomeInput,
+.job__badge .badgeInput,
+.job__exp .expInput {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  opacity: 1;
+  text-overflow: ellipsis;
+  height: 60px;
+  border: 0.5px solid #a0a4ad;
+}
+
+.job__fieldCom div {
+  width: 48%;
+}
+
+.job__com input {
+  border: 0.5px solid #a0a4ad !important;
+}
+
+.job__badgeTime div {
+  width: 48%;
+}
+
+/* button */
+.button {
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+  a {
+    text-decoration: none;
+    button {
+      border: none;
+      background-color: #b582d9;
+      padding: 20px 30px 20px 30px;
+      border-radius: 40px;
+      //   margin-left: 30px;
+      &:hover {
+        background-color: #d1a9ed;
+      }
+      &:nth-child(2) {
+        background-color: #{$text};
+        padding-left: 60px;
+        padding-right: 60px;
+        &:hover {
+          background-color: indigo;
+        }
+      }
+    }
+    &:nth-child(2) {
+      margin-left: 20px;
+    }
+  }
+}

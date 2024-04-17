@@ -1,0 +1,31 @@
+// header
+.navbar {
+  background-color: #5536a2;
+  .container-xl {
+    .navbar-brand {
+      .header-logo {
+        width: 100px;
+        height: 50px;
+      }
+    }
+    .collapse.navbar-collapse {
+      .d-flex {
+        .btn {
+          padding: 10px 25px;
+          span {
+            color: #6e1dba;
+            font-size: 17px;
+            line-height: 20px;
+            font-weight: 500;
+          }
+          &:hover {
+            background-color: #7e37c4;
+            span {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

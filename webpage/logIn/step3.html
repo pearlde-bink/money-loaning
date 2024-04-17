@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../asset/css/step3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="app">
+        <div class="range text-center">
+            <p>Nhận +15% cơ hội được phê duyệt bằng cách hoàn thành tất cả các trường</p>
+        </div>
+
+        <!-- job -->
+        <form action="" class="d-flex justify-content-center align-items-center">
+            <div class="job">
+                <h5>Nơi làm việc</h5>
+                <div class="job__jobType mt-4">
+                    <label for="">Loại công việc*</label>
+                    <input type="text" id="jobType" name="jobType" class="jobTypeInput" required>
+                </div>
+
+                <div class="job__fieldCom mt-4 d-flex justify-content-between align-items-center">
+                    <div class="job__field">
+                        <label for="">Lĩnh vực hoạt động*</label>
+                        <select class="form-select form-select-sm fieldInput" id="field" aria-label=".form-select-sm">
+                            <option value="" selected>Sinh viên</option>
+                            <option value="" selected>Thất nghiệp</option>
+                            <option value="" selected>Về hưu</option>
+                            <option value="" selected>Khác</option>
+                            <option value="" selected>Y tế và Dược phẩm</option>
+                            <option value="" selected>Công nghệ thông tin và Công nghệ</option>
+                            <option value="" selected>Tài chính và Kế toán</option>
+                            <option value="" selected>Giáo dục</option>
+                            <option value="" selected>Dịch vụ Khách hàng</option>
+                            <option value="" selected>Bán lẻ và Thương mại điện tử</option>
+                            <option value="" selected>Khoa học và Nghiên cứu</option>
+                            <option value="" selected>Nghệ thuật và Thiết kế</option>
+                            <option value="" selected>Xây dựng và Kiến trúc</option>
+                            <option value="" selected>Du lịch và Dịch vụ</option>
+                        </select>
+                    </div>
+
+                    <div class="job__com">
+                        <label for="">Tên công ty*</label>
+                        <input type="text" id="com" name="com" class="comInput" required>
+                    </div>
+                </div>
+
+                <div class="job__badgeTime mt-4 d-flex justify-content-between align-items-center">
+                    <div class="job__badge">
+                        <label for="">Chức vụ*</label>
+                        <input type="text" id="badge" name="badge" class="badgeInput" required>
+                    </div>
+
+                    <div class="job__exp">
+                        <label for="">Kinh nghiệm nơi làm việc cuối cùng*</label>
+                        <select id="exp" name="exp" class="expInput">
+                            <option class="expOption" value="docthan">Dưới 1 năm</option>
+                            <option class="expOption" value="1nam">1 năm</option>
+                            <option class="expOption" value="2nam">2 năm</option>
+                            <option class="expOption" value="3nam">3 năm</option>
+                            <option class="expOption" value="4nam">4 năm</option>
+                            <option class="expOption" value="5nam">5 năm</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="job__income mt-4">
+                    <label for="">Thu nhập hàng tháng*</label>
+                    <select id="income" name="income" class="incomeInput">
+                        <option class="incomeOption" value="docthan">Không có thu nhập</option>
+                        <option class="incomeOption" value="1nam">1.5 - 3 triệu đồng</option>
+                        <option class="incomeOption" value="2nam">3 - 5 triệu đồng</option>
+                        <option class="incomeOption" value="3nam">5 - 7 triệu đồng</option>
+                        <option class="incomeOption" value="4nam">7 - 9 triệu đồng</option>
+                        <option class="incomeOption" value="5nam">9 - 11 triệu đồng</option>
+                        <option class="incomeOption" value="5nam">Lớn hơn 11 triệu đồng</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        <!-- button -->
+        <div class="button d-flex flex-row justify-content-center">
+            <button class="fw-bold text-light">Quay lại</button>
+            <button class="fw-bold text-light">Tiếp theo</button>
+        </div>
+    </div>
+</body>
+
+</html>

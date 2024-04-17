@@ -1,0 +1,71 @@
+@import "variables";
+
+.app {
+  background-color: white;
+  /* banner */
+  #banner {
+    background: #{$violet};
+    overflow: hidden;
+    height: 330px;
+    .banner {
+      width: 80%;
+      margin-left: 150px !important;
+      h1 {
+        font-size: 60px;
+        font-weight: 500;
+        width: 960px;
+        margin: 120px auto 0px;
+      }
+      p {
+        color: #d6bbec;
+      }
+    }
+  }
+  /* product */
+  .product {
+    width: 80%;
+    margin: 100px auto;
+    .product__header {
+      display: inline-block;
+      background-color: #{$bgText};
+      color: #{$text};
+      font-size: 18px;
+      font-weight: 500;
+      padding: 10px;
+      border-radius: 10px;
+      height: 45px;
+      margin-bottom: 30px;
+      margin-left: 15px;
+    }
+    .accordion-item {
+      .accordion-header {
+        button {
+          background-color: transparent !important;
+          border: none;
+        }
+        .accordion-button {
+          span {
+            font-size: 18px;
+            font-weight: 500;
+          }
+          &:focus {
+            border: none !important;
+          }
+          &:not(.collapsed) {
+            color: black !important;
+          }
+        }
+      }
+      .accordion-collapse {
+        .accordion-body {
+          color: gray;
+          font-size: 16px;
+          a {
+            color: #{$text};
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

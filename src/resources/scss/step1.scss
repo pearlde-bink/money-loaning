@@ -1,0 +1,165 @@
+@import "variables";
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app.register {
+  background-color: white;
+  //   height: 100vh;
+  position: relative;
+  margin-top: 100px;
+  //   margin-bottom: 150px !important;
+}
+
+.range {
+  width: 670px;
+  margin: auto;
+  p {
+    font-size: 13px;
+    padding: 10px;
+    background-color: #ffbde7;
+    border-radius: 10px;
+  }
+}
+
+.info {
+  width: 660px;
+  margin-top: 50px;
+  div {
+    input {
+      padding-left: 20px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
+  }
+  .info__name,
+  .info__cccd,
+  .info__birth,
+  .info__marriage,
+  .info__email {
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    line-height: 1;
+    border: 0.5px solid #b3b8c3;
+    label {
+      z-index: 1;
+      pointer-events: none;
+      position: absolute;
+      top: calc(20% - 3px);
+      left: 10px;
+      transform: scale(0.75);
+      font-size: 16px;
+      padding-right: 10px;
+      color: #8ea0b8;
+    }
+  }
+  .info__name .nameInput,
+  .info__cccd .cccdInput,
+  .info__birth .birthInput,
+  .info__marriage .marriageInput,
+  .info__email .emailInput {
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    opacity: 1;
+    text-overflow: ellipsis;
+    height: 60px;
+    border: 0.5px solid #a0a4ad;
+  }
+  .info__cccdBirth {
+    width: 100%;
+    .info__cccd,
+    .info__birth {
+      width: 46%;
+    }
+  }
+  .note1 p,
+  .note2 p {
+    font-weight: 300;
+    font-size: 18px;
+  }
+  .info__sexMarriage {
+    .info__sex,
+    .info__marriage {
+      width: 20%;
+    }
+    .info__sex {
+      label {
+        font-size: 16px;
+        color: #8ea0b8;
+      }
+      .sex {
+        /* Adjust the label position to align with the custom radio button */
+        .sex1 label,
+        .sex2 label {
+          margin-top: -3px;
+        }
+      }
+    }
+    .info__marriage {
+      width: 200px;
+      .marriageInput {
+        option {
+          background-color: white;
+        }
+        .marriageOption {
+          &:focus {
+            background-color: rgb(204, 244, 245);
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+// .info__name label,
+// .info__cccd label,
+// .info__birth label,
+// .info__marriage label,
+// .info__email
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Style the custom radio button */
+input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 15px;
+}
+
+/* Create the custom radio button indicator */
+input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fdb2e2;
+  border-radius: 50%;
+}
+
+/* Style the custom radio button indicator when checked */
+input[type="radio"]:checked + label:before {
+  background-color: #a51872;
+}
+
+/* button */
+.button {
+  margin: 50px auto;
+  padding: 15px 60px 15px 60px;
+  background-color: #{$text};
+  border-radius: 35px;
+  border: none;
+  h6 {
+    margin-top: 10px;
+  }
+}
