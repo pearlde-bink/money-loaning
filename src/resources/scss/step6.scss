@@ -7,10 +7,8 @@ body {
 
 .app.step6 {
   background-color: white;
-  height: 100vh;
   position: relative;
   margin-top: 100px;
-  margin-bottom: 150px !important;
 }
 
 .range,
@@ -54,7 +52,7 @@ body {
   height: 80px;
   width: 650px;
   margin: auto;
-  border: 2px dotted var(--violet);
+  border: 2px dotted #{$violet};
   position: relative;
   display: flex;
   align-items: center;

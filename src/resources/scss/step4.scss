@@ -85,32 +85,24 @@ body {
   width: 48%;
 }
 
-/* button */
 .button {
   margin-top: 100px !important;
   margin-bottom: 100px !important;
-  a {
-    text-decoration: none;
-    button {
-      border: none;
-      background-color: #b582d9;
-      padding: 20px 30px 20px 30px;
-      border-radius: 40px;
-      //   margin-left: 30px;
-      &:hover {
-        background-color: #d1a9ed;
-      }
-      &:nth-child(2) {
-        background-color: #{$text};
-        padding-left: 60px;
-        padding-right: 60px;
-        &:hover {
-          background-color: indigo;
-        }
-      }
-    }
-    &:nth-child(2) {
-      margin-left: 20px;
-    }
-  }
+}
+
+.button button {
+  border: none;
+  background-color: #b582d9;
+  padding: 20px 30px 20px 30px;
+  border-radius: 40px;
+  margin-left: 30px;
+}
+
+.button button:hover {
+  background-color: #ac5de4;
+}
+
+.button button:nth-child(2):hover {
+  cursor: default;
+  background-color: rgba(181, 130, 217, 0.9);
 }

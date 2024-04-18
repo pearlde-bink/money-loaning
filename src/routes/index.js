@@ -6,8 +6,10 @@ const questionRouter = require("./question");
 const paymentRouter = require("./payment");
 const logInRouter = require("./logIn");
 const registerRouter = require("./register");
+const emiRouter = require("./emi");
 
 function route(app) {
+  app.use("/emi", emiRouter);
   app.use("/register", registerRouter);
   app.use("/log-in", logInRouter);
   app.use("/payment", paymentRouter);

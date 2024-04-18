@@ -156,10 +156,13 @@ input[type="radio"]:checked + label:before {
 .button {
   margin: 50px auto;
   padding: 15px 60px 15px 60px;
-  background-color: #{$text};
+  background-color: #b582d9;
   border-radius: 35px;
   border: none;
   h6 {
     margin-top: 10px;
+  }
+  &:hover {
+    background-color: #ac5de4;
   }
 }
