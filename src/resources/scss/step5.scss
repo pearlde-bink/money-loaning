@@ -5,6 +5,10 @@ body {
   height: 100%;
 }
 
+form {
+  padding: 20px;
+}
+
 .app.step5 {
   background-color: white;
   position: relative;
@@ -24,7 +28,7 @@ body {
 }
 
 .intention {
-  width: 670px;
+  width: 95%;
   margin-top: 50px;
 }
 
@@ -65,6 +69,7 @@ body {
 .button {
   margin-top: 100px !important;
   margin-bottom: 100px !important;
+  gap: 30px;
 }
 
 .button button {
@@ -72,7 +77,6 @@ body {
   background-color: #b582d9;
   padding: 20px 30px 20px 30px;
   border-radius: 40px;
-  margin-left: 30px;
 }
 
 .button button:hover {
@@ -82,4 +86,27 @@ body {
 .button button:nth-child(2):hover {
   cursor: default;
   background-color: rgba(181, 130, 217, 0.9);
+}
+@media only screen and (max-width: 479px) {
+  .range {
+    width: 80% !important;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .range {
+    width: 80% !important;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .range {
+    width: 80% !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+}
+@media only screen and (min-width: 1401px) and (max-width: 1899px) {
 }

@@ -9,12 +9,12 @@
     height: 330px;
     .banner {
       width: 80%;
-      margin-left: 150px !important;
+      margin: 0 auto;
       h1 {
         font-size: 60px;
         font-weight: 500;
         width: 960px;
-        margin: 120px auto 0px;
+        margin: 100px auto 0px;
       }
       p {
         color: #d6bbec;
@@ -68,4 +68,77 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 479px) {
+  #banner {
+    height: auto !important;
+    .banner {
+      h1 {
+        font-size: 40px !important;
+        margin-top: 80px !important;
+        text-align: center;
+      }
+      p {
+        margin-bottom: 40px !important;
+      }
+    }
+  }
+  .app .product {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  #banner {
+    height: auto !important;
+    .banner {
+      h1 {
+        font-size: 40px !important;
+        margin-top: 80px !important;
+        text-align: center;
+      }
+      p {
+        margin-bottom: 40px !important;
+      }
+    }
+  }
+  .app .product {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  #banner {
+    height: auto !important;
+    .banner {
+      h1 {
+        font-size: 45px !important;
+        margin-top: 80px !important;
+        text-align: center;
+      }
+      p {
+        margin-bottom: 40px !important;
+      }
+    }
+  }
+  .app .product {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .banner {
+    h1 {
+      font-size: 55px !important;
+      margin-top: 80px !important;
+      text-align: center;
+    }
+  }
+  .app .product {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+}
+@media only screen and (min-width: 1401px) and (max-width: 1899px) {
 }

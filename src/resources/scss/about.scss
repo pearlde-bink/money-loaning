@@ -9,25 +9,29 @@
   .term {
     overflow: hidden;
     background: linear-gradient(to top right, #8611ea 15%, #{$violet} 52%);
-    .term__text {
-      width: 440px !important;
-      margin-top: 50px !important;
-      margin-left: 150px;
-      margin-right: 133px;
-      h2 {
-        font-size: 60px;
+    .row.mt-5 {
+      margin: 50px 50px;
+      gap: 50px;
+      .term__text {
+        // width: 440px !important;
+        margin-top: 50px !important;
+        // margin-left: 150px;
+        // margin-right: 133px;
+        h2 {
+          font-size: 60px;
+        }
+        .term__text--explain {
+          color: rgba(225, 225, 225, 0.8);
+          font-size: 17px;
+          line-height: 29px;
+        }
       }
-      .term__text--explain {
-        color: rgba(225, 225, 225, 0.8);
-        font-size: 17px;
-        line-height: 29px;
-      }
-    }
-    .term__image {
-      margin-bottom: 100px;
-      width: 600px !important;
-      img {
-        border-radius: 40px 0 0 40px;
+      .term__image {
+        margin-bottom: 100px;
+        // width: 600px !important;
+        img {
+          border-radius: 40px 0 0 40px;
+        }
       }
     }
   }
@@ -71,6 +75,7 @@
       .contactInfo__item {
         background-color: #f4ebff;
         border-radius: 10px;
+        margin-bottom: 30px;
         .contactInfo__item--header {
           width: 100px;
           height: 100px;
@@ -98,4 +103,43 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 479px) {
+  .term__image {
+    width: 100%;
+    margin-bottom: 0 !important;
+    img {
+      border-radius: 0 !important;
+      width: 100% !important;
+    }
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .term__image {
+    width: 100%;
+    margin-bottom: 0 !important;
+    img {
+      border-radius: 0 !important;
+      width: 100% !important;
+    }
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .term__image {
+    width: 100%;
+    margin-bottom: 0 !important;
+    img {
+      border-radius: 0 !important;
+      width: 100% !important;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+}
+@media only screen and (min-width: 1401px) and (max-width: 1899px) {
 }

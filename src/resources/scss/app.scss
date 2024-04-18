@@ -153,8 +153,8 @@
   /* banner 1 */
   .banner_mot {
     position: relative;
-    width: 101.9%;
-    margin-left: -16px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     .banner__mot-img {
       border-radius: 50px 50px 0 0;
@@ -299,6 +299,8 @@
           margin-top: -40px;
           button {
             margin-top: -10px;
+            border: none;
+            background: transparent;
           }
         }
       }
@@ -363,5 +365,216 @@
     margin-left: 130px;
   }
 }
-// }
-// }
+
+@media only screen and (max-width: 479px) {
+  .loaning {
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 50px !important;
+    gap: 40px;
+    .loaning-intro {
+      width: 120% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  #docs {
+    height: auto !important;
+    padding-bottom: 20px;
+    .docs__header {
+      h3 {
+        margin-left: 0px;
+        margin-top: 50px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .docs__item {
+      margin-left: 0px;
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    a {
+      margin-left: 30px;
+    }
+  }
+  #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img2,
+  #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img1 {
+    display: none;
+  }
+
+  #client {
+    .client__item {
+      width: auto;
+      p {
+        padding-right: 0;
+        width: fit-content;
+      }
+    }
+    .client__button {
+      width: 80%;
+    }
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .loaning {
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 50px !important;
+    gap: 40px;
+    .loaning-intro {
+      width: 120% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  #docs {
+    height: auto !important;
+    padding-bottom: 20px;
+    .docs__header {
+      h3 {
+        margin-left: 0px;
+        margin-top: 50px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .docs__item {
+      margin-left: 0px;
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    a {
+      margin-left: 30px;
+    }
+  }
+  #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img2,
+  #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img1 {
+    display: none;
+  }
+
+  #client {
+    .client__item {
+      width: auto;
+      p {
+        padding-right: 0;
+        width: fit-content;
+      }
+    }
+    .client__button {
+      width: 80%;
+    }
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .loaning {
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 50px !important;
+    gap: 40px;
+    .loaning-intro {
+      width: 120% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  #docs {
+    height: auto !important;
+    padding-bottom: 20px;
+    .docs__header {
+      h3 {
+        margin-left: 0px;
+        margin-top: 50px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .docs__item {
+      margin-left: 0px;
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    a {
+      margin-left: 30px;
+    }
+  }
+  #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img2,
+  #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img1 {
+    display: none;
+  }
+
+  #client {
+    .client__item {
+      width: auto;
+      p {
+        padding-right: 0;
+        width: fit-content;
+      }
+    }
+    .client__button {
+      width: 80%;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .loaning {
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 50px !important;
+    gap: 40px;
+    .loaning-intro {
+      width: 120% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  #docs {
+    height: auto !important;
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .loaning {
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 50px !important;
+    gap: 40px;
+    .loaning-intro {
+      width: 120% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+}
+@media only screen and (min-width: 1401px) and (max-width: 1899px) {
+}

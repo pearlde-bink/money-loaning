@@ -11,6 +11,9 @@ body {
   position: relative;
   margin-top: 100px;
   //   margin-bottom: 150px !important;
+  form {
+    padding: 20px;
+  }
 }
 
 .range {
@@ -102,6 +105,9 @@ body {
     }
     .info__marriage {
       width: 200px;
+      label {
+        transform: translate(-5px, -6px) !important;
+      }
       .marriageInput {
         option {
           background-color: white;
@@ -165,4 +171,27 @@ input[type="radio"]:checked + label:before {
   &:hover {
     background-color: #ac5de4;
   }
+}
+@media only screen and (max-width: 479px) {
+  .range {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .range {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .range {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+}
+@media only screen and (min-width: 1401px) and (max-width: 1899px) {
 }

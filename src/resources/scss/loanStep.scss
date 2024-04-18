@@ -7,7 +7,7 @@
     overflow: hidden;
     .banner {
       width: 80%;
-      margin-left: 150px !important;
+      margin: 0 100px;
       .banner-intro {
         width: 515px !important;
         margin-top: 25px !important;
@@ -104,4 +104,48 @@
       font-size: 17px;
     }
   }
+}
+@media only screen and (max-width: 479px) {
+  .banner {
+    margin: 0 !important;
+  }
+  .banner-image {
+    display: none !important;
+  }
+  .app .steps {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .banner {
+    margin: 0 !important;
+  }
+  .banner-image {
+    display: none !important;
+  }
+  .app .steps {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .banner-image img {
+    margin-top: 100px !important;
+  }
+  .app .steps {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .banner-image img {
+    margin-top: 100px !important;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .banner-image img {
+    margin-top: 100px !important;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+}
+@media only screen and (min-width: 1401px) and (max-width: 1899px) {
 }

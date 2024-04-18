@@ -5,15 +5,22 @@ body {
   height: 100%;
 }
 
+form {
+  padding: 20px;
+}
+
 .app.step6 {
   background-color: white;
   position: relative;
   margin-top: 100px;
 }
 
-.range,
-.ccAuthen {
+.range {
   width: 670px;
+  margin: auto;
+}
+.ccAuthen {
+  width: 95%;
   margin: auto;
 }
 
@@ -25,7 +32,7 @@ body {
 }
 
 .ccAuthen {
-  margin-bottom: 30px Im !important;
+  margin-bottom: 30px !important;
 }
 
 .ccAuthen__header h4 {
@@ -38,12 +45,16 @@ body {
   background-color: #e1caea;
   border-radius: 10px;
   font-weight: 400;
+  width: 60%;
+  margin: 0 auto;
 }
 
-.ccAuthen__form label {
-  font-weight: 700;
-  text-align: start !important;
-  margin-top: 30px;
+.ccAuthen__form {
+  label {
+    font-weight: 700;
+    text-align: start !important;
+    margin-top: 30px;
+  }
 }
 
 #drop-zone,
@@ -91,8 +102,10 @@ div#content {
 }
 
 .button {
-  margin-top: 100px !important;
-  margin-bottom: 100px !important;
+  display: flex;
+  margin: 100px 0 100px !important;
+  gap: 30px !important;
+  justify-content: center;
 }
 
 .button button {
@@ -100,7 +113,6 @@ div#content {
   background-color: #b582d9;
   padding: 20px 30px 20px 30px;
   border-radius: 40px;
-  margin-left: 30px;
 }
 
 .button button:hover {
@@ -110,4 +122,43 @@ div#content {
 .button button:nth-child(2):hover {
   cursor: default;
   background-color: rgba(181, 130, 217, 0.9);
+}
+@media only screen and (max-width: 479px) {
+  .range {
+    width: 80% !important;
+  }
+  .ccAuthen__form {
+    div {
+      width: 100% !important;
+    }
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .range {
+    width: 80% !important;
+  }
+  .ccAuthen__form {
+    div {
+      width: 100% !important;
+    }
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .range {
+    width: 80% !important;
+  }
+
+  .ccAuthen__form {
+    div {
+      width: 100% !important;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+}
+@media only screen and (min-width: 1401px) and (max-width: 1899px) {
 }
