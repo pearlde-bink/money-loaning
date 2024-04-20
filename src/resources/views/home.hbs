@@ -47,7 +47,7 @@
                 </div>
                 <div class="loaning-form-date d-flex justify-content-between">
                     <h4 class="text-secondary">Ngày thanh toán</h4>
-                    <h4>27/03/2024</h4>
+                    <h4 class="loaning-form-date__payday"></h4>
                 </div>
 
                 <div class="loaning-form-benefit">
@@ -348,4 +348,8 @@
             loanBenefit.style.display = "none"
         }
     }
+
+    const payday = document.getElementsByClassName('loaning-form-date__payday')[0];
+    const d = new Date();
+    payday.innerHTML = d.getDate() + "/" + (d.getMonth() + 2) + "/" + d.getFullYear();
 </script>

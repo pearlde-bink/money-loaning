@@ -47,6 +47,11 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {{!-- src="main.js" --}}
 <script>
+
+    //format number
+    function formatValue(e) {
+        return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     const loanAmountInput = document.querySelector(".loan-amount");
     const interestRateInput = document.querySelector(".interest-rate");
     const loanTenureInput = document.querySelector(".loan-tenure");
@@ -96,7 +101,7 @@
                 datasets: [
                     {
                         data: [totalInterestAmount, loanAmount],
-                        backgroundColor: ["#e63946", "#14213d"],
+                        backgroundColor: ["#FB9AD1", "#5536a2"],
                         borderWidth: 0,
                     },
                 ],
@@ -118,13 +123,13 @@
     };
 
     const updateData = (emi) => {
-        loanEMIValue.innerHTML = Math.round(emi);
+        loanEMIValue.innerHTML = formatValue(Math.round(emi));
 
         let totalAmount = Math.round(loanTenure * emi);
-        totalAmountValue.innerHTML = totalAmount;
+        totalAmountValue.innerHTML = formatValue(totalAmount);
 
         let totalInterestAmount = Math.round(totalAmount - loanAmount);
-        totalInterestValue.innerHTML = totalInterestAmount;
+        totalInterestValue.innerHTML = formatValue(totalInterestAmount);
 
         if (myChart) {
             updateChart(totalInterestAmount);
@@ -150,5 +155,4 @@
     init();
 
     calculateBtn.addEventListener("click", init);
-
 </script>

@@ -1,8 +1,12 @@
+@import "variables";
+body {
+  background: #aa8bf4;
+}
 .loan-calculator {
   font-family: "Roboto", sans-serif;
   width: 600px;
   margin: 24px auto;
-  background: #fff;
+  background: white;
   box-shadow: 0 12px 50px -11px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   color: #14213d;
@@ -12,7 +16,8 @@
     box-sizing: border-box;
   }
   .top {
-    background: #14213d;
+    // background: #14213d;
+    background-color: #{$violet};
     color: #fff;
     padding: 32px;
     h2 {
@@ -49,9 +54,10 @@
     }
     .value {
       font-size: 30px;
-      font-weight: 700;
+      font-weight: 600;
       padding-top: 5px;
       padding-bottom: 5px;
+      color: #{$violet};
       border-bottom: 1px solid rgba(20, 33, 61, 0.2);
       &::before {
         content: "VND";
@@ -62,7 +68,7 @@
       }
     }
     .calculate-btn {
-      background: red;
+      background-color: #fb9ad1;
       color: #fff;
       border: none;
       padding: 8px 32px;
