@@ -33,20 +33,22 @@ body {
         font-weight: 600;
       }
       form {
-        input {
-          background-color: white;
-          border-radius: 5px;
-          width: 100%;
-          border: 0.5px solid rgb(207, 209, 210);
-          height: 45px;
-          &:focus {
-            outline: 1px solid #6941c6;
+        .form-group {
+          input {
+            background-color: white;
+            border-radius: 5px;
+            width: 100%;
+            border: 0.5px solid rgb(207, 209, 210);
+            height: 45px;
+            &:focus {
+              outline: 1px solid #6941c6;
+            }
           }
-        }
-        p {
-          font-size: 14px;
-          margin-bottom: 5px;
-          color: rgb(63, 63, 63);
+          label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: rgb(63, 63, 63);
+          }
         }
       }
     }
@@ -66,15 +68,6 @@ body {
           font-size: 18px;
           line-height: 40px;
         }
-        // &.btn1 {
-        //   background-color: white;
-        //   color: #{$text};
-        //   margin-right: 20px;
-        // }
-        // &.btn2 {
-        //   background-color: #{$text};
-        //   color: white;
-        // }
       }
     }
   }

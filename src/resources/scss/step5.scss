@@ -18,21 +18,23 @@ form {
 .range {
   width: 670px;
   margin: auto;
-}
-
-.range p {
-  font-size: 13px;
-  padding: 10px;
-  background-color: #ffbde7;
-  border-radius: 10px;
+  p {
+    font-size: 13px;
+    padding: 10px;
+    background-color: #ffbde7;
+    border-radius: 10px;
+  }
 }
 
 .intention {
-  width: 95%;
+  width: 40%;
   margin-top: 50px;
 }
 
 .method,
+.momoNum,
+.bankName,
+.bankNum,
 .purpose {
   position: relative;
   background-color: #fff;
@@ -43,12 +45,15 @@ form {
 }
 
 .method label,
+.momoNum label,
+.bankName label,
+.bankNum label,
 .purpose label {
   z-index: 1;
   pointer-events: none;
   position: absolute;
   top: calc(20% - 3px);
-  left: 10px;
+  // left: 10px;
   transform: scale(0.75);
   font-size: 16px;
   padding-right: 10px;
@@ -56,6 +61,9 @@ form {
 }
 
 .method .methodItemInput,
+.momoNum .momoNumItemInput,
+.bankName .bankNameItemInput,
+.bankNum .bankNumItemInput,
 .purpose .purposeItemInput {
   position: relative;
   width: 100%;
@@ -70,22 +78,27 @@ form {
   margin-top: 100px !important;
   margin-bottom: 100px !important;
   gap: 30px;
+  button {
+    border: none;
+    background-color: #b582d9;
+    padding: 20px 30px 20px 30px;
+    border-radius: 40px;
+    &:hover {
+      background-color: #ac5de4;
+    }
+    &:nth-child(2) {
+      &:hover {
+        cursor: default;
+        background-color: rgba(181, 130, 217, 0.9);
+      }
+    }
+  }
 }
 
-.button button {
-  border: none;
-  background-color: #b582d9;
-  padding: 20px 30px 20px 30px;
-  border-radius: 40px;
-}
-
-.button button:hover {
-  background-color: #ac5de4;
-}
-
-.button button:nth-child(2):hover {
-  cursor: default;
-  background-color: rgba(181, 130, 217, 0.9);
+input,
+select {
+  padding-left: 10px !important;
+  padding-top: 10px !important;
 }
 @media only screen and (max-width: 479px) {
   .range {

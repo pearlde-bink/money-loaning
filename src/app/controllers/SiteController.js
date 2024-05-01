@@ -1,20 +1,23 @@
-// const Course = require("../models/Course");
+const Relative = require("../models/Relatives");
 const { multipleMongooseToObject } = require("../../util/mongoose");
 class SiteController {
   // GET /home
-  //   home(req, res, next) {
-  //     // res.render('home');
-  //     Course.find({})
-  //       .then((courses) => {
-  //         res.render("home", { courses: multipleMongooseToObject(courses) });
-  //       })
-  //       .catch(next);
-  //   }
   home(req, res, next) {
-    res.render("home", {
-      style: "app.css",
-    });
+    // res.render('home');
+    Relative.find({})
+      .then((relatives) =>
+        res.render("home", {
+          style: "app.css",
+          relatives: multipleMongooseToObject(relatives),
+        })
+      )
+      .catch(next);
   }
+  // home(req, res, next) {
+  //   res.render("home", {
+  //     style: "app.css",
+  //   });
+  // }
 
   // GET /news/:slug
   // home(req, res) {

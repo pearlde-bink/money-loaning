@@ -18,35 +18,35 @@ form {
 .range {
   width: 670px;
   margin: auto;
+  p {
+    font-size: 13px;
+    padding: 10px;
+    background-color: #ffbde7;
+    border-radius: 10px;
+  }
 }
 .ccAuthen {
   width: 95%;
   margin: auto;
-}
-
-.range p {
-  font-size: 13px;
-  padding: 10px;
-  background-color: #ffbde7;
-  border-radius: 10px;
-}
-
-.ccAuthen {
   margin-bottom: 30px !important;
 }
 
-.ccAuthen__header h4 {
-  font-size: 18px;
+.ccAuthen__header {
+  h4 {
+    font-size: 18px;
+  }
 }
 
-.ccAuthen__header--note p {
-  font-size: 16px;
-  padding: 15px;
-  background-color: #e1caea;
-  border-radius: 10px;
-  font-weight: 400;
-  width: 60%;
-  margin: 0 auto;
+.ccAuthen__header--note {
+  p {
+    font-size: 16px;
+    padding: 15px;
+    background-color: #e1caea;
+    border-radius: 10px;
+    font-weight: 400;
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 
 .ccAuthen__form {
@@ -106,23 +106,23 @@ div#content {
   margin: 100px 0 100px !important;
   gap: 30px !important;
   justify-content: center;
+  button {
+    border: none;
+    background-color: #b582d9;
+    padding: 20px 30px 20px 30px;
+    border-radius: 40px;
+    &:hover {
+      background-color: #ac5de4;
+    }
+    &:nth-child(2) {
+      &:hover {
+        cursor: default;
+        background-color: rgba(181, 130, 217, 0.9);
+      }
+    }
+  }
 }
 
-.button button {
-  border: none;
-  background-color: #b582d9;
-  padding: 20px 30px 20px 30px;
-  border-radius: 40px;
-}
-
-.button button:hover {
-  background-color: #ac5de4;
-}
-
-.button button:nth-child(2):hover {
-  cursor: default;
-  background-color: rgba(181, 130, 217, 0.9);
-}
 @media only screen and (max-width: 479px) {
   .range {
     width: 80% !important;

@@ -2,11 +2,17 @@
     <div class="logInForm">
         <div class="form">
             <h2 class="text-center">ĐĂNG NHẬP THANH TOÁN VAY THÊM CÙNG NHIỀU ƯU ĐÃI HẤP DẪN</h2>
-            <form action="" class="mt-3" method="post">
-                <p class="fw-semibold">Số điện thoại</p>
-                <input type="text" id="username" name="username" required>
-                <p class="fw-semibold mt-3">Mật khẩu *</p>
-                <input type="text" id="password" name="pasword" required>
+            <form action="" class="mt-3" method="POST" class="form" id="form-1">
+                <div class="form-group">
+                    <label for="sdt" class="fw-semibold">Số điện thoại</label>
+                    <input type="text" id="sdt" name="sdt" required>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="fw-semibold mt-3">Mật khẩu*</label>
+                    <input type="text" id="password" name="pasword" required>
+                    <span class="form-message"></span>
+                </div>
             </form>
         </div>
         <div class="button">
@@ -21,3 +27,15 @@
         </div>
     </div>
 </div>
+
+<script src="/js/validator.js"></script>
+<script>
+    console.log("hello");
+    Validator({
+        form: '#form-1',
+        rules: [
+            Validator.isrequired('#sdt'),
+            Validator.isrequired('#password'),
+        ]
+    });
+</script>

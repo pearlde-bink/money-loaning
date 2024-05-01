@@ -6,12 +6,6 @@
     <!-- job -->
     <form action="" class="d-flex justify-content-center align-items-center">
         <div class="job">
-            <h5>Nơi làm việc</h5>
-            <div class="job__jobType mt-4">
-                <label for="">Loại công việc*</label>
-                <input type="text" id="jobType" name="jobType" class="jobTypeInput" required>
-            </div>
-
             <div class="job__fieldCom mt-4 d-flex justify-content-between align-items-center">
                 <div class="job__field">
                     <label for="">Lĩnh vực hoạt động*</label>
@@ -39,16 +33,16 @@
                 </div>
             </div>
 
-            <div class="job__badgeTime mt-4 d-flex justify-content-between align-items-center">
-                <div class="job__badge">
+            <div class="job__roleTime mt-4 d-flex justify-content-between align-items-center">
+                <div class="job__role">
                     <label for="">Chức vụ*</label>
-                    <input type="text" id="badge" name="badge" class="badgeInput" required>
+                    <input type="text" id="role" name="role" class="roleInput" required>
                 </div>
 
                 <div class="job__exp">
                     <label for="">Kinh nghiệm nơi làm việc cuối cùng*</label>
                     <select id="exp" name="exp" class="expInput">
-                        <option class="expOption" value="docthan">Dưới 1 năm</option>
+                        <option class="expOption" value="shorter1nam">Dưới 1 năm</option>
                         <option class="expOption" value="1nam">1 năm</option>
                         <option class="expOption" value="2nam">2 năm</option>
                         <option class="expOption" value="3nam">3 năm</option>
@@ -61,13 +55,13 @@
             <div class="job__income mt-4">
                 <label for="">Thu nhập hàng tháng*</label>
                 <select id="income" name="income" class="incomeInput">
-                    <option class="incomeOption" value="docthan">Không có thu nhập</option>
-                    <option class="incomeOption" value="1nam">1.5 - 3 triệu đồng</option>
-                    <option class="incomeOption" value="2nam">3 - 5 triệu đồng</option>
-                    <option class="incomeOption" value="3nam">5 - 7 triệu đồng</option>
-                    <option class="incomeOption" value="4nam">7 - 9 triệu đồng</option>
-                    <option class="incomeOption" value="5nam">9 - 11 triệu đồng</option>
-                    <option class="incomeOption" value="5nam">Lớn hơn 11 triệu đồng</option>
+                    <option class="incomeOption" value="noincome">Không có thu nhập</option>
+                    <option class="incomeOption" value="3trieu">1.5 - 3 triệu đồng</option>
+                    <option class="incomeOption" value="5trieu">3 - 5 triệu đồng</option>
+                    <option class="incomeOption" value="7trieu">5 - 7 triệu đồng</option>
+                    <option class="incomeOption" value="9trieu">7 - 9 triệu đồng</option>
+                    <option class="incomeOption" value="11trieu">9 - 11 triệu đồng</option>
+                    <option class="incomeOption" value="hon11trieu">Lớn hơn 11 triệu đồng</option>
                 </select>
             </div>
         </div>

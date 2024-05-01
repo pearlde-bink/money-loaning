@@ -1,0 +1,513 @@
+<div class="app container user mt-5">
+    <div class="row">
+        <div class="col-12 col-md-3 user__left mb-5">
+            <div class="user__avt">
+                <img src="/img/logo.png" alt="avt">
+            </div>
+            <div class="user__info active" id="user__account">
+                <button>Thông tin cá nhân</button>
+            </div>
+            <div class="user__info" id="user__address">
+                <button>Thông tin địa chỉ</button>
+            </div>
+            <div class="user__info" id="user__job">
+                <button>Thông tin công việc</button>
+            </div>
+            <div class="user__info" id="user__relationship">
+                <button>Thông tin quan hệ</button>
+            </div>
+            <div class="user__info" id="user__method">
+                <button>Phương thức thanh toán</button>
+            </div>
+            <div class="user__info" id="user__loan">
+                <button>Thông tin khoản vay</button>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-9 user__right">
+            {{!-- account --}}
+            <div class="form" id="form__account">
+                <form action="POST" action="">
+                    <h2>Thông tin của tôi</h2>
+                    <p class="text-secondary">Quản lý thông tin hồ sơ để bảo mật tài khoản
+                    </p>
+
+                    <div class="line"></div>
+
+                    <div class="row form__main">
+                        <div
+                            class="form__main--left col-12 col-sm-8 d-flex justify-content-center align-items-center flex-column">
+                            <div class="form__main--name d-flex justify-content-between flex-row">
+                                <p>Tên người dùng</p>
+                                <input type="text" value="" id="name" name="name">
+                            </div>
+                            <div class="form__main--email d-flex justify-content-between flex-row">
+                                <p>Email</p>
+                                <input type="text" value="" id="email" name="email">
+                            </div>
+                            <div class="form__main--phone d-flex justify-content-between flex-row">
+                                <p>Số điện thoại</p>
+                                <input type="text" value="" id="phone" name="phone">
+                            </div>
+                            <div class="form__main--dob d-flex justify-content-between flex-row">
+                                <p>Ngày sinh</p>
+                                <input type="date" id="dob" name="dob">
+                            </div>
+                            <div class="form__main--sex d-flex justify-content-between flex-row">
+                                <p>Giới tính</p>
+                                <div class="d-flex justify-content-between flex-row">
+                                    <div>
+                                        <input type="radio" id="nam" name="nam" value="nam">
+                                        <label for="nam">Nam</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="nu" name="nu" value="nu">
+                                        <label for="nu">Nữ</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="khac" name="khac" value="khac">
+                                        <label for="khac">Khác</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form__main--marriage d-flex justify-content-between flex-row">
+                                <p>Tình trạng hôn nhân</p>
+                                <div class="d-flex justify-content-between flex-row">
+                                    <div>
+                                        <input type="radio" id="single" name="single" value="single">
+                                        <label for="single">Độc thân</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="married" name="married" value="married">
+                                        <label for="married">Đã cưới</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="divorced" name="divorced" value="divorced">
+                                        <label for="divorced">Ly hôn</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form__main--cccd d-flex justify-content-between flex-row">
+                                <p>CCCD</p>
+                                <input type="text" value="" id="cccd" name="cccd">
+                            </div>
+                            <div class="form__main--cccdImage d-flex justify-content-between flex-row">
+                                <p>Ảnh CCCD</p>
+                                <input type="file">
+                            </div>
+                        </div>
+                        <div
+                            class="form__main--right col-12 col-sm-4 d-flex justify-content-center align-items-center flex-column">
+                            <div class="form__main--right-avt">
+                                <img src="/img/logo.png" alt="">
+                            </div>
+                            <button id="fileInputButton" type="submit">
+                                <p>Chọn ảnh</p>
+                            </button>
+                            <p>Dụng lượng file tối đa 1 MB
+                                Định dạng:.JPEG, .PNG</p>
+                            <input type="file" id="fileInput" style="display: none;">
+                        </div>
+                    </div>
+                </form>
+
+                <button class="update mt-4 mb-5" type="submit">
+                    <p>Cập nhật</p>
+                </button>
+            </div>
+
+            {{!-- address --}}
+            <div class="form" id="form__address">
+                <form action="POST">
+                    <h2>Địa chỉ của tôi</h2>
+                    <p class="text-secondary">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+
+                    <div class="line"></div>
+
+                    <div class="row form__main d-flex justify-content-center align-items-center flex-column">
+                        <div class="form__main--province d-flex justify-content-between flex-row">
+                            <p>Thành phố / Tỉnh</p>
+                            <input type="text" value="" id="province" name="province">
+                        </div>
+                        <div class="form__main--district d-flex justify-content-between flex-row">
+                            <p>Quận / Huyện</p>
+                            <input type="text" value="" id="district" name="district">
+                        </div>
+                        <div class="form__main--village d-flex justify-content-between flex-row">
+                            <p>Phường / Xã</p>
+                            <input type="text" value="" id="village" name="village">
+                        </div>
+                        <div class="form__main--road d-flex justify-content-between flex-row">
+                            <p>Đường</p>
+                            <input type="text" id="road" name="road">
+                        </div>
+                        <div class="form__main--home d-flex justify-content-between flex-row">
+                            <p>Số nhà</p>
+                            <input type="text" id="home" name="home">
+                        </div>
+                        <div class="form__main--marriage d-flex justify-content-between flex-row">
+                            <p>Thời gian cư trú</p>
+                            <div>
+                                <select id="time" name="time" class="timeInput">
+                                    <option class="timeOption" value="docthan">Dưới 1 năm</option>
+                                    <option class="timeOption" value="1nam">1 năm</option>
+                                    <option class="timeOption" value="2nam">2 năm</option>
+                                    <option class="timeOption" value="3nam">3 năm</option>
+                                    <option class="timeOption" value="4nam">Trên 3 năm</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <button class="update mt-4 mb-5">
+                    <p>Cập nhật</p>
+                </button>
+            </div>
+
+            {{!-- job --}}
+            <div class="form" id="form__job">
+                <form action="POST">
+                    <h2>Công việc của tôi</h2>
+                    <p class="text-secondary">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+
+                    <div class="line"></div>
+
+                    <div class="row form__main d-flex justify-content-center align-items-center flex-column">
+                        <div class="form__main--field d-flex justify-content-between flex-row">
+                            <p>Lĩnh vực hoạt động</p>
+                            <div>
+                                <select class="form-select form-select-sm fieldInput" id="field"
+                                    aria-label=".form-select-sm">
+                                    <option value="" selected>Sinh viên</option>
+                                    <option value="" selected>Thất nghiệp</option>
+                                    <option value="" selected>Về hưu</option>
+                                    <option value="" selected>Khác</option>
+                                    <option value="" selected>Y tế và Dược phẩm</option>
+                                    <option value="" selected>Công nghệ thông tin và Công nghệ</option>
+                                    <option value="" selected>Tài chính và Kế toán</option>
+                                    <option value="" selected>Giáo dục</option>
+                                    <option value="" selected>Dịch vụ Khách hàng</option>
+                                    <option value="" selected>Bán lẻ và Thương mại điện tử</option>
+                                    <option value="" selected>Khoa học và Nghiên cứu</option>
+                                    <option value="" selected>Nghệ thuật và Thiết kế</option>
+                                    <option value="" selected>Xây dựng và Kiến trúc</option>
+                                    <option value="" selected>Du lịch và Dịch vụ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__main--com d-flex justify-content-between flex-row">
+                            <p>Tên công ty</p>
+                            <input type="text" value="" id="com" name="com">
+                        </div>
+                        <div class="form__main--role d-flex justify-content-between flex-row">
+                            <p>Chức vụ</p>
+                            <input type="text" value="" id="role" name="role">
+                        </div>
+                        <div class="form__main--exp d-flex justify-content-between flex-row">
+                            <p>Kinh nghiệm nơi làm việc cuối cùng</p>
+                            <div>
+                                <select id="exp" name="exp" class="expInput">
+                                    <option class="expOption" value="shorter1nam">Dưới 1 năm</option>
+                                    <option class="expOption" value="1nam">1 năm</option>
+                                    <option class="expOption" value="2nam">2 năm</option>
+                                    <option class="expOption" value="3nam">3 năm</option>
+                                    <option class="expOption" value="4nam">4 năm</option>
+                                    <option class="expOption" value="5nam">5 năm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__main--income d-flex justify-content-between flex-row">
+                            <p>Thu nhập hàng tháng</p>
+                            <div>
+                                <select id="income" name="income" class="incomeInput">
+                                    <option class="incomeOption" value="noincome">Không có thu nhập</option>
+                                    <option class="incomeOption" value="3trieu">1.5 - 3 triệu đồng</option>
+                                    <option class="incomeOption" value="5trieu">3 - 5 triệu đồng</option>
+                                    <option class="incomeOption" value="7trieu">5 - 7 triệu đồng</option>
+                                    <option class="incomeOption" value="9trieu">7 - 9 triệu đồng</option>
+                                    <option class="incomeOption" value="11trieu">9 - 11 triệu đồng</option>
+                                    <option class="incomeOption" value="hon11trieu">Lớn hơn 11 triệu đồng</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <button class="update mt-4 mb-5">
+                    <p>Cập nhật</p>
+                </button>
+            </div>
+
+            {{!-- relationship --}}
+            <div class="form" id="form__relationship">
+                <form action="POST">
+                    <h2>Các mối quan hệ</h2>
+                    <p class="text-secondary">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+
+                    <div class="line"></div>
+
+                    <div class="row form__main d-flex justify-content-center align-items-center flex-column">
+                        <h5>Thông tin người thân</h5>
+                        <div class="form__main--relatives d-flex justify-content-between flex-row">
+                            <p>Họ và tên</p>
+                            <input type="text" id="relatives" name="relatives">
+                        </div>
+                        <div class="form__main--type d-flex justify-content-between flex-row">
+                            <p>Kiểu quan hệ họ hàng</p>
+                            <div>
+                                <select class="form-select form-select-sm relativesTypeInput" id="relativesType"
+                                    aria-label=".form-select-sm">
+                                    <option value="" selected>Khác</option>
+                                    <option value="" selected>Mẹ / bố</option>
+                                    <option value="" selected>Anh trai</option>
+                                    <option value="" selected>Em gái</option>
+                                    <option value="" selected>Vợ / chồng</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__main--relativesPhone d-flex justify-content-between flex-row">
+                            <p>Số điện thoại</p>
+                            <input type="text" value="" id="relativesPhone" name="relativesPhone">
+                        </div>
+
+                        <h5>Thông tin về đồng nghiệp</h5>
+                        <div class="form__main--colleague d-flex justify-content-between flex-row">
+                            <p>Họ và tên</p>
+                            <input type="text" id="colleague" name="colleague">
+                        </div>
+                        <div class="form__main--colleaguePhone d-flex justify-content-between flex-row">
+                            <p>Số điện thoại</p>
+                            <input type="text" value="" id="colleaguePhone" name="colleaguePhone">
+                        </div>
+                    </div>
+
+                    <button class="update mt-4 mb-5">
+                        <p>Cập nhật</p>
+                    </button>
+                </form>
+            </div>
+
+            {{!-- pay method --}}
+            <div class="form" id="form__payment">
+                <form action="POST">
+                    <h2>Phương thức thanh toán</h2>
+                    <p class="text-secondary">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+
+                    <div class="line"></div>
+
+                    <div class="row form__main d-flex justify-content-center align-items-center flex-column">
+                        <div class="form__main--method d-flex justify-content-between flex-row">
+                            <p>Phương thức nhận / vay tiền</p>
+                            <div>
+                                <select class="form-select form-select-sm methodItemInput" id="methodItem"
+                                    aria-label=".form-select-sm">
+                                    <option value="Tai khoan ngan hang">Tài khoản ngân hàng</option>
+                                    <option value="Vi momo">Ví momo</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="bank">
+                            <div class="form__main--bank d-flex justify-content-between flex-row" id="bankInfo">
+                                <p>Ngân hàng</p>
+                                <div>
+                                    <select class="form-select form-select-sm bankNameItemInput" id="bankNameItemInput"
+                                        aria-label=".form-select-sm">
+                                        <option value="" selected>Chọn ngân hàng</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__main--bankNum d-flex justify-content-between flex-row">
+                                <p>Số tài khoản</p>
+                                <input type="text" id="bankNum" name="bankNum" required class="bankNumItemInput">
+                            </div>
+                        </div>
+                        <p class="text-muted momoText" style="font-size: 15px; margin: 0px">Bỏ trống nếu thanh toán bằng
+                            tài
+                            khoản ngân hàng
+                        </p>
+                        <div class="form__main--momoPhone momoNum d-flex justify-content-between flex-row" id="momo">
+
+                            <p>Số điện thoại Momo</p>
+                            <input type="text" id="momoNum" name="momoNum" class="momoNumItemInput">
+                        </div>
+                    </div>
+
+                    <button class="update mt-4 mb-5">
+                        <p>Cập nhật</p>
+                    </button>
+                </form>
+            </div>
+
+            {{!-- loan info --}}
+            <div class="form" id="form__loan">
+                <form action="POST">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    //colorize chosen info section's bg
+    document.addEventListener("DOMContentLoaded", function () {
+        var infoDivs = document.querySelectorAll('.user__info');
+        infoDivs.forEach(function (div) {
+            div.addEventListener('click', function () {
+                infoDivs.forEach(function (div) {
+                    div.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    })
+
+    //bankin method toggle
+    /*const method = document.getElementById("methodItem");
+    const momoNum = document.getElementById("momo");
+    const bank = document.getElementById("bankInfo");*/
+
+    //hide momo at first
+    /* momoNum.style.display = "none";
+     bank.style.display = "block";
+ 
+     method.addEventListener("change", function () {
+         if (method.value === "Vi momo") {
+             momoNum.style.display = "block";
+             bank.style.display = "none";
+             console.log("hide bank")
+         } else {
+             console.log("hide momo");
+             momoNum.style.display = "none";
+             bank.style.display = "block";
+         }
+     });*/
+    document.addEventListener("DOMContentLoaded", function () {
+        const method = document.getElementById("methodItem");
+        const momo = document.getElementById("momo");
+        const momoText = document.querySelector(".momoText");
+        const momoP = document.querySelector('#momo p');
+        const bank = document.querySelector(".bank");
+
+        // Hide momo at first
+        momoText.style.display = "block";
+        momo.style.display = "none";
+        momoP.style.color = "black";
+        bank.style.display = "block";
+
+        method.addEventListener("change", function () {
+            console.log("Selected value:", method.value);
+            if (method.value === "Vi momo") {
+                momo.style.display = "block";
+                momoText.style.display = "none";
+                momoP.style.color = "black";
+                bank.style.display = "none";
+                console.log("hide bank");
+            } else {
+                console.log("hide momo");
+                momoText.style.display = "block";
+                momo.style.display = "none";
+                bank.style.display = "block";
+                momoP.style.color = "gray";
+            }
+        });
+    });
+
+
+    //render bank json
+    const bankName = document.getElementById("bankNameItemInput");
+    const Parameter = {
+        url: "https://api.vietqr.io/v2/banks",
+        method: "GET",
+        responseType: "json",
+    }
+
+    const promise = axios(Parameter);
+    promise.then(function (result) {
+        //var origindata = JSON.parse(JSON.stringify(data));
+        renderBank(result.data);
+        console.log("result: ", result.data);
+    }).catch(err => console.log("there's error: ", err));
+
+    function renderBank(data) {
+        for (const x of data.data) {
+            bankName.options[bankName.options.length] = new Option(x.shortName, x.id);
+        }
+    }
+
+    //toggle info
+    const userAccount = document.getElementById("user__account");
+    const userAddress = document.getElementById("user__address");
+    const userJob = document.getElementById("user__job");
+    const userRelationship = document.getElementById("user__relationship");
+    const userLoan = document.getElementById("user__loan");
+    const userMethod = document.getElementById("user__method");
+
+    const formAccount = document.getElementById("form__account");
+    const formAddress = document.getElementById("form__address");
+    const formJob = document.getElementById("form__job");
+    const formRelationship = document.getElementById("form__relationship");
+    const formLoan = document.getElementById("form__loan");
+    const formPayment = document.getElementById("form__payment");
+
+    //display account at first
+    const form = document.querySelectorAll('.form');
+    function closeForm() {
+        form.forEach(function (form) {
+            form.style.display = "none";
+        })
+    }
+    closeForm();
+    formAccount.style.display = "block";
+
+    userAccount.addEventListener("click", function () {
+        closeForm();
+        formAccount.style.display = "block";
+    });
+
+    userAddress.addEventListener("click", function () {
+        closeForm();
+        formAddress.style.display = "block";
+    })
+
+
+    userJob.addEventListener("click", function () {
+        closeForm();
+        formJob.style.display = "block";
+    })
+
+    userRelationship.addEventListener("click", function () {
+        closeForm();
+        formRelationship.style.display = "block";
+    })
+
+    userLoan.addEventListener("click", function () {
+        closeForm();
+        formLoan.style.display = "block";
+    })
+
+    userMethod.addEventListener("click", function () {
+        closeForm();
+        formPayment.style.display = "block";
+    })
+
+    //open file explorer when change avt
+    document.addEventListener("DOMContentLoaded", function () {
+        var fileInputButton = document.getElementById('fileInputButton');
+        var fileInput = document.getElementById('fileInput');
+
+        fileInputButton.addEventListener('click', function () {
+            fileInput.click(); // Trigger click event on file input
+        });
+
+        fileInput.addEventListener('change', function () {
+            // Handle file selection here if needed
+            console.log("File selected:", this.files[0]);
+        });
+    });
+</script>

@@ -4,7 +4,7 @@
         <form action="#">
             <div class="group">
                 <div class="title">Số tiền vay</div>
-                <input type="text" class="loan-amount" value="100000">
+                <input type="text" class="loan-amount" value="100000" id="inputBox" oninput="formatText()">
             </div>
             <div class="group">
                 <div class="title">Lãi suất (năm)</div>
@@ -40,6 +40,28 @@
             <canvas id="myChart"></canvas>
         </div>
     </div>
+
+    {{!-- test --}}
+    <div class="mt-4">
+        <div class="row">
+            {{#each clients}}
+            <div class="col-sm-6 col-lg-4">
+                <a href="/client/{{this.slug}}">
+                    <p>{{this.name}}</p>
+                </a>
+
+                <div class="card-body">
+                    <a href="/clients/{{this.slug}}">
+                        <h5 class="card-title">{{this.cccd}}</h5>
+                    </a>
+                    <p class="card-text">{{this.email}}</p>
+                    <a href="#" class="btn btn-primary">Mua khoa hoc</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
@@ -47,6 +69,19 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {{!-- src="main.js" --}}
 <script>
+    //format while inputting
+    function formatText() {
+        // Get the input value
+        let input = document.getElementById("").value;
+
+        // Format the input (e.g., capitalize every word)
+        let formattedInput = input.replace(/\b\w/g, function (char) {
+            return char.toUpperCase();
+        });
+
+        // Update the input field with the formatted text
+        document.getElementById("inputBox").value = formattedInput;
+    }
 
     //format number
     function formatValue(e) {
@@ -63,9 +98,9 @@
     const calculateBtn = document.querySelector(".calculate-btn");
 
     // convert to number
-    let loanAmount = parseFloat(loanAmountInput.value);
+    let loanAmount = formatValue(parseFloat(loanAmountInput.value));
     let interestRate = parseFloat(interestRateInput.value);
-    let loanTenure = parseFloat(loanTenureInput.value);
+    let loanTenure = formatValue(parseFloat(loanTenureInput.value));
 
     // calculate interest for month
     let interest = interestRate / 12 / 100;

@@ -38,11 +38,10 @@ form {
   }
 }
 
-.job__jobType,
 .job__field,
 .job__com,
 .job__income,
-.job__badge,
+.job__role,
 .job__exp {
   position: relative;
   background-color: #fff;
@@ -52,28 +51,26 @@ form {
   border: 0.5px solid #b3b8c3;
 }
 
-.job__jobType label,
 .job__field label,
 .job__com label,
 .job__income label,
-.job__badge label,
+.job__role label,
 .job__exp label {
   z-index: 1;
   pointer-events: none;
   position: absolute;
   top: calc(20% - 3px);
-  left: 10px;
+  // left: 20px;
   transform: scale(0.75);
   font-size: 16px;
   padding-right: 10px;
   color: #8ea0b8;
 }
 
-.job__jobType .jobTypeInput,
 .job__field .fieldInput,
 .job__com .comInput,
 .job__income .incomeInput,
-.job__badge .badgeInput,
+.job__role .roleInput,
 .job__exp .expInput {
   position: relative;
   width: 100%;
@@ -84,42 +81,49 @@ form {
   border: 0.5px solid #a0a4ad;
 }
 
-.job__fieldCom div {
-  width: 48%;
+.job__fieldCom {
+  div {
+    width: 48%;
+  }
 }
 
-.job__com input {
-  border: 0.5px solid #a0a4ad !important;
+.job__com {
+  input {
+    border: 0.5px solid #a0a4ad !important;
+  }
 }
 
-.job__badgeTime div {
-  width: 48%;
+.job__roleTime {
+  div {
+    width: 48%;
+  }
 }
 
 .button {
   margin-top: 100px !important;
   margin-bottom: 100px !important;
   gap: 30px;
+  button {
+    border: none;
+    background-color: #b582d9;
+    padding: 20px 30px 20px 30px;
+    border-radius: 40px;
+    &:hover {
+      background-color: #ac5de4;
+    }
+    &:nth-child(2) {
+      &:hover {
+        cursor: default;
+        background-color: rgba(181, 130, 217, 0.9);
+      }
+    }
+  }
 }
 
-.button button {
-  border: none;
-  background-color: #b582d9;
-  padding: 20px 30px 20px 30px;
-  border-radius: 40px;
-}
-
-.button button:hover {
-  background-color: #ac5de4;
-}
-
-.button button:nth-child(2):hover {
-  cursor: default;
-  background-color: rgba(181, 130, 217, 0.9);
-}
-
-label {
-  transform: translate(-5px, -6px) !important;
+input,
+select {
+  padding-left: 10px !important;
+  padding-top: 10px !important;
 }
 @media only screen and (max-width: 479px) {
   .range {

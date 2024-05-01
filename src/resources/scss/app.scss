@@ -28,6 +28,12 @@
           button {
             background-color: transparent;
             border: none;
+            img {
+              opacity: 0.6;
+              &:hover {
+                opacity: 2;
+              }
+            }
           }
         }
       }
@@ -47,7 +53,7 @@
       .loaning-form-range {
         input {
           height: 10px;
-          #range1 {
+          &#range1 {
             -webkit-appearance: none;
             appearance: none;
             width: 100%;
@@ -58,19 +64,19 @@
             margin: 20px 0px;
           }
 
-          #range1::-webkit-slider-runnable-track {
+          &#range1::-webkit-slider-runnable-track {
             height: 10px;
             background: #ccc;
             border-radius: 16px;
           }
 
-          #range1::-moz-range-track {
+          &#range1::-moz-range-track {
             height: 15px;
             background: #{$violet};
             border-radius: 16px;
           }
 
-          #range1::-webkit-slider-thumb {
+          &#range1::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
             height: 11px;
@@ -81,7 +87,7 @@
             box-shadow: -407px 0 0 400px #{$violet};
           }
 
-          #range1::-moz-range-thumb {
+          &#range1::-moz-range-thumb {
             height: 15px;
             width: 15px;
             background-color: #fff;

@@ -1,5 +1,11 @@
 <div class="app">
     <!-- loaning -->
+    <ul>
+        {{#each relatives}}
+        <li>{{this.relationship}}</li>
+        {{/each}}
+    </ul>
+
     <div class="container-fluid" id="loaning">
         <div class="row d-flex justify-content-between align-items-center loaning">
             <!-- left -->
@@ -26,7 +32,7 @@
 
             <!-- right -->
             <div class="col-sm-9 col-md-6 loaning-form">
-                <div class="loaning-form_max d-flex justify-content-between">
+                <div class="loaning-form_max d-flex justify-content-between mt-2">
                     <h3 class="">Hạn mức</h3>
                     <h3 class="fw-bold money-loan">2 000 000đ</h3>
                 </div>

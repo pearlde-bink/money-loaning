@@ -1,0 +1,347 @@
+@import "variables";
+
+button.update {
+  position: relative;
+  left: 60%;
+  top: 0px;
+  background-color: #{$text};
+  border: none;
+  border-radius: 10px;
+  padding: 9px 18px;
+  &:hover {
+    background-color: #{$violet};
+  }
+  p {
+    margin: 0;
+    color: white;
+  }
+}
+.user {
+  .row {
+    .user__left {
+      .user__avt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 80%;
+          height: auto;
+          display: center;
+          margin: 0 auto;
+        }
+      }
+      .user__info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        button {
+          width: 100%;
+          border: none;
+          background-color: white;
+          //   transform: translateX(50px);
+          padding: 20px;
+          font-size: 16px;
+          &:hover {
+            background-color: #{$bgText};
+          }
+        }
+      }
+      .active {
+        button {
+          background-color: rgb(213, 155, 255);
+        }
+      }
+    }
+
+    .user__right {
+      margin-top: 10px;
+      #form__account {
+        form {
+          h2 {
+            color: #{$text};
+          }
+          .line {
+            height: 1px;
+            width: 100%;
+            background-color: rgb(231, 231, 231);
+            margin: 20px auto;
+          }
+          .form__main {
+            .form__main--left {
+              div {
+                width: 100%;
+                margin: 10px auto;
+                p {
+                  text-align: right;
+                  width: 30%;
+                }
+                input {
+                  width: 60%;
+                  border: 1px solid gray;
+                }
+              }
+              div.form__main--sex {
+                p {
+                  text-align: right;
+                  width: 30%;
+                }
+                div {
+                  width: 50%;
+                  margin: 0 auto;
+                  input {
+                    width: 50%;
+                  }
+                  label {
+                    font-size: 19px;
+                  }
+                }
+              }
+
+              div.form__main--marriage {
+                p {
+                  text-align: right;
+                  width: 30%;
+                }
+                div {
+                  width: 60%;
+                  margin: 0 0px 0 15px;
+                  input {
+                    width: 20%;
+                  }
+                  label {
+                    font-size: 19px;
+                  }
+                }
+              }
+            }
+
+            .form__main--right {
+              .form__main--right-avt {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                  width: 80%;
+                  height: auto;
+                  display: center;
+                  margin: 0 auto;
+                }
+              }
+              button {
+                background-color: white;
+                padding: 8px 12px;
+                border: 1px solid rgb(171, 171, 171);
+                p {
+                  margin: 0;
+                }
+              }
+              p {
+                margin-top: 20px;
+                text-align: center;
+                white-space: pre-line;
+              }
+            }
+          }
+        }
+      }
+
+      #form__address {
+        width: 90%;
+        form {
+          h2 {
+            color: #{$text};
+          }
+          .line {
+            height: 1px;
+            width: 100%;
+            background-color: rgb(231, 231, 231);
+            margin: 20px auto;
+          }
+          .form__main {
+            div {
+              width: 100%;
+              margin: 10px auto;
+              p {
+                text-align: right;
+                width: 20%;
+              }
+              input {
+                width: 75%;
+                border: 1px solid gray;
+              }
+            }
+            .form__main--marriage {
+              width: 100%;
+              margin: 10px auto;
+              p {
+                text-align: right;
+                width: 20%;
+              }
+              div {
+                width: 70%;
+                select {
+                  width: 120px;
+                  border: 1px solid gray;
+                  padding: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #form__job {
+        width: 90%;
+        form {
+          h2 {
+            color: #{$text};
+          }
+          .line {
+            height: 1px;
+            width: 100%;
+            background-color: rgb(231, 231, 231);
+            margin: 20px auto;
+          }
+          .form__main {
+            div {
+              width: 100%;
+              margin: 10px auto;
+              p {
+                text-align: right;
+                width: 30%;
+              }
+              input {
+                width: 65%;
+                border: 1px solid gray;
+              }
+            }
+            .form__main--field,
+            .form__main--income,
+            .form__main--exp {
+              width: 100%;
+              margin: 10px auto;
+              p {
+                text-align: right;
+                width: 30%;
+              }
+              div {
+                width: 60%;
+                select {
+                  width: 120px;
+                  border: 1px solid gray;
+                  padding: 3px;
+                }
+              }
+            }
+            .form__main--field,
+            .form__main--income {
+              div {
+                select {
+                  width: 180px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #form__relationship {
+        width: 90%;
+        form {
+          h2 {
+            color: #{$text};
+          }
+        }
+        .line {
+          height: 1px;
+          width: 100%;
+          background-color: rgb(231, 231, 231);
+          margin: 20px auto;
+        }
+        .form__main {
+          h5 {
+            margin-top: 50px;
+            margin-bottom: 30px;
+          }
+          div {
+            width: 100%;
+            margin: 10px auto;
+            p {
+              text-align: right;
+              width: 30%;
+            }
+            input {
+              width: 65%;
+              border: 1px solid gray;
+            }
+          }
+          .form__main--type {
+            width: 100%;
+            margin: 10px auto;
+            p {
+              text-align: right;
+              width: 30%;
+            }
+            div {
+              width: 60%;
+              select {
+                width: 120px;
+                border: 1px solid gray;
+                padding: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #form__payment {
+      width: 90%;
+      form {
+        h2 {
+          color: #{$text};
+        }
+      }
+      .line {
+        height: 1px;
+        width: 100%;
+        background-color: rgb(231, 231, 231);
+        margin: 20px auto;
+      }
+      .form__main {
+        div {
+          width: 100%;
+          margin: 10px auto;
+          p {
+            text-align: right;
+            width: 30%;
+          }
+          input {
+            width: 65%;
+            border: 1px solid gray;
+          }
+        }
+        // .form__main--momoPhone {
+        //   display: none !important;
+        // }
+        .form__main--method,
+        .form__main--bank {
+          width: 100%;
+          margin: 10px auto;
+          p {
+            text-align: right;
+            width: 30%;
+          }
+          div {
+            width: 60%;
+            select {
+              width: 170px;
+              border: 1px solid gray;
+              padding: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

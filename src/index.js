@@ -2,11 +2,12 @@ const express = require("express");
 const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const path = require("path");
-const port = 3000
+const port = 3000;
 
 const route = require("./routes");
 
 const db = require("./config/db");
+
 // connect DB
 db.connect();
 
@@ -24,6 +25,14 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
 
+//set the MIME type for JS files to 'application/javascript'
+app.use((req, res, next) => {
+  if (req.url.endsWith(".js")) {
+    res.set("Content-Type", "application/javascript");
+  }
+  next();
+});
+
 // template engine
 app.engine(
   "hbs",
@@ -37,10 +46,6 @@ app.set("views", path.join(__dirname, "resources", "views"));
 // route init
 route(app);
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
-
 app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}`)
-})
+  console.log(`Example app listening on port http://localhost:${port}`);
+});

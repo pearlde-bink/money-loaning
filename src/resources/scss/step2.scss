@@ -57,21 +57,13 @@ body {
     pointer-events: none;
     position: absolute;
     top: calc(20% - 3px);
-    left: 10px;
+    // left: 10px;
     transform: scale(0.75);
     font-size: 16px;
     padding-right: 10px;
     color: #8ea0b8;
   }
 }
-
-// .address__city label,
-// .address__location--province label,
-// .address__location--district label,
-// .address__location--village label,
-// .address__road label,
-// .address__home label,
-// .address__time
 
 .address__city .cityInput,
 .address__location--province .provinceInput,
@@ -89,37 +81,48 @@ body {
   border: 0.5px solid #a0a4ad;
 }
 
-.address__location div {
-  width: 30%;
-  label {
-    transform: translate(-5px, -6px) !important;
+.address__location {
+  div {
+    width: 30%;
+    label {
+      // transform: translate(-5px, -6px) !important;
+      left: 10px;
+    }
   }
 }
 
-.address__homeTime div {
-  width: 40%;
+.address__homeTime {
+  gap: 50px;
+  div {
+    width: 50%;
+  }
 }
 
 .button {
   margin-top: 100px !important;
   margin-bottom: 100px !important;
   gap: 30px;
+  button {
+    border: none;
+    background-color: #b582d9;
+    padding: 20px 30px 20px 30px;
+    border-radius: 40px;
+    &:hover {
+      background-color: #ac5de4;
+    }
+    &:nth-child(2) {
+      &:hover {
+        cursor: default;
+        background-color: rgba(181, 130, 217, 0.9);
+      }
+    }
+  }
 }
 
-.button button {
-  border: none;
-  background-color: #b582d9;
-  padding: 20px 30px 20px 30px;
-  border-radius: 40px;
-}
-
-.button button:hover {
-  background-color: #ac5de4;
-}
-
-.button button:nth-child(2):hover {
-  cursor: default;
-  background-color: rgba(181, 130, 217, 0.9);
+input,
+select {
+  padding-left: 10px !important;
+  padding-top: 10px !important;
 }
 @media only screen and (max-width: 479px) {
   .range {
