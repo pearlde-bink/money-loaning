@@ -39,6 +39,9 @@ body {
   }
   .info__name,
   .info__cccd,
+  .info__sdt,
+  .info__password,
+  .info__retypePassword,
   .info__birth,
   .info__marriage,
   .info__email {
@@ -63,6 +66,9 @@ body {
   .info__name .nameInput,
   .info__cccd .cccdInput,
   .info__birth .birthInput,
+  .info__sdt .sdtInput,
+  .info__password .passwordInput,
+  .info__retypePassword .retypePasswordInput,
   .info__marriage .marriageInput,
   .info__email .emailInput {
     position: relative;
@@ -77,6 +83,13 @@ body {
     width: 100%;
     .info__cccd,
     .info__birth {
+      width: 46%;
+    }
+  }
+  .info__sdtPassword {
+    width: 100%;
+    .info__sdt,
+    .info__password {
       width: 46%;
     }
   }

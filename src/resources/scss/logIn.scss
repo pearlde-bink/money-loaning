@@ -12,16 +12,17 @@ body {
     rgb(131, 36, 198) 30%,
     #{$violet} 60%
   );
-  height: 100vh;
+  height: 750px;
   position: relative;
   /* logInForm */
   .logInForm {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 450px;
-    height: 350px;
+    max-width: 500px;
+    width: 80%;
+    height: auto;
     border-radius: 10px;
     background-color: white;
     padding: 15px;
@@ -40,6 +41,7 @@ body {
             width: 100%;
             border: 0.5px solid rgb(207, 209, 210);
             height: 45px;
+            padding: 5px 10px;
             &:focus {
               outline: 1px solid #6941c6;
             }
@@ -54,8 +56,11 @@ body {
     }
     .button {
       display: inline-block;
-      margin-top: 15px;
-      margin-left: 8px;
+      margin: 50px auto 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       a {
         text-decoration: none;
       }

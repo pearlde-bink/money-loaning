@@ -19,8 +19,26 @@
                 </div>
                 <div class="info__birth">
                     <label for="birth">Ngày sinh*</label>
-                    <input type="text" id="birth" name="dob" class="birthInput" required>
+                    <input type="date" id="birth" name="dob" class="birthInput" required>
                 </div>
+            </div>
+
+            <p class="text-muted" style="margin: 30px 0px 0px">(Dùng để đăng nhập)</p>
+            <div class="info__sdtPassword d-flex justify-content-between align-items-center mt-2">
+                <div class="info__sdt">
+                    <label for="sdt">Số điện thoại*</label>
+                    <input type="text" id="sdt" name="sdtNumber" class="sdtInput" required>
+                </div>
+                <div class="info__password">
+                    <label for="password">Mật khẩu*</label>
+                    <input type="password" id="password" name="password" class="passwordInput" required>
+                </div>
+            </div>
+
+            <div class="form-group info__retypePassword mt-4">
+                <label for="retypepassword">Nhập lại mật khẩu*</label>
+                <input type="password" id="password" name="retypepassword" class="retypePasswordInput" required>
+                <span class="form-message"></span>
             </div>
 
 
