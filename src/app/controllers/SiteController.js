@@ -1,14 +1,14 @@
-const Relative = require("../models/Relatives");
+const Payment = require("../models/Payment");
 const { multipleMongooseToObject } = require("../../util/mongoose");
 class SiteController {
   // GET /home
   home(req, res, next) {
     // res.render('home');
-    Relative.find({})
-      .then((relatives) =>
+    Payment.find({})
+      .then((workplace) =>
         res.render("home", {
           style: "app.css",
-          relatives: multipleMongooseToObject(relatives),
+          workplace: multipleMongooseToObject(workplace),
         })
       )
       .catch(next);

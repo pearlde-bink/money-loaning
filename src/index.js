@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const path = require("path");
 const port = 3000;
+const bcrypt = require("bcrypt");
 
 const route = require("./routes");
 

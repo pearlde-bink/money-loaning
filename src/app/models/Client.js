@@ -5,23 +5,23 @@ const ObjectId = Schema.ObjectId;
 const Client = new Schema(
   {
     name: { type: String, require: true },
-    cccd: { type: String, require: true },
+    email: { type: String, require: true },
+    phone: { type: String, require: true },
     dob: { type: Date, require: true },
     gender: { type: String },
     marriageStatus: { type: String, require: true },
-    email: { type: String, require: true },
-    city: { type: String, require: true },
-    province: { type: String, require: true },
-    district: { type: String, require: true },
-    commune: { type: String, require: true },
-    street: { type: String, require: true },
-    address: { type: String, require: true },
-    stayPeriod: { type: String, require: true },
-    paymentMethod: { type: String, require: true },
-    loanPurpose: { type: String, require: true },
-    cccdFore: { type: String, require: true },
-    cccdSelfie: { type: String, require: true },
-    cccdBack: { type: String, require: true },
+    cccd: {
+      cccdNum: { type: String, require: true },
+      cccdFore: { type: String, require: true },
+      cccdSelfie: { type: String, require: true },
+      cccdBack: { type: String, require: true },
+    },
+    avatarLink: {
+      type: String,
+      default:
+        "https://as2.ftcdn.net/v2/jpg/03/31/69/91/1000_F_331699188_lRpvqxO5QRtwOM05gR50ImaaJgBx68vi.jpg",
+      unique: false,
+    },
     slug: { type: String, default: "Le Van B" },
   },
   {
