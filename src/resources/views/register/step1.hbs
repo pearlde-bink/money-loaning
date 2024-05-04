@@ -4,29 +4,29 @@
     </div>
 
     <!-- personal infor -->
-    <form action="" class="d-flex justify-content-center align-items-center">
+    <form action="/register" method="POST" class="d-flex justify-content-center align-items-center flex-column">
         <div class="info">
             <h5>Thông tin cá nhân</h5>
             <div class="info__name mt-4">
-                <label for="">Họ và tên*</label>
+                <label for="name">Họ và tên*</label>
                 <input type="text" id="name" name="name" class="nameInput" required>
             </div>
 
-            <div class="info__cccdBirth d-flex justify-content-between align-items-center mt-4">
+            {{!-- <div class="info__cccdBirth d-flex justify-content-between align-items-center mt-4">
                 <div class="info__cccd">
-                    <label for="cccd">Số CMND/CCCD*</label>
+                    <label for="cccdNumber">Số CMND/CCCD*</label>
                     <input type="text" id="cccd" name="cccdNumber" class="cccdInput" required>
                 </div>
                 <div class="info__birth">
-                    <label for="birth">Ngày sinh*</label>
+                    <label for="dob">Ngày sinh*</label>
                     <input type="date" id="birth" name="dob" class="birthInput" required>
                 </div>
-            </div>
+            </div> --}}
 
             <p class="text-muted" style="margin: 30px 0px 0px">(Dùng để đăng nhập)</p>
             <div class="info__sdtPassword d-flex justify-content-between align-items-center mt-2">
                 <div class="info__sdt">
-                    <label for="sdt">Số điện thoại*</label>
+                    <label for="sdtNumber">Số điện thoại*</label>
                     <input type="text" id="sdt" name="sdtNumber" class="sdtInput" required>
                 </div>
                 <div class="info__password">
@@ -34,13 +34,16 @@
                     <input type="password" id="password" name="password" class="passwordInput" required>
                 </div>
             </div>
+            <div class="info__slug d-none">
+                <label for="slug">Slug*</label>
+                <input type="text" id="slug" name="slug" class="passwordInput">
+            </div>
 
-            <div class="form-group info__retypePassword mt-4">
+            {{!-- <div class="form-group info__retypePassword mt-4">
                 <label for="retypepassword">Nhập lại mật khẩu*</label>
                 <input type="password" id="password" name="retypepassword" class="retypePasswordInput" required>
                 <span class="form-message"></span>
-            </div>
-
+            </div> --}}
 
             <div class="note1 text-center mt-4">
                 <p>Nếu quý khách đang có CMND và CCCD, vui lòng chỉ cung cấp thông tin của 1 chứng từ mà quý khách
@@ -48,7 +51,7 @@
                     sở hữu để đảm bảo tỷ lệ duyệt cao hơn.</p>
             </div>
 
-            <div class="info__sexMarriage d-flex flex-row justify-content-between mt-4">
+            {{!-- <div class="info__sexMarriage d-flex flex-row justify-content-between mt-4">
                 <div class="info__sex">
                     <label for="sex">Giới tính*</label>
                     <div class="d-flex flex-row justify-content-between">
@@ -81,15 +84,15 @@
             <div class="info__email mt-4">
                 <label for="email">Email*</label>
                 <input type="email" id="email" name="email" class="emailInput" required>
-            </div>
+            </div> --}}
         </div>
-    </form>
 
-    <!-- button -->
-    <a href="/register/step2" class="text-decoration-none">
-        <button class="button d-flex justify-content-center">
-            <h6 class="text-light text-center">Tiếp theo</h6>
-        </button>
-    </a>
+        <!-- button /register/step2-->
+        {{!-- <a href="/" class="text-decoration-none"> --}}
+            <button class="button d-flex justify-content-center" type="submit">
+                <h6 class="text-light text-center">Tiếp theo</h6>
+            </button>
+            {{!-- </a> --}}
+    </form>
 
 </div>

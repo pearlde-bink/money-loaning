@@ -37,11 +37,11 @@
                     <h3 class="fw-bold money-loan">2 000 000đ</h3>
                 </div>
                 <div class="loaning-form-range text-secondary">
-                    <input type="range" id="range1" min="0" max="20000000" step="500000" value="2000000"
+                    <input type="range" id="range1" min="1000000" max="30000000" step="500000" value="2000000"
                         onchange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)" />
                     <div class="loaning-form-range_number">
-                        <h4>500 000đ </h4>
-                        <h4>20 000 000đ</h4>
+                        <h4>1 000 000đ </h4>
+                        <h4>30 000 000đ</h4>
                     </div>
                 </div>
                 <div class="loaning-form-date d-flex justify-content-between mt-4">
@@ -340,9 +340,23 @@
         moneyLoans.forEach(function (element) {
             element.innerHTML = formattedValue + "đ";
         });
+        let moneyLoan1 = document.querySelectorAll(".money-loan")[0];
+        let moneyLoan2 = document.querySelectorAll(".money-loan")[1];
+        /*console.log(moneyLoan1);
+        console.log(moneyLoan2);*/
         const moneyLoanRed = document.getElementById("money-loan-red");
         if (!isNaN(value)) {
-            moneyLoanRed.innerHTML = (value * 1.135).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
+            if (value <= 10000000) {
+                moneyLoanRed.innerHTML = (value * 1.25).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
+                moneyLoan2.innerHTML = (value * 1.12).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
+            } else if (value <= 20000000) {
+                moneyLoanRed.innerHTML = (value * 1.35).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
+                moneyLoan2.innerHTML = (value * 1.264).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
+            } else {
+                moneyLoanRed.innerHTML = (value * 1.55).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
+                moneyLoan2.innerHTML = (value * 1.45).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
+            }
+            //moneyLoanRed.innerHTML = (value * 1.135).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
         } else {
             moneyLoanRed.innerHTML = "0đ";
         }
@@ -353,9 +367,26 @@
         } else {
             loanBenefit.style.display = "none"
         }
-    }
 
-    const payday = document.getElementsByClassName('loaning-form-date__payday')[0];
-    const d = new Date();
-    payday.innerHTML = d.getDate() + "/" + (d.getMonth() + 2) + "/" + d.getFullYear();
+        const moneyLoan = document.getElementById("range1").value;
+        const payday = document.querySelector('.loaning-form-date__payday');
+        const d = new Date();
+        let date = d.getDate();
+        let month = d.getMonth();
+        let year = d.getFullYear();
+        let month18 = d.getMonth(d.setMonth(d.getMonth() + 18));
+
+        if (moneyLoan > 0 && moneyLoan <= 10000000) {
+            if (month + 6 > 12) {
+                payday.innerHTML = date + "/" + (6 - month) + "/" + (year + 1);
+                console.log(date + "/" + (6 - month) + "/" + (year + 1));
+            } else {
+                payday.innerHTML = date + "/" + (month + 6) + "/" + year;
+            }
+        } else if (moneyLoan > 10000000 && moneyLoan <= 20000000) {
+            payday.innerHTML = date + "/" + month + "/" + (year + 1);
+        } else if (moneyLoan > 20000000) {
+            payday.innerHTML = date + "/" + (month18 + 1) + "/" + (year + Math.floor((month + 18) / 12));
+        }
+    }
 </script>
