@@ -19,6 +19,13 @@ button.update {
 .user {
   .row {
     .user__left {
+      div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        button {
+          border-radius: 10px;
+        }
+      }
       .user__avt {
         display: flex;
         align-items: center;
@@ -71,7 +78,7 @@ button.update {
               div {
                 width: 100%;
                 margin: 10px auto;
-                p {
+                label {
                   text-align: right;
                   width: 30%;
                 }
@@ -83,7 +90,7 @@ button.update {
                 }
               }
               div.form__main--sex {
-                p {
+                label {
                   text-align: right;
                   width: 30%;
                 }
@@ -100,7 +107,7 @@ button.update {
               }
 
               div.form__main--marriage {
-                p {
+                label {
                   text-align: right;
                   width: 30%;
                 }
@@ -163,7 +170,7 @@ button.update {
             div {
               width: 100%;
               margin: 10px auto;
-              p {
+              label {
                 text-align: right;
                 width: 20%;
               }
@@ -175,7 +182,7 @@ button.update {
             .form__main--stayPeriod {
               width: 100%;
               margin: 10px auto;
-              p {
+              label {
                 text-align: right;
                 width: 20%;
               }
@@ -208,7 +215,7 @@ button.update {
             div {
               width: 100%;
               margin: 10px auto;
-              p {
+              label {
                 text-align: right;
                 width: 30%;
               }
@@ -222,7 +229,7 @@ button.update {
             .form__main--exp {
               width: 100%;
               margin: 10px auto;
-              p {
+              label {
                 text-align: right;
                 width: 30%;
               }
@@ -268,7 +275,7 @@ button.update {
           div {
             width: 100%;
             margin: 10px auto;
-            p {
+            label {
               text-align: right;
               width: 30%;
             }
@@ -280,7 +287,7 @@ button.update {
           .form__main--type {
             width: 100%;
             margin: 10px auto;
-            p {
+            label {
               text-align: right;
               width: 30%;
             }
@@ -314,7 +321,7 @@ button.update {
         div {
           width: 100%;
           margin: 10px auto;
-          p {
+          label {
             text-align: right;
             width: 30%;
           }
@@ -323,14 +330,11 @@ button.update {
             border: 1px solid gray;
           }
         }
-        // .form__main--momoPhone {
-        //   display: none !important;
-        // }
         .form__main--method,
         .form__main--bank {
           width: 100%;
           margin: 10px auto;
-          p {
+          label {
             text-align: right;
             width: 30%;
           }

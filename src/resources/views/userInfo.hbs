@@ -38,31 +38,31 @@
                         <div
                             class="form__main--left col-12 col-sm-8 d-flex justify-content-center align-items-center flex-column">
                             <div class="form__main--name d-flex justify-content-between flex-row">
-                                <p>Tên người dùng</p>
+                                <label>Tên người dùng</label>
                                 <input type="text" value="" id="name" name="name">
                             </div>
                             <div class="form__main--email d-flex justify-content-between flex-row">
-                                <p>Email</p>
+                                <label>Email</label>
                                 <input type="text" value="" id="email" name="email">
                             </div>
                             <div class="form__main--phone d-flex justify-content-between flex-row">
-                                <p>Số điện thoại</p>
-                                <input type="text" value="" id="phone" name="phone">
+                                <label for="sdtNumber">Số điện thoại</label>
+                                <input type="text" value="" id="sdt" name="sdtNumber">
                             </div>
                             <div class="form__main--password d-flex justify-content-between flex-row">
-                                <p>Mật khẩu hiện tại</p>
+                                <label>Mật khẩu hiện tại</label>
                                 <input type="password" value="" id="password" name="password">
                             </div>
                             <div class="form__main--password d-flex justify-content-between flex-row">
-                                <p>Nhập mật khẩu mới</p>
+                                <label>Nhập mật khẩu mới</label>
                                 <input type="password" value="" id="password" name="password">
                             </div>
                             <div class="form__main--dob d-flex justify-content-between flex-row">
-                                <p>Ngày sinh</p>
+                                <label>Ngày sinh</label>
                                 <input type="date" id="dob" name="dob">
                             </div>
                             <div class="form__main--sex d-flex justify-content-between flex-row">
-                                <p>Giới tính</p>
+                                <label>Giới tính</label>
                                 <div class="d-flex justify-content-between flex-row">
                                     <div>
                                         <input type="radio" id="nam" name="sex" value="nam">
@@ -80,7 +80,7 @@
 
                             </div>
                             <div class="form__main--marriage d-flex justify-content-between flex-row">
-                                <p>Tình trạng hôn nhân</p>
+                                <label>Tình trạng hôn nhân</label>
                                 <div class="d-flex justify-content-between flex-row">
                                     <div>
                                         <input type="radio" id="single" name="marriage" value="single">
@@ -98,11 +98,11 @@
 
                             </div>
                             <div class="form__main--cccd d-flex justify-content-between flex-row">
-                                <p>CCCD</p>
+                                <label>CCCD</label>
                                 <input type="text" value="" id="cccd" name="cccd">
                             </div>
                             <div class="form__main--cccdImage d-flex justify-content-between flex-row">
-                                <p>Ảnh CCCD</p>
+                                <label>Ảnh CCCD</label>
                                 <input type="file">
                             </div>
                         </div>
@@ -119,11 +119,11 @@
                             <input type="file" id="fileInput" style="display: none;">
                         </div>
                     </div>
-                </form>
 
-                <button class="update mt-4 mb-5" type="submit">
-                    <p>Cập nhật</p>
-                </button>
+                    <button class="update mt-4 mb-5" type="submit">
+                        <p>Cập nhật</p>
+                    </button>
+                </form>
             </div>
 
             {{!-- address --}}
@@ -136,27 +136,27 @@
 
                     <div class="row form__main d-flex justify-content-center align-items-center flex-column">
                         <div class="form__main--province d-flex justify-content-between flex-row">
-                            <p>Thành phố / Tỉnh</p>
+                            <label>Thành phố / Tỉnh</label>
                             <input type="text" value="" id="province" name="province">
                         </div>
                         <div class="form__main--district d-flex justify-content-between flex-row">
-                            <p>Quận / Huyện</p>
+                            <label>Quận / Huyện</label>
                             <input type="text" value="" id="district" name="district">
                         </div>
                         <div class="form__main--village d-flex justify-content-between flex-row">
-                            <p>Phường / Xã</p>
+                            <label>Phường / Xã</label>
                             <input type="text" value="" id="village" name="village">
                         </div>
                         <div class="form__main--road d-flex justify-content-between flex-row">
-                            <p>Đường</p>
+                            <label>Đường</label>
                             <input type="text" id="road" name="road">
                         </div>
                         <div class="form__main--home d-flex justify-content-between flex-row">
-                            <p>Số nhà</p>
+                            <label>Số nhà</label>
                             <input type="text" id="home" name="home">
                         </div>
                         <div class="form__main--stayPeriod d-flex justify-content-between flex-row">
-                            <p>Thời gian cư trú</p>
+                            <label>Thời gian cư trú</label>
                             <div>
                                 <select id="time" name="time" class="timeInput">
                                     <option class="timeOption" value="docthan">Dưới 1 năm</option>
@@ -185,7 +185,7 @@
 
                     <div class="row form__main d-flex justify-content-center align-items-center flex-column">
                         <div class="form__main--field d-flex justify-content-between flex-row">
-                            <p>Lĩnh vực hoạt động</p>
+                            <label>Lĩnh vực hoạt động</label>
                             <div>
                                 <select class="form-select form-select-sm fieldInput" id="field"
                                     aria-label=".form-select-sm">
@@ -207,15 +207,15 @@
                             </div>
                         </div>
                         <div class="form__main--com d-flex justify-content-between flex-row">
-                            <p>Tên công ty</p>
+                            <label>Tên công ty</label>
                             <input type="text" value="" id="com" name="com">
                         </div>
                         <div class="form__main--role d-flex justify-content-between flex-row">
-                            <p>Chức vụ</p>
+                            <label>Chức vụ</label>
                             <input type="text" value="" id="role" name="role">
                         </div>
                         <div class="form__main--exp d-flex justify-content-between flex-row">
-                            <p>Kinh nghiệm nơi làm việc cuối cùng</p>
+                            <label>Kinh nghiệm nơi làm việc cuối cùng</label>
                             <div>
                                 <select id="exp" name="exp" class="expInput">
                                     <option class="expOption" value="shorter1nam">Dưới 1 năm</option>
@@ -228,7 +228,7 @@
                             </div>
                         </div>
                         <div class="form__main--income d-flex justify-content-between flex-row">
-                            <p>Thu nhập hàng tháng</p>
+                            <label>Thu nhập hàng tháng</label>
                             <div>
                                 <select id="income" name="income" class="incomeInput">
                                     <option class="incomeOption" value="noincome">Không có thu nhập</option>
@@ -260,11 +260,11 @@
                     <div class="row form__main d-flex justify-content-center align-items-center flex-column">
                         <h5>Thông tin người thân</h5>
                         <div class="form__main--relatives d-flex justify-content-between flex-row">
-                            <p>Họ và tên</p>
+                            <label>Họ và tên</label>
                             <input type="text" id="relatives" name="relatives">
                         </div>
                         <div class="form__main--type d-flex justify-content-between flex-row">
-                            <p>Kiểu quan hệ họ hàng</p>
+                            <label>Kiểu quan hệ họ hàng</label>
                             <div>
                                 <select class="form-select form-select-sm relativesTypeInput" id="relativesType"
                                     aria-label=".form-select-sm">
@@ -277,17 +277,17 @@
                             </div>
                         </div>
                         <div class="form__main--relativesPhone d-flex justify-content-between flex-row">
-                            <p>Số điện thoại</p>
+                            <label>Số điện thoại</label>
                             <input type="text" value="" id="relativesPhone" name="relativesPhone">
                         </div>
 
                         <h5>Thông tin về đồng nghiệp</h5>
                         <div class="form__main--colleague d-flex justify-content-between flex-row">
-                            <p>Họ và tên</p>
+                            <label>Họ và tên</label>
                             <input type="text" id="colleague" name="colleague">
                         </div>
                         <div class="form__main--colleaguePhone d-flex justify-content-between flex-row">
-                            <p>Số điện thoại</p>
+                            <label>Số điện thoại</label>
                             <input type="text" value="" id="colleaguePhone" name="colleaguePhone">
                         </div>
                     </div>
@@ -308,7 +308,7 @@
 
                     <div class="row form__main d-flex justify-content-center align-items-center flex-column">
                         <div class="form__main--method d-flex justify-content-between flex-row">
-                            <p>Phương thức nhận / vay tiền</p>
+                            <label>Phương thức nhận / vay tiền</label>
                             <div>
                                 <select class="form-select form-select-sm methodItemInput" id="methodItem"
                                     aria-label=".form-select-sm">
@@ -320,7 +320,7 @@
                         </div>
                         <div class="bank">
                             <div class="form__main--bank d-flex justify-content-between flex-row" id="bankInfo">
-                                <p>Ngân hàng</p>
+                                <label>Ngân hàng</label>
                                 <div>
                                     <select class="form-select form-select-sm bankNameItemInput" id="bankNameItemInput"
                                         aria-label=".form-select-sm">
@@ -329,7 +329,7 @@
                                 </div>
                             </div>
                             <div class="form__main--bankNum d-flex justify-content-between flex-row">
-                                <p>Số tài khoản</p>
+                                <label>Số tài khoản</label>
                                 <input type="text" id="bankNum" name="bankNum" required class="bankNumItemInput">
                             </div>
                         </div>
@@ -339,7 +339,7 @@
                         </p>
                         <div class="form__main--momoPhone momoNum d-flex justify-content-between flex-row" id="momo">
 
-                            <p>Số điện thoại Momo</p>
+                            <label>Số điện thoại Momo</label>
                             <input type="text" id="momoNum" name="momoNum" class="momoNumItemInput">
                         </div>
                     </div>

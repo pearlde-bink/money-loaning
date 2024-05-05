@@ -1,7 +1,7 @@
 <div class="app">
     {{!-- <ul>
         {{#each workplace}}
-        <li>{{this.paymentMethod.bank.bankName}}</li>
+        <li>{{this.name}}</li>
         {{/each}}
     </ul> --}}
 
@@ -356,7 +356,6 @@
                 moneyLoanRed.innerHTML = (value * 1.55).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
                 moneyLoan2.innerHTML = (value * 1.45).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
             }
-            //moneyLoanRed.innerHTML = (value * 1.135).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "đ";
         } else {
             moneyLoanRed.innerHTML = "0đ";
         }
@@ -375,11 +374,13 @@
         let month = d.getMonth();
         let year = d.getFullYear();
         let month18 = d.getMonth(d.setMonth(d.getMonth() + 18));
+        if (date < 10) {
+            date = "0" + date;
+        }
 
         if (moneyLoan > 0 && moneyLoan <= 10000000) {
             if (month + 6 > 12) {
                 payday.innerHTML = date + "/" + (6 - month) + "/" + (year + 1);
-                console.log(date + "/" + (6 - month) + "/" + (year + 1));
             } else {
                 payday.innerHTML = date + "/" + (month + 6) + "/" + year;
             }

@@ -2,97 +2,708 @@
     <div class="range text-center">
         <p>Nhận +15% cơ hội được phê duyệt bằng cách hoàn thành tất cả các trường</p>
     </div>
+    <div class="progress-bar">
+        <div class="step">
+            <p>
+                Step 1
+            </p>
+            <div class="bullet">
+                <span>1</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Step 2
+            </p>
+            <div class="bullet">
+                <span>2</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Step 3
+            </p>
+            <div class="bullet">
+                <span>3</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Step 4
+            </p>
+            <div class="bullet">
+                <span>4</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Step 5
+            </p>
+            <div class="bullet">
+                <span>5</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Step 6
+            </p>
+            <div class="bullet">
+                <span>6</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+    </div>
 
     <!-- personal infor -->
-    <form action="/register" method="POST" class="d-flex justify-content-center align-items-center flex-column">
-        <div class="info">
-            <h5>Thông tin cá nhân</h5>
-            <div class="info__name mt-4">
-                <label for="name">Họ và tên*</label>
-                <input type="text" id="name" name="name" class="nameInput" required>
-            </div>
+    <div class="form-outer">
+        <form action="/register" method="POST" class="d-flex justify-content-center align-items-center flex-column">
+            {{!-- step1 --}}
+            <div class="page slide-page">
+                <div class="info">
+                    <h5>Thông tin cá nhân</h5>
+                    <div class="info__name mt-4">
+                        <label for="name">Họ và tên*</label>
+                        <input required type="text" id="name" name="name" class="nameInput">
+                    </div>
 
-            {{!-- <div class="info__cccdBirth d-flex justify-content-between align-items-center mt-4">
-                <div class="info__cccd">
-                    <label for="cccdNumber">Số CMND/CCCD*</label>
-                    <input type="text" id="cccd" name="cccdNumber" class="cccdInput" required>
-                </div>
-                <div class="info__birth">
-                    <label for="dob">Ngày sinh*</label>
-                    <input type="date" id="birth" name="dob" class="birthInput" required>
-                </div>
-            </div> --}}
-
-            <p class="text-muted" style="margin: 30px 0px 0px">(Dùng để đăng nhập)</p>
-            <div class="info__sdtPassword d-flex justify-content-between align-items-center mt-2">
-                <div class="info__sdt">
-                    <label for="sdtNumber">Số điện thoại*</label>
-                    <input type="text" id="sdt" name="sdtNumber" class="sdtInput" required>
-                </div>
-                <div class="info__password">
-                    <label for="password">Mật khẩu*</label>
-                    <input type="password" id="password" name="password" class="passwordInput" required>
-                </div>
-            </div>
-            <div class="info__slug d-none">
-                <label for="slug">Slug*</label>
-                <input type="text" id="slug" name="slug" class="passwordInput">
-            </div>
-
-            {{!-- <div class="form-group info__retypePassword mt-4">
-                <label for="retypepassword">Nhập lại mật khẩu*</label>
-                <input type="password" id="password" name="retypepassword" class="retypePasswordInput" required>
-                <span class="form-message"></span>
-            </div> --}}
-
-            <div class="note1 text-center mt-4">
-                <p>Nếu quý khách đang có CMND và CCCD, vui lòng chỉ cung cấp thông tin của 1 chứng từ mà quý khách
-                    đang
-                    sở hữu để đảm bảo tỷ lệ duyệt cao hơn.</p>
-            </div>
-
-            {{!-- <div class="info__sexMarriage d-flex flex-row justify-content-between mt-4">
-                <div class="info__sex">
-                    <label for="sex">Giới tính*</label>
-                    <div class="d-flex flex-row justify-content-between">
-                        <div class="sex1">
-                            <input type="radio" id="sex__1" name="sex">
-                            <label class="text-dark" for="sex__1">Nam</label>
+                    <div class="info__cccdBirth d-flex justify-content-between align-items-center mt-4">
+                        <div class="info__cccd">
+                            <label for="cccdNumber">Số CMND/CCCD*</label>
+                            <input required type="text" id="cccd" name="cccdNumber" class="cccdInput">
                         </div>
-                        <div class="sex2">
-                            <input type="radio" id="sex__2" name="sex">
-                            <label class="text-dark" for="sex__2">Nữ</label>
+                        <div class="info__birth">
+                            <label for="dob">Ngày sinh*</label>
+                            <input required type="date" id="birth" name="dob" class="birthInput">
+                        </div>
+                    </div>
+
+                    <p class="text-muted" style="margin: 30px 0px 0px">(Dùng để đăng nhập)</p>
+                    <div class="info__sdtPassword d-flex justify-content-between align-items-center mt-2">
+                        <div class="info__sdt">
+                            <label for="sdtNumber">Số điện thoại*</label>
+                            <input required type="text" id="sdt" name="sdtNumber" class="sdtInput">
+                        </div>
+                        <div class="info__password">
+                            <label for="password">Mật khẩu*</label>
+                            <input required type="password" id="password" name="password" class="passwordInput">
+                        </div>
+                    </div>
+
+                    <div class="form-group info__retypePassword mt-4">
+                        <label for="retypepassword">Nhập lại mật khẩu*</label>
+                        <input required type="password" id="retypepassword" name="retypepassword"
+                            class="retypePasswordInput">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="note1 text-center mt-4">
+                        <p>Nếu quý khách đang có CMND và CCCD, vui lòng chỉ cung cấp thông tin của 1 chứng từ mà quý
+                            khách
+                            đang
+                            sở hữu để đảm bảo tỷ lệ duyệt cao hơn.</p>
+                    </div>
+
+                    <div class="info__sexMarriage d-flex flex-row justify-content-between mt-4">
+                        <div class="info__sex">
+                            <label for="sex">Giới tính*</label>
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="sex1">
+                                    <input type="radio" id="sex__1" name="sex">
+                                    <label class="text-dark" for="sex__1">Nam</label>
+                                </div>
+                                <div class="sex2">
+                                    <input type="radio" id="sex__2" name="sex">
+                                    <label class="text-dark" for="sex__2">Nữ</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info__marriage">
+                            <label for="marriage">Tình hình hôn nhân</label>
+                            <select id="marriage" name="marriage" class="marriageInput">
+                                <option class="marriageOption" value="docthan">Độc thân</option>
+                                <option class="marriageOption" value="cuoi">Đã cưới</option>
+                                <option class="marriageOption" value="lyhon">Ly hôn</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="note2 text-center mt-4">
+                        <h5>Cung cấp email giúp khả năng phê duyệt cao hơn.</h5>
+                        <p>Lưu ý! Email bạn vừa cung cấp sẽ nhận được mã OTP dùng để ký xác nhận đăng ký khoản vay.</p>
+                    </div>
+
+                    <div class="info__email mt-4">
+                        <label for="email">Email*</label>
+                        <input required type="email" id="email" name="email" class="emailInput">
+                    </div>
+                </div>
+
+                <button class="button firstNext next d-flex justify-content-center">
+                    <h6 class="text-light text-center">Tiếp theo</h6>
+                </button>
+            </div>
+
+            {{!-- step2 --}}
+            <div class="page">
+                <div class="address">
+                    <h5>Địa chỉ cư trú</h5>
+                    <div class="address__city mt-4">
+                        <label for="">Thành phố*</label>
+                        <input required type="text" id="city" name="city" class="cityInput">
+                    </div>
+
+                    <div class="address__location mt-4 d-flex justify-content-between align-items-center">
+                        <div class="address__location--province">
+                            <label for="">Tỉnh*</label>
+                            <select class="form-select form-select-sm provinceInput" id="province"
+                                aria-label=".form-select-sm">
+                                <option value="" selected>Chọn tỉnh thành</option>
+                            </select>
+                        </div>
+
+                        <div class="address__location--district">
+                            <label for="">Quận huyện*</label>
+                            <select class="form-select form-select-sm districtInput" id="district"
+                                aria-label=".form-select-sm">
+                                <option value="" selected>Chọn quận huyện</option>
+                            </select>
+                        </div>
+
+                        <div class="address__location--village">
+                            <label for="">Phường xã*</label>
+                            <select class="form-select form-select-sm villageInput" id="village"
+                                aria-label=".form-select-sm">
+                                <option value="" selected>Chọn phường xã</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="address__road mt-4">
+                        <label for="">Đường*</label>
+                        <input required type="text" id="road" name="road" class="roadInput">
+                    </div>
+
+                    <div class="address__homeTime mt-4 d-flex justify-content-between align-items-center">
+                        <div class="address__home">
+                            <label for="">Số nhà*</label>
+                            <input required type="text" id="home" name="home" class="homeInput">
+                        </div>
+
+                        <div class="address__time">
+                            <label for="">Thời gian cư trú*</label>
+                            <select id="time" name="time" class="timeInput">
+                                <option class="timeOption" value="docthan">Dưới 1 năm</option>
+                                <option class="timeOption" value="1nam">1 năm</option>
+                                <option class="timeOption" value="2nam">2 năm</option>
+                                <option class="timeOption" value="3nam">3 năm</option>
+                                <option class="timeOption" value="4nam">Trên 3 năm</option>
+                            </select>
                         </div>
                     </div>
                 </div>
 
-                <div class="info__marriage">
-                    <label for="marriage">Tình hình hôn nhân</label>
-                    <select id="marriage" name="marriage" class="marriageInput">
-                        <option class="marriageOption" value="docthan">Độc thân</option>
-                        <option class="marriageOption" value="cuoi">Đã cưới</option>
-                        <option class="marriageOption" value="lyhon">Ly hôn</option>
-                    </select>
+                <!-- button -->
+                <div class="button2 d-flex flex-row justify-content-center">
+                    <button class="fw-bold text-light prev-1 prev">Quay lại</button>
+                    <button class="fw-bold text-light next-1 next">Tiếp theo</button>
                 </div>
             </div>
 
-            <div class="note2 text-center mt-4">
-                <h5>Cung cấp email giúp khả năng phê duyệt cao hơn.</h5>
-                <p>Lưu ý! Email bạn vừa cung cấp sẽ nhận được mã OTP dùng để ký xác nhận đăng ký khoản vay.</p>
+            {{!-- step3 --}}
+            <div class="page">
+                <div class="job">
+                    <h5>Thông tin công việc</h5>
+                    <div class="job__fieldCom mt-4 d-flex justify-content-between align-items-center">
+                        <div class="job__field">
+                            <label for="">Lĩnh vực hoạt động*</label>
+                            <select class="form-select form-select-sm fieldInput" id="field"
+                                aria-label=".form-select-sm">
+                                <option value="" selected>Sinh viên</option>
+                                <option value="" selected>Thất nghiệp</option>
+                                <option value="" selected>Về hưu</option>
+                                <option value="" selected>Khác</option>
+                                <option value="" selected>Y tế và Dược phẩm</option>
+                                <option value="" selected>Công nghệ thông tin và Công nghệ</option>
+                                <option value="" selected>Tài chính và Kế toán</option>
+                                <option value="" selected>Giáo dục</option>
+                                <option value="" selected>Dịch vụ Khách hàng</option>
+                                <option value="" selected>Bán lẻ và Thương mại điện tử</option>
+                                <option value="" selected>Khoa học và Nghiên cứu</option>
+                                <option value="" selected>Nghệ thuật và Thiết kế</option>
+                                <option value="" selected>Xây dựng và Kiến trúc</option>
+                                <option value="" selected>Du lịch và Dịch vụ</option>
+                            </select>
+                        </div>
+
+                        <div class="job__com">
+                            <label for="">Tên công ty*</label>
+                            <input required type="text" id="com" name="com" class="comInput">
+                        </div>
+                    </div>
+
+                    <div class="job__roleTime mt-4 d-flex justify-content-between align-items-center">
+                        <div class="job__role">
+                            <label for="">Chức vụ*</label>
+                            <input required type="text" id="role" name="role" class="roleInput">
+                        </div>
+
+                        <div class="job__exp">
+                            <label for="">Kinh nghiệm nơi làm việc cuối cùng*</label>
+                            <select id="exp" name="exp" class="expInput">
+                                <option class="expOption" value="shorter1nam">Dưới 1 năm</option>
+                                <option class="expOption" value="1nam">1 năm</option>
+                                <option class="expOption" value="2nam">2 năm</option>
+                                <option class="expOption" value="3nam">3 năm</option>
+                                <option class="expOption" value="4nam">4 năm</option>
+                                <option class="expOption" value="5nam">5 năm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="job__income mt-4">
+                        <label for="">Thu nhập hàng tháng*</label>
+                        <select id="income" name="income" class="incomeInput">
+                            <option class="incomeOption" value="noincome">Không có thu nhập</option>
+                            <option class="incomeOption" value="3trieu">1.5 - 3 triệu đồng</option>
+                            <option class="incomeOption" value="5trieu">3 - 5 triệu đồng</option>
+                            <option class="incomeOption" value="7trieu">5 - 7 triệu đồng</option>
+                            <option class="incomeOption" value="9trieu">7 - 9 triệu đồng</option>
+                            <option class="incomeOption" value="11trieu">9 - 11 triệu đồng</option>
+                            <option class="incomeOption" value="hon11trieu">Lớn hơn 11 triệu đồng</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- button -->
+                <div class="button3 d-flex flex-row justify-content-center">
+                    <a href="">
+                        <button class="fw-bold text-light prev-2 prev">Quay lại</button>
+                    </a>
+                    <a href="">
+                        <button class="fw-bold text-light next-2 next">Tiếp theo</button>
+                    </a>
+                </div>
             </div>
 
-            <div class="info__email mt-4">
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" class="emailInput" required>
-            </div> --}}
-        </div>
+            {{!-- step4 --}}
+            <div class="page">
+                <div class="relatives">
+                    <h5>Thông tin người thân</h5>
+                    <div class="relatives__name mt-4">
+                        <label for="">Họ và tên*</label>
+                        <input required type="text" id="relativesName" name="relativesName" class="relativesNameInput">
+                    </div>
 
-        <!-- button /register/step2-->
-        {{!-- <a href="/" class="text-decoration-none"> --}}
-            <button class="button d-flex justify-content-center" type="submit">
-                <h6 class="text-light text-center">Tiếp theo</h6>
-            </button>
-            {{!-- </a> --}}
-    </form>
+                    <div class="relatives__typeNum mt-4 d-flex justify-content-between align-items-center">
+                        <div class="relatives__type">
+                            <label for="">Kiểu quan hệ họ hàng*</label>
+                            <select class="form-select form-select-sm relativesTypeInput" id="relativesType"
+                                aria-label=".form-select-sm">
+                                <option value="" selected>Khác</option>
+                                <option value="" selected>Mẹ / bố</option>
+                                <option value="" selected>Anh trai</option>
+                                <option value="" selected>Em gái</option>
+                                <option value="" selected>Vợ / chồng</option>
+                            </select>
+                        </div>
+
+                        <div class="relatives__phone">
+                            <label for="">Số điện thoại*</label>
+                            <input required type="text" id="relativePhone" name="relativePhone"
+                                class="relativePhoneInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="colleague">
+                    <h5>Thông tin về đồng nghiệp</h5>
+                    <div class="colleague__namePhone mt-4 d-flex justify-content-between align-items-center">
+                        <div class="colleague__name">
+                            <label for="">Họ và tên*</label>
+                            <input required type="text" id="colleagueBame" name="colleagueName"
+                                class="colleagueNameInput">
+                        </div>
+
+                        <div class="colleague__phone">
+                            <label for="">Số điện thoại*</label>
+                            <input required type="text" id="colleaguePhone" name="colleaguePhone"
+                                class="colleaguePhoneInput">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- button -->
+                <div class="button4 d-flex flex-row justify-content-center">
+                    <a href="">
+                        <button class="fw-bold text-light prev-3 prev">Quay lại</button>
+                    </a>
+                    <a href="">
+                        <button class="fw-bold text-light next-3 next">Tiếp theo</button>
+                    </a>
+                </div>
+            </div>
+
+            {{!-- step5 --}}
+            <div class="page">
+                <h5>Phương thức nhận tiền</h5>
+                <div class="intention">
+                    <div class="method">
+                        <label for="">Phương thức nhận / vay tiền*</label>
+                        <select class="form-select form-select-sm methodItemInput" id="methodItem"
+                            aria-label=".form-select-sm">
+                            <option value="Tai khoan ngan hang">Tài khoản ngân hàng</option>
+                            <option value="Vi momo">Ví momo</option>
+                        </select>
+                    </div>
+
+                    <div class="momoNum mt-4">
+                        <label for="">Số điện thoại Momo*</label>
+                        <input required type="text" id="momoNum" name="momoNum" class="momoNumItemInput">
+                    </div>
+
+                    <div class="bank">
+                        <div class="bankName mt-3">
+                            <label for="">Ngân hàng*</label>
+                            <select class="form-select form-select-sm bankNameItemInput" id="bankNameItemInput"
+                                aria-label=".form-select-sm">
+                                <option value="" selected>Chọn ngân hàng</option>
+                            </select>
+                        </div>
+                        <div class="bankNum mt-3">
+                            <label for="">Số tài khoản*</label>
+                            <input required type="text" id="bankNum" name="bankNum" class="bankNumItemInput">
+                        </div>
+                    </div>
+
+                    <div class="purpose mt-5">
+                        <label for="">Mục đích khoản vay*</label>
+                        <select class="form-select form-select-sm purposeItemInput" id="purposeItem"
+                            aria-label=".form-select-sm">
+                            <option value="" selected>Khác</option>
+                            <option value="" selected>Kinh doanh</option>
+                            <option value="" selected>Sửa xe</option>
+                            <option value="" selected>Chăm sóc sức khỏe</option>
+                            <option value="" selected>Du lịch</option>
+                            <option value="" selected>Cần gấp</option>
+                            <option value="" selected>Sự kiện quan trọng</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- button -->
+                <div class="button5 d-flex flex-row justify-content-center">
+                    <a href="">
+                        <button class="fw-bold text-light prev-4 prev">Quay lại</button>
+                    </a>
+                    <a href="">
+                        <button class="fw-bold text-light next-4 next">Tiếp theo</button>
+                    </a>
+                </div>
+            </div>
+
+            {{!-- step6 --}}
+            <div class="page">
+                <div class="ccAuthen mt-5">
+                    <div class="ccAuthen__header">
+                        <h4>Xác minh CMND/CCCD</h4>
+                        <p class="mt-5">Quý khách kính mến, Để tiếp tục xử lý khoản vay,vui lòng tải
+                            lên
+                            hình ảnh
+                            CMND/CCCD của bạn</p>
+                        <div class="ccAuthen__header--note">
+                            <p>Tất cả các bức ảnh được chụp phải rõ nét, không được mờ và thiếu chi tiết!</p>
+                        </div>
+                    </div>
+
+                    <div class="ccAuthen__form my-4">
+                        <!-- cccd -->
+                        <label for="cccd">Ảnh CMND</label>
+                        <div id="drop-zone">
+                            <h6>Bạn hãy kéo hoặc tải file lên</h6>
+                            <input type="file" id="file-uploader" accept=".jpg, .png" multiple>
+                            <div id="content"></div>
+                        </div>
+
+                        <!-- selfie cccd -->
+                        <label for="cccd">Chụp ảnh selfie cùng CMND</label>
+                        <div id="drop-zone2">
+                            <h6>Bạn hãy kéo hoặc tải file lên</h6>
+                            <input type="file" id="file-uploader2" accept=".jpg, .png" multiple>
+                            <div id="content2"></div>
+                        </div>
+
+                        <!-- cccd back -->
+                        <label for="cccd">Ảnh CMND (mặt sau) </label>
+                        <div id="drop-zone3">
+                            <h6>Bạn hãy kéo hoặc tải file lên</h6>
+                            <input type="file" id="file-uploader3" accept=".jpg, .png" multiple>
+                            <div id="content3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- button -->
+                <div class="button6 d-flex flex-row justify-content-center">
+                    <a href="">
+                        <button class="fw-bold text-light prev-5 prev">Quay lại</button>
+                    </a>
+                    <a href="">
+                        <button class="fw-bold text-light submit" type="submit">Tiếp theo</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    //switch between steps
+    const slidePage = document.querySelector(".slide-page");
+    const nextBtnFirst = document.querySelector(".firstNext");
+    const prevBtnSec = document.querySelector(".prev-1");
+    const nextBtnSec = document.querySelector(".next-1");
+    const prevBtnThird = document.querySelector(".prev-2");
+    const nextBtnThird = document.querySelector(".next-2");
+    const prevBtnFourth = document.querySelector(".prev-3");
+    const nextBtnFourth = document.querySelector(".next-3");
+    const prevBtnFift = document.querySelector(".prev-4");
+    const nextBtnFift = document.querySelector(".next-4");
+    const prevBtnSixth = document.querySelector(".prev-5");
+    const submitBtn = document.querySelector(".submit");
+    const progressText = document.querySelectorAll(".step p");
+    const progressCheck = document.querySelectorAll(".step .check");
+    const bullet = document.querySelectorAll(".step .bullet");
+    let current = 1;
+
+    nextBtnFirst.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-20%";
+        bullet[current - 1].classList.add("active");
+        progressCheck[current - 1].classList.add("active");
+        progressText[current - 1].classList.add("active");
+        current += 1;
+    });
+    nextBtnSec.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-60%";
+        bullet[current - 1].classList.add("active");
+        progressCheck[current - 1].classList.add("active");
+        progressText[current - 1].classList.add("active");
+        current += 1;
+    });
+    nextBtnThird.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-100%";
+        bullet[current - 1].classList.add("active");
+        progressCheck[current - 1].classList.add("active");
+        progressText[current - 1].classList.add("active");
+        current += 1;
+    });
+    nextBtnFourth.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-140%";
+        bullet[current - 1].classList.add("active");
+        progressCheck[current - 1].classList.add("active");
+        progressText[current - 1].classList.add("active");
+        current += 1;
+    });
+    nextBtnFift.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-180%";
+        bullet[current - 1].classList.add("active");
+        progressCheck[current - 1].classList.add("active");
+        progressText[current - 1].classList.add("active");
+        current += 1;
+    });
+
+    submitBtn.addEventListener("click", function () {
+        bullet[current - 1].classList.add("active");
+        progressCheck[current - 1].classList.add("active");
+        progressText[current - 1].classList.add("active");
+        current += 1;
+        /*setTimeout(function () {
+            alert("Your Form Successfully Signed up");
+            location.reload();
+        }, 800);*/
+    });
+
+    prevBtnSec.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "20%";
+        bullet[current - 2].classList.remove("active");
+        progressCheck[current - 2].classList.remove("active");
+        progressText[current - 2].classList.remove("active");
+        current -= 1;
+    });
+    prevBtnThird.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-20%";
+        bullet[current - 2].classList.remove("active");
+        progressCheck[current - 2].classList.remove("active");
+        progressText[current - 2].classList.remove("active");
+        current -= 1;
+    });
+    prevBtnFourth.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-60%";
+        bullet[current - 2].classList.remove("active");
+        progressCheck[current - 2].classList.remove("active");
+        progressText[current - 2].classList.remove("active");
+        current -= 1;
+    });
+    prevBtnFift.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-100%";
+        bullet[current - 2].classList.remove("active");
+        progressCheck[current - 2].classList.remove("active");
+        progressText[current - 2].classList.remove("active");
+        current -= 1;
+    });
+    prevBtnSixth.addEventListener("click", function (event) {
+        event.preventDefault();
+        slidePage.style.marginLeft = "-140%";
+        bullet[current - 2].classList.remove("active");
+        progressCheck[current - 2].classList.remove("active");
+        progressText[current - 2].classList.remove("active");
+        current -= 1;
+    });
+    //step2
+    var provinces = document.getElementById("province");
+    var districts = document.getElementById("district");
+    var villages = document.getElementById("village");
+    var Parameter2 = {
+        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+        method: "GET",
+        responseType: "application/json",
+    };
+    var promise2 = axios(Parameter2);
+    promise2.then(function (result) {
+        renderCity(result.data);
+    });
+
+    function renderCity(data) {
+        for (const x of data) {
+            provinces.options[provinces.options.length] = new Option(x.Name, x.Id);
+        }
+        provinces.onchange = function () {
+            districts.length = 1;
+            villages.length = 1;
+            if (this.value != "") {
+                const result = data.filter((n) => n.Id === this.value);
+
+                for (const k of result[0].Districts) {
+                    districts.options[district.options.length] = new Option(k.Name, k.Id);
+                }
+            }
+        };
+        districts.onchange = function () {
+            villages.length = 1;
+            const dataCity = data.filter((n) => n.Id === provinces.value);
+            if (this.value != "") {
+                const dataWards = dataCity[0].Districts.filter(
+                    (n) => n.Id === this.value
+                )[0].Wards;
+
+                for (const w of dataWards) {
+                    villages.options[villages.options.length] = new Option(w.Name, w.Id);
+                }
+            }
+        };
+    }
+
+    //step 5
+    //bankin method toggle
+    const method = document.getElementById("methodItem");
+    const momoNum = document.querySelector(".momoNum");
+    const bank = document.querySelector(".bank");
+
+    //hide momo at first
+    momoNum.style.display = "none";
+    bank.style.display = "block";
+
+    method.addEventListener("change", function () {
+        if (method.value === "Vi momo") {
+            momoNum.style.display = "block";
+            bank.style.display = "none";
+        } else {
+            momoNum.style.display = "none";
+            bank.style.display = "block";
+        }
+    });
+
+    //render bank json
+    const bankName = document.getElementById("bankNameItemInput");
+    const Parameter5 = {
+        url: "https://api.vietqr.io/v2/banks",
+        method: "GET",
+        responseType: "json",
+    }
+
+    const promise5 = axios(Parameter5);
+    promise5.then(function (result) {
+        //var origindata = JSON.parse(JSON.stringify(data));
+        renderBank(result.data);
+        //console.log("result: ", result.data);
+    }).catch(err => console.log("there's error: ", err));
+
+    function renderBank(data) {
+        for (const x of data.data) {
+            bankName.options[bankName.options.length] = new Option(x.shortName, x.id);
+        }
+    }
+
+    //step6
+    // Upload file
+    const fileUploaders = document.querySelectorAll('[id^="file-uploader"]');
+    const dropZones = document.querySelectorAll('[id^="drop-zone"]');
+    const readers = [];
+
+    fileUploaders.forEach((fileUploader, index) => {
+        const reader = new FileReader();
+        readers.push(reader);
+
+        fileUploader.addEventListener("change", (event) => {
+            const files = event.target.files;
+            console.log("files", files);
+        });
+
+        const dropZone = dropZones[index];
+        const content = dropZone.querySelector('[id^="content"]');
+
+        dropZone.addEventListener("dragover", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            event.dataTransfer.dropEffect = "copy";
+        });
+
+        dropZone.addEventListener("drop", (event) => {
+            content.innerHTML = "";
+            event.stopPropagation();
+            event.preventDefault();
+            const files = event.dataTransfer.files;
+            console.log(files);
+
+            reader.readAsDataURL(files[0]);
+
+            reader.addEventListener("load", (event) => {
+                content.innerHTML = "";
+                const img = document.createElement("img");
+                img.style.height = "400px";
+                img.style.width = "400px";
+                content.appendChild(img);
+                img.src = event.target.result;
+                img.alt = files[0].name;
+            });
+        });
+    });
+</script>

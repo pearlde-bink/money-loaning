@@ -1,10 +1,10 @@
-const Payment = require("../models/Payment");
+const Client = require("../models/Client");
 const { multipleMongooseToObject } = require("../../util/mongoose");
 class SiteController {
   // GET /home
   home(req, res, next) {
     // res.render('home');
-    Payment.find({})
+    Client.find({})
       .then((workplace) =>
         res.render("home", {
           style: "app.css",

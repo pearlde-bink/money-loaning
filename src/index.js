@@ -47,17 +47,18 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources", "views"));
 
-// register
+// register;
 app.post("/register", async (req, res) => {
   const data = {
     name: req.body.name,
-    // cccd: req.body.cccdNumber,
-    // dob: req.body.dob,
+    cccd: req.body.cccdNumber,
+    dob: req.body.dob,
     sdt: req.body.sdtNumber,
     password: req.body.password,
-    // gender: req.body.sex,
-    // marriageStatus: req.body.marriage,
-    // email: req.body.email,
+    gender: req.body.sex,
+    marriageStatus: req.body.marriage,
+    email: req.body.email,
+    slug: req.body.slug,
   };
 
   // check existing user
