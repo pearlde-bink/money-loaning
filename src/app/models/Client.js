@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 // const { connect } = require("../config/db");
-const SALT_ROUNDS = 10;
-const bcrypt = require("bcrypt");
-const collection = require("../../config/db");
+// const SALT_ROUNDS = 10;
+// const bcrypt = require("bcrypt");
+// const collection = require("../../config/db");
 
 const Client = new Schema(
   {
@@ -35,53 +35,53 @@ const Client = new Schema(
   }
 );
 
-const detail = async (id) => {
-  const results = await collection.find({ _id: ObjectId(id) }).toArray();
-  return results[0];
-};
-exports.detail = detail;
+// const detail = async (id) => {
+//   const results = await collection.find({ _id: ObjectId(id) }).toArray();
+//   return results[0];
+// };
+// exports.detail = detail;
 
-module.exports.list = async () => {
-  return (results = await collection.find({}).toArray());
-};
+// module.exports.list = async () => {
+//   return (results = await collection.find({}).toArray());
+// };
 
-module.exports.add = async (user) => {
-  return await collection.insertOne(user);
-};
+// module.exports.add = async (user) => {
+//   return await collection.insertOne(user);
+// };
 
-const get = async (sdt) => {
-  return await collection.findOne({ sdt: sdt });
-};
-exports.get = get;
+// const get = async (sdt) => {
+//   return await collection.findOne({ sdt: sdt });
+// };
+// exports.get = get;
 
-exports.verify = async (sdt, password) => {
-  const user = collection.findOne({ sdt: sdt });
-  if (user) {
-    return undefined;
-    //verify password
-    //...
-  }
-  return results[0];
-};
+// exports.verify = async (sdt, password) => {
+//   const user = collection.findOne({ sdt: sdt });
+//   if (user) {
+//     return undefined;
+//     //verify password
+//     //...
+//   }
+//   return results[0];
+// };
 
-exports.validPassword = async (sdt, password) => {
-  const hash = await bcrypt.hash(password, SALT_ROUNDS);
-  const user = await get(sdt);
+// exports.validPassword = async (sdt, password) => {
+//   const hash = await bcrypt.hash(password, SALT_ROUNDS);
+//   const user = await get(sdt);
 
-  if (!user) return false;
-  return await bcrypt.compare(password, user.password);
-};
+//   if (!user) return false;
+//   return await bcrypt.compare(password, user.password);
+// };
 
-const check = async (sdt) => {
-  const user = await collection.findOne({ sdt: sdt });
-  if (user) return true;
-  return false;
-};
+// const check = async (sdt) => {
+//   const user = await collection.findOne({ sdt: sdt });
+//   if (user) return true;
+//   return false;
+// };
 
-exports.check = check;
+// exports.check = check;
 
-module.exports.update = async (sdt, user) => {
-  return await collection.updateOne({ sdt: sdt }, { $set: user });
-};
+// module.exports.update = async (sdt, user) => {
+//   return await collection.updateOne({ sdt: sdt }, { $set: user });
+// };
 
 module.exports.Client = mongoose.model("Client", Client);

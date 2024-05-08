@@ -56,7 +56,7 @@ const Address = new mongoose.Schema({
   // address_id: { type: Schema.Types.ObjectId, auto: true },
   client_Id: {
     type: Schema.Types.ObjectId,
-    ref: "clients",
+    ref: "Client",
     require: true,
   },
   province: { type: String, require: true },
@@ -71,7 +71,7 @@ const Workplace = new mongoose.Schema({
   // workplace_id: { type: Schema.Types.ObjectId, auto: true },
   client_Id: {
     type: Schema.Types.ObjectId,
-    ref: "clients",
+    ref: "Client",
     require: true,
   },
   workField: { type: String, require: true },
@@ -85,7 +85,7 @@ const Relatives = new mongoose.Schema({
   // relatives_id: { type: Schema.Types.ObjectId, auto: true },
   client_Id: {
     type: Schema.Types.ObjectId,
-    ref: "clients",
+    ref: "Client",
     require: true,
   },
   name: { type: String, require: true },
@@ -97,7 +97,7 @@ const Payment = new mongoose.Schema({
   // payment_id: { type: Schema.Types.ObjectId, auto: true },
   client_Id: {
     type: Schema.Types.ObjectId,
-    ref: "clients",
+    ref: "Client",
     require: true,
   },
   paymentMethod: {
@@ -115,7 +115,7 @@ const Colleague = new mongoose.Schema({
   // colleague_id: { type: Schema.Types.ObjectId, auto: true },
   client_Id: {
     type: Schema.Types.ObjectId,
-    ref: "clients",
+    ref: "Client",
     require: true,
   },
   name: { type: String, require: true },
