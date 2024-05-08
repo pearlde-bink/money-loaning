@@ -4,7 +4,7 @@ class SiteController {
   // GET /home
   home(req, res, next) {
     // res.render('home');
-    Client.find({})
+    Client.findOne({})
       .then((workplace) =>
         res.render("home", {
           style: "app.css",

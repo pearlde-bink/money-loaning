@@ -4,7 +4,12 @@ const exphbs = require("express-handlebars");
 const path = require("path");
 const port = 3000;
 const bcrypt = require("bcrypt");
-const collectionUser = require("./config/db");
+const { clients } = require("./config/db");
+// const { addresses } = require("./config/db");
+// const { workplaces } = require("./config/db");
+// const { relatives } = require("./config/db");
+// const { payments } = require("./config/db");
+// const { colleagues } = require("./config/db");
 
 const route = require("./routes");
 
@@ -49,7 +54,7 @@ app.set("views", path.join(__dirname, "resources", "views"));
 
 // register;
 app.post("/register", async (req, res) => {
-  const data = {
+  const dataUser = {
     name: req.body.name,
     cccd: req.body.cccdNumber,
     dob: req.body.dob,
@@ -60,21 +65,72 @@ app.post("/register", async (req, res) => {
     email: req.body.email,
     slug: req.body.slug,
   };
+  // const dataAddress = {
+  //   client_Id: dataUser._id,
+  //   province: req.body.province,
+  //   district: req.body.district,
+  //   village: req.body.village,
+  //   street: req.body.road,
+  //   homeAddress: req.body.home,
+  //   stayPeriod: req.body.addressTime,
+  // };
+  // const dataWorkplace = {
+  //   client_Id: dataUser._id,
+  //   workField: req.body.field,
+  //   company: req.body.company,
+  //   role: req.body.role,
+  //   exprerience: req.body.exp,
+  //   salary: req.body.income,
+  // };
+  // const dataRelatives = {
+  //   client_Id: dataUser._id,
+  //   name: req.body.relativesName,
+  //   relationship: req.body.relativesType,
+  //   phone: req.body.relatives__phone,
+  // };
+  // const dataColleague = {
+  //   client_Id: dataUser._id,
+  //   name: req.body.colleagueName,
+  //   phone: req.body.colleague__phone,
+  // };
+  // const dataPayment = {
+  //   client_Id: dataUser._id,
+  //   paymentMethod: {
+  //     bank: {
+  //       bankName: req.body.bankName,
+  //       stk: req.body.bankNum,
+  //     },
+  //     momo: {
+  //       momoNumber: req.body.momoNum,
+  //     },
+  //   },
+  // };
 
   // check existing user
-  const existingUser = await collectionUser.findOne({ sdt: data.sdt });
+  const existingUser = await clients.findOne({ sdt: dataUser.sdt });
   if (existingUser) {
     res.send("phone number already exist.");
   } else {
     // hash password using bcrypt
     const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(data.password, saltRounds);
+    const hashedPassword = await bcrypt.hash(dataUser.password, saltRounds);
 
-    data.password = hashedPassword; //replace user pw with hashed one
+    dataUser.password = hashedPassword; //replace user pw with hashed one
 
-    const userdata = await collectionUser.insertMany(data); //add if user not in db
+    const userdata = await clients.insertMany(dataUser); //add if user not in db
+    // const addressdata = await addresses.insertMany(dataAddress);
+    // const workplacedata = await workplaces.insertMany(dataWorkplace);
+    // const relativesdata = await relatives.insertMany(dataRelatives);
+    // const paymentdata = await payments.insertMany(dataPayment);
+    // const colleaguedata = await colleagues.insertMany(dataColleague);
+
     res.redirect(302, "/");
-    console.log(userdata);
+    console.log("user: ", userdata);
+    // console.log("address :", addressdata);
+    // console.log("workplace: ", workplacedata);
+    // console.log("relatives: ", relativesdata);
+    // console.log("payment: ", paymentdata);
+    // console.log("colleague: ", colleaguedata);
   }
 });
 
