@@ -153,31 +153,27 @@
             <div class="page">
                 <div class="address">
                     <h5>Địa chỉ cư trú</h5>
-                    <div class="address__city mt-4">
-                        <label for="">Thành phố*</label>
-                        <input required type="text" id="city" name="city" class="cityInput">
-                    </div>
 
                     <div class="address__location mt-4 d-flex justify-content-between align-items-center">
                         <div class="address__location--province">
-                            <label for="">Tỉnh*</label>
+                            <label for="province">Tỉnh*</label>
                             <select class="form-select form-select-sm provinceInput" id="province"
-                                aria-label=".form-select-sm">
+                                aria-label=".form-select-sm" name="province">
                                 <option value="" selected>Chọn tỉnh thành</option>
                             </select>
                         </div>
 
                         <div class="address__location--district">
-                            <label for="">Quận huyện*</label>
-                            <select class="form-select form-select-sm districtInput" id="district"
+                            <label for="district">Quận huyện*</label>
+                            <select class="form-select form-select-sm districtInput" id="district" name="district"
                                 aria-label=".form-select-sm">
                                 <option value="" selected>Chọn quận huyện</option>
                             </select>
                         </div>
 
                         <div class="address__location--village">
-                            <label for="">Phường xã*</label>
-                            <select class="form-select form-select-sm villageInput" id="village"
+                            <label for="village">Phường xã*</label>
+                            <select class="form-select form-select-sm villageInput" id="village" name="village"
                                 aria-label=".form-select-sm">
                                 <option value="" selected>Chọn phường xã</option>
                             </select>
@@ -185,19 +181,19 @@
                     </div>
 
                     <div class="address__road mt-4">
-                        <label for="">Đường*</label>
+                        <label for="road">Đường*</label>
                         <input required type="text" id="road" name="road" class="roadInput">
                     </div>
 
                     <div class="address__homeTime mt-4 d-flex justify-content-between align-items-center">
                         <div class="address__home">
-                            <label for="">Số nhà*</label>
+                            <label for="home">Số nhà*</label>
                             <input required type="text" id="home" name="home" class="homeInput">
                         </div>
 
                         <div class="address__time">
-                            <label for="">Thời gian cư trú*</label>
-                            <select id="time" name="time" class="timeInput">
+                            <label for="addressTime">Thời gian cư trú*</label>
+                            <select id="time" name="addressTime" class="timeInput">
                                 <option class="timeOption" value="docthan">Dưới 1 năm</option>
                                 <option class="timeOption" value="1nam">1 năm</option>
                                 <option class="timeOption" value="2nam">2 năm</option>
@@ -221,9 +217,9 @@
                     <h5>Thông tin công việc</h5>
                     <div class="job__fieldCom mt-4 d-flex justify-content-between align-items-center">
                         <div class="job__field">
-                            <label for="">Lĩnh vực hoạt động*</label>
+                            <label for="field">Lĩnh vực hoạt động*</label>
                             <select class="form-select form-select-sm fieldInput" id="field"
-                                aria-label=".form-select-sm">
+                                aria-label=".form-select-sm" name="field">
                                 <option value="" selected>Sinh viên</option>
                                 <option value="" selected>Thất nghiệp</option>
                                 <option value="" selected>Về hưu</option>
@@ -242,19 +238,19 @@
                         </div>
 
                         <div class="job__com">
-                            <label for="">Tên công ty*</label>
-                            <input required type="text" id="com" name="com" class="comInput">
+                            <label for="company">Tên công ty*</label>
+                            <input required type="text" id="com" name="company" class="comInput">
                         </div>
                     </div>
 
                     <div class="job__roleTime mt-4 d-flex justify-content-between align-items-center">
                         <div class="job__role">
-                            <label for="">Chức vụ*</label>
+                            <label for="role">Chức vụ*</label>
                             <input required type="text" id="role" name="role" class="roleInput">
                         </div>
 
                         <div class="job__exp">
-                            <label for="">Kinh nghiệm nơi làm việc cuối cùng*</label>
+                            <label for="exp">Kinh nghiệm nơi làm việc cuối cùng*</label>
                             <select id="exp" name="exp" class="expInput">
                                 <option class="expOption" value="shorter1nam">Dưới 1 năm</option>
                                 <option class="expOption" value="1nam">1 năm</option>
@@ -267,7 +263,7 @@
                     </div>
 
                     <div class="job__income mt-4">
-                        <label for="">Thu nhập hàng tháng*</label>
+                        <label for="income">Thu nhập hàng tháng*</label>
                         <select id="income" name="income" class="incomeInput">
                             <option class="incomeOption" value="noincome">Không có thu nhập</option>
                             <option class="incomeOption" value="3trieu">1.5 - 3 triệu đồng</option>
@@ -296,25 +292,25 @@
                 <div class="relatives">
                     <h5>Thông tin người thân</h5>
                     <div class="relatives__name mt-4">
-                        <label for="">Họ và tên*</label>
+                        <label for="relativesName">Họ và tên*</label>
                         <input required type="text" id="relativesName" name="relativesName" class="relativesNameInput">
                     </div>
 
                     <div class="relatives__typeNum mt-4 d-flex justify-content-between align-items-center">
                         <div class="relatives__type">
-                            <label for="">Kiểu quan hệ họ hàng*</label>
+                            <label for="relativesType">Kiểu quan hệ họ hàng*</label>
                             <select class="form-select form-select-sm relativesTypeInput" id="relativesType"
-                                aria-label=".form-select-sm">
+                                aria-label=".form-select-sm" name="relativesType">
                                 <option value="" selected>Khác</option>
                                 <option value="" selected>Mẹ / bố</option>
-                                <option value="" selected>Anh trai</option>
-                                <option value="" selected>Em gái</option>
+                                <option value="" selected>Anh / em trai</option>
+                                <option value="" selected>Chị / em gái</option>
                                 <option value="" selected>Vợ / chồng</option>
                             </select>
                         </div>
 
                         <div class="relatives__phone">
-                            <label for="">Số điện thoại*</label>
+                            <label for="relativePhone">Số điện thoại*</label>
                             <input required type="text" id="relativePhone" name="relativePhone"
                                 class="relativePhoneInput">
                         </div>
@@ -325,13 +321,13 @@
                     <h5>Thông tin về đồng nghiệp</h5>
                     <div class="colleague__namePhone mt-4 d-flex justify-content-between align-items-center">
                         <div class="colleague__name">
-                            <label for="">Họ và tên*</label>
+                            <label for="colleagueName">Họ và tên*</label>
                             <input required type="text" id="colleagueBame" name="colleagueName"
                                 class="colleagueNameInput">
                         </div>
 
                         <div class="colleague__phone">
-                            <label for="">Số điện thoại*</label>
+                            <label for="colleaguePhone">Số điện thoại*</label>
                             <input required type="text" id="colleaguePhone" name="colleaguePhone"
                                 class="colleaguePhoneInput">
                         </div>
@@ -363,28 +359,28 @@
                     </div>
 
                     <div class="momoNum mt-4">
-                        <label for="">Số điện thoại Momo*</label>
-                        <input required type="text" id="momoNum" name="momoNum" class="momoNumItemInput">
+                        <label for="momoNum">Số điện thoại Momo*</label>
+                        <input type="text" id="momoNum" name="momoNum" class="momoNumItemInput">
                     </div>
 
                     <div class="bank">
                         <div class="bankName mt-3">
-                            <label for="">Ngân hàng*</label>
+                            <label for="bankName">Ngân hàng*</label>
                             <select class="form-select form-select-sm bankNameItemInput" id="bankNameItemInput"
-                                aria-label=".form-select-sm">
+                                aria-label=".form-select-sm" name="bankName">
                                 <option value="" selected>Chọn ngân hàng</option>
                             </select>
                         </div>
                         <div class="bankNum mt-3">
-                            <label for="">Số tài khoản*</label>
-                            <input required type="text" id="bankNum" name="bankNum" class="bankNumItemInput">
+                            <label for="bankNum">Số tài khoản*</label>
+                            <input type="text" id="bankNum" name="bankNum" class="bankNumItemInput">
                         </div>
                     </div>
 
                     <div class="purpose mt-5">
-                        <label for="">Mục đích khoản vay*</label>
+                        <label for="purpose">Mục đích khoản vay*</label>
                         <select class="form-select form-select-sm purposeItemInput" id="purposeItem"
-                            aria-label=".form-select-sm">
+                            aria-label=".form-select-sm" name="purpose">
                             <option value="" selected>Khác</option>
                             <option value="" selected>Kinh doanh</option>
                             <option value="" selected>Sửa xe</option>
@@ -466,244 +462,4 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script>
-    //switch between steps
-    const slidePage = document.querySelector(".slide-page");
-    const nextBtnFirst = document.querySelector(".firstNext");
-    const prevBtnSec = document.querySelector(".prev-1");
-    const nextBtnSec = document.querySelector(".next-1");
-    const prevBtnThird = document.querySelector(".prev-2");
-    const nextBtnThird = document.querySelector(".next-2");
-    const prevBtnFourth = document.querySelector(".prev-3");
-    const nextBtnFourth = document.querySelector(".next-3");
-    const prevBtnFift = document.querySelector(".prev-4");
-    const nextBtnFift = document.querySelector(".next-4");
-    const prevBtnSixth = document.querySelector(".prev-5");
-    const submitBtn = document.querySelector(".submit");
-    const progressText = document.querySelectorAll(".step p");
-    const progressCheck = document.querySelectorAll(".step .check");
-    const bullet = document.querySelectorAll(".step .bullet");
-    let current = 1;
-
-    nextBtnFirst.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-20%";
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
-    });
-    nextBtnSec.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-60%";
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
-    });
-    nextBtnThird.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-100%";
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
-    });
-    nextBtnFourth.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-140%";
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
-    });
-    nextBtnFift.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-180%";
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
-    });
-
-    submitBtn.addEventListener("click", function () {
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
-        /*setTimeout(function () {
-            alert("Your Form Successfully Signed up");
-            location.reload();
-        }, 800);*/
-    });
-
-    prevBtnSec.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "20%";
-        bullet[current - 2].classList.remove("active");
-        progressCheck[current - 2].classList.remove("active");
-        progressText[current - 2].classList.remove("active");
-        current -= 1;
-    });
-    prevBtnThird.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-20%";
-        bullet[current - 2].classList.remove("active");
-        progressCheck[current - 2].classList.remove("active");
-        progressText[current - 2].classList.remove("active");
-        current -= 1;
-    });
-    prevBtnFourth.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-60%";
-        bullet[current - 2].classList.remove("active");
-        progressCheck[current - 2].classList.remove("active");
-        progressText[current - 2].classList.remove("active");
-        current -= 1;
-    });
-    prevBtnFift.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-100%";
-        bullet[current - 2].classList.remove("active");
-        progressCheck[current - 2].classList.remove("active");
-        progressText[current - 2].classList.remove("active");
-        current -= 1;
-    });
-    prevBtnSixth.addEventListener("click", function (event) {
-        event.preventDefault();
-        slidePage.style.marginLeft = "-140%";
-        bullet[current - 2].classList.remove("active");
-        progressCheck[current - 2].classList.remove("active");
-        progressText[current - 2].classList.remove("active");
-        current -= 1;
-    });
-    //step2
-    var provinces = document.getElementById("province");
-    var districts = document.getElementById("district");
-    var villages = document.getElementById("village");
-    var Parameter2 = {
-        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
-        method: "GET",
-        responseType: "application/json",
-    };
-    var promise2 = axios(Parameter2);
-    promise2.then(function (result) {
-        renderCity(result.data);
-    });
-
-    function renderCity(data) {
-        for (const x of data) {
-            provinces.options[provinces.options.length] = new Option(x.Name, x.Id);
-        }
-        provinces.onchange = function () {
-            districts.length = 1;
-            villages.length = 1;
-            if (this.value != "") {
-                const result = data.filter((n) => n.Id === this.value);
-
-                for (const k of result[0].Districts) {
-                    districts.options[district.options.length] = new Option(k.Name, k.Id);
-                }
-            }
-        };
-        districts.onchange = function () {
-            villages.length = 1;
-            const dataCity = data.filter((n) => n.Id === provinces.value);
-            if (this.value != "") {
-                const dataWards = dataCity[0].Districts.filter(
-                    (n) => n.Id === this.value
-                )[0].Wards;
-
-                for (const w of dataWards) {
-                    villages.options[villages.options.length] = new Option(w.Name, w.Id);
-                }
-            }
-        };
-    }
-
-    //step 5
-    //bankin method toggle
-    const method = document.getElementById("methodItem");
-    const momoNum = document.querySelector(".momoNum");
-    const bank = document.querySelector(".bank");
-
-    //hide momo at first
-    momoNum.style.display = "none";
-    bank.style.display = "block";
-
-    method.addEventListener("change", function () {
-        if (method.value === "Vi momo") {
-            momoNum.style.display = "block";
-            bank.style.display = "none";
-        } else {
-            momoNum.style.display = "none";
-            bank.style.display = "block";
-        }
-    });
-
-    //render bank json
-    const bankName = document.getElementById("bankNameItemInput");
-    const Parameter5 = {
-        url: "https://api.vietqr.io/v2/banks",
-        method: "GET",
-        responseType: "json",
-    }
-
-    const promise5 = axios(Parameter5);
-    promise5.then(function (result) {
-        //var origindata = JSON.parse(JSON.stringify(data));
-        renderBank(result.data);
-        //console.log("result: ", result.data);
-    }).catch(err => console.log("there's error: ", err));
-
-    function renderBank(data) {
-        for (const x of data.data) {
-            bankName.options[bankName.options.length] = new Option(x.shortName, x.id);
-        }
-    }
-
-    //step6
-    // Upload file
-    const fileUploaders = document.querySelectorAll('[id^="file-uploader"]');
-    const dropZones = document.querySelectorAll('[id^="drop-zone"]');
-    const readers = [];
-
-    fileUploaders.forEach((fileUploader, index) => {
-        const reader = new FileReader();
-        readers.push(reader);
-
-        fileUploader.addEventListener("change", (event) => {
-            const files = event.target.files;
-            console.log("files", files);
-        });
-
-        const dropZone = dropZones[index];
-        const content = dropZone.querySelector('[id^="content"]');
-
-        dropZone.addEventListener("dragover", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            event.dataTransfer.dropEffect = "copy";
-        });
-
-        dropZone.addEventListener("drop", (event) => {
-            content.innerHTML = "";
-            event.stopPropagation();
-            event.preventDefault();
-            const files = event.dataTransfer.files;
-            console.log(files);
-
-            reader.readAsDataURL(files[0]);
-
-            reader.addEventListener("load", (event) => {
-                content.innerHTML = "";
-                const img = document.createElement("img");
-                img.style.height = "400px";
-                img.style.width = "400px";
-                content.appendChild(img);
-                img.src = event.target.result;
-                img.alt = files[0].name;
-            });
-        });
-    });
-</script>
+<script src="/js/step1.js"></script>

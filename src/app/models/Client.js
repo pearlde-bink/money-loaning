@@ -8,6 +8,7 @@ const collection = require("../../config/db");
 
 const Client = new Schema(
   {
+    client_id: { type: Schema.Types.ObjectId, auto: true },
     name: { type: String, require: true },
     sdt: { type: String, require: true },
     email: { type: String, require: true },
@@ -83,4 +84,4 @@ module.exports.update = async (sdt, user) => {
   return await collection.updateOne({ sdt: sdt }, { $set: user });
 };
 
-module.exports = mongoose.model("Client", Client);
+module.exports.Client = mongoose.model("Client", Client);
