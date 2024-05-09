@@ -1,6 +1,3 @@
-{
-  /* <script> */
-}
 //switch between steps
 const slidePage = document.querySelector(".slide-page");
 const nextBtnFirst = document.querySelector(".firstNext");
@@ -13,8 +10,7 @@ const nextBtnFourth = document.querySelector(".next-3");
 const prevBtnFift = document.querySelector(".prev-4");
 const nextBtnFift = document.querySelector(".next-4");
 const prevBtnSixth = document.querySelector(".prev-5");
-//const submitBtn = document.querySelector(".submit");
-const submitBtn = document.getElementById("submitBtn");
+const submitBtn = document.querySelector(".submit");
 const progressText = document.querySelectorAll(".step p");
 const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
@@ -67,9 +63,9 @@ submitBtn.addEventListener("click", function () {
   progressText[current - 1].classList.add("active");
   current += 1;
   /*setTimeout(function () {
-            alert("Your Form Successfully Signed up");
-            location.reload();
-        }, 800);*/
+        alert("Your Form Successfully Signed up");
+        location.reload();
+    }, 800);*/
 });
 
 prevBtnSec.addEventListener("click", function (event) {
@@ -137,7 +133,7 @@ function renderCity(data) {
       const result = data.filter((n) => n.Id === this.value);
 
       for (const k of result[0].Districts) {
-        districts.options[districts.options.length] = new Option(k.Name, k.Id);
+        districts.options[district.options.length] = new Option(k.Name, k.Id);
       }
     }
   };
@@ -246,4 +242,3 @@ fileUploaders.forEach((fileUploader, index) => {
     });
   });
 });
-// </script>

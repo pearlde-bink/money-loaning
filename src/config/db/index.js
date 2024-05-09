@@ -53,86 +53,86 @@ const userSchema = new mongoose.Schema({
   slug: { type: String, unique: false, default: "" },
 });
 
-// const Address = new mongoose.Schema({
-//   // address_id: { type: Schema.Types.ObjectId, auto: true },
-//   client_Id: {
-//     type: Schema.Types.ObjectId,
-//     ref: "clients",
-//     require: true,
-//   },
-//   province: { type: String, require: true },
-//   district: { type: String, require: true },
-//   village: { type: String, require: true },
-//   street: { type: String, require: true },
-//   homeAddress: { type: String, require: true },
-//   stayPeriod: { type: String, require: true },
-// });
+const Address = new mongoose.Schema({
+  // address_id: { type: Schema.Types.ObjectId, auto: true },
+  client_Id: {
+    type: Schema.Types.ObjectId,
+    ref: "Client",
+    require: true,
+  },
+  province: { type: String, require: true },
+  district: { type: String, require: true },
+  village: { type: String, require: true },
+  street: { type: String, require: true },
+  homeAddress: { type: String, require: true },
+  stayPeriod: { type: String, require: true },
+});
 
-// const Workplace = new mongoose.Schema({
-//   // workplace_id: { type: Schema.Types.ObjectId, auto: true },
-//   client_Id: {
-//     type: Schema.Types.ObjectId,
-//     ref: "clients",
-//     require: true,
-//   },
-//   workField: { type: String, require: true },
-//   company: { type: String, require: true },
-//   role: { type: String, require: true },
-//   exprerience: { type: String, require: true },
-//   salary: { type: String, require: true },
-// });
+const Workplace = new mongoose.Schema({
+  // workplace_id: { type: Schema.Types.ObjectId, auto: true },
+  client_Id: {
+    type: Schema.Types.ObjectId,
+    ref: "Client",
+    require: true,
+  },
+  workField: { type: String, require: true },
+  company: { type: String, require: true },
+  role: { type: String, require: true },
+  exprerience: { type: String, require: true },
+  salary: { type: String, require: true },
+});
 
-// const Relatives = new mongoose.Schema({
-//   // relatives_id: { type: Schema.Types.ObjectId, auto: true },
-//   client_Id: {
-//     type: Schema.Types.ObjectId,
-//     ref: "clients",
-//     require: true,
-//   },
-//   name: { type: String, require: true },
-//   relationship: { type: String, require: true },
-//   phone: { type: String, require: true },
-// });
+const Relatives = new mongoose.Schema({
+  // relatives_id: { type: Schema.Types.ObjectId, auto: true },
+  client_Id: {
+    type: Schema.Types.ObjectId,
+    ref: "Client",
+    require: true,
+  },
+  name: { type: String, require: true },
+  relationship: { type: String, require: true },
+  phone: { type: String, require: true },
+});
 
-// const Payment = new mongoose.Schema({
-//   // payment_id: { type: Schema.Types.ObjectId, auto: true },
-//   client_Id: {
-//     type: Schema.Types.ObjectId,
-//     ref: "clients",
-//     require: true,
-//   },
-//   paymentMethod: {
-//     bank: {
-//       bankName: { type: String, require: true },
-//       stk: { type: String, require: true },
-//     },
-//     momo: {
-//       momoNumber: { type: String, require: true },
-//     },
-//   },
-// });
+const Payment = new mongoose.Schema({
+  // payment_id: { type: Schema.Types.ObjectId, auto: true },
+  client_Id: {
+    type: Schema.Types.ObjectId,
+    ref: "Client",
+    require: true,
+  },
+  paymentMethod: {
+    bank: {
+      bankName: { type: String, require: true },
+      stk: { type: String, require: true },
+    },
+    momo: {
+      momoNumber: { type: String, require: true },
+    },
+  },
+});
 
-// const Colleague = new mongoose.Schema({
-//   // colleague_id: { type: Schema.Types.ObjectId, auto: true },
-//   client_Id: {
-//     type: Schema.Types.ObjectId,
-//     ref: "clients",
-//     require: true,
-//   },
-//   name: { type: String, require: true },
-//   phone: { type: String, require: true },
-// });
+const Colleague = new mongoose.Schema({
+  // colleague_id: { type: Schema.Types.ObjectId, auto: true },
+  client_Id: {
+    type: Schema.Types.ObjectId,
+    ref: "Client",
+    require: true,
+  },
+  name: { type: String, require: true },
+  phone: { type: String, require: true },
+});
 
 const clients = mongoose.model("clients", userSchema);
-// const addresses = mongoose.model("addresses", Address);
-// const workplaces = mongoose.model("workplaces", Workplace);
-// const relatives = mongoose.model("relatives", Relatives);
-// const payments = mongoose.model("payments", Payment);
-// const colleagues = mongoose.model("colleagues", Colleague);
+const addresses = mongoose.model("addresses", Address);
+const workplaces = mongoose.model("workplaces", Workplace);
+const relatives = mongoose.model("relatives", Relatives);
+const payments = mongoose.model("payments", Payment);
+const colleagues = mongoose.model("colleagues", Colleague);
 
-// module.exports.colleagues = colleagues;
-// module.exports.payments = payments;
-// module.exports.relatives = relatives;
-// module.exports.workplaces = workplaces;
-// module.exports.addresses = addresses;
+module.exports.colleagues = colleagues;
+module.exports.payments = payments;
+module.exports.relatives = relatives;
+module.exports.workplaces = workplaces;
+module.exports.addresses = addresses;
 module.exports.clients = clients;

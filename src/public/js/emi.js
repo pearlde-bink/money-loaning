@@ -1,3 +1,21 @@
+//format while inputting
+function formatText() {
+  // Get the input value
+  let input = document.getElementById("").value;
+
+  // Format the input (e.g., capitalize every word)
+  let formattedInput = input.replace(/\b\w/g, function (char) {
+    return char.toUpperCase();
+  });
+
+  // Update the input field with the formatted text
+  document.getElementById("inputBox").value = formattedInput;
+}
+
+//format number
+function formatValue(e) {
+  return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 const loanAmountInput = document.querySelector(".loan-amount");
 const interestRateInput = document.querySelector(".interest-rate");
 const loanTenureInput = document.querySelector(".loan-tenure");
@@ -9,9 +27,9 @@ const totalAmountValue = document.querySelector(".total-amount .value");
 const calculateBtn = document.querySelector(".calculate-btn");
 
 // convert to number
-let loanAmount = parseFloat(loanAmountInput.value);
+let loanAmount = formatValue(parseFloat(loanAmountInput.value));
 let interestRate = parseFloat(interestRateInput.value);
-let loanTenure = parseFloat(loanTenureInput.value);
+let loanTenure = formatValue(parseFloat(loanTenureInput.value));
 
 // calculate interest for month
 let interest = interestRate / 12 / 100;
@@ -47,7 +65,7 @@ const displayChart = (totalInterestAmount) => {
       datasets: [
         {
           data: [totalInterestAmount, loanAmount],
-          backgroundColor: ["#e63946", "#14213d"],
+          backgroundColor: ["#FB9AD1", "#5536a2"],
           borderWidth: 0,
         },
       ],
@@ -69,13 +87,13 @@ const calculateEMI = () => {
 };
 
 const updateData = (emi) => {
-  loanEMIValue.innerHTML = Math.round(emi);
+  loanEMIValue.innerHTML = formatValue(Math.round(emi));
 
   let totalAmount = Math.round(loanTenure * emi);
-  totalAmountValue.innerHTML = totalAmount;
+  totalAmountValue.innerHTML = formatValue(totalAmount);
 
   let totalInterestAmount = Math.round(totalAmount - loanAmount);
-  totalInterestValue.innerHTML = totalInterestAmount;
+  totalInterestValue.innerHTML = formatValue(totalInterestAmount);
 
   if (myChart) {
     updateChart(totalInterestAmount);

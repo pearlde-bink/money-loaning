@@ -5,11 +5,11 @@ const path = require("path");
 const port = 3000;
 const bcrypt = require("bcrypt");
 const { clients } = require("./config/db");
-// const { addresses } = require("./config/db");
-// const { workplaces } = require("./config/db");
-// const { relatives } = require("./config/db");
-// const { payments } = require("./config/db");
-// const { colleagues } = require("./config/db");
+const { addresses } = require("./config/db");
+const { workplaces } = require("./config/db");
+const { relatives } = require("./config/db");
+const { payments } = require("./config/db");
+const { colleagues } = require("./config/db");
 
 const route = require("./routes");
 
@@ -29,11 +29,6 @@ app.use(
   })
 );
 
-// convert data to json format
-app.use(express.json());
-
-app.use(express.static(path.join(__dirname, "public")));
-
 //set the MIME type for JS files to 'application/javascript'
 app.use((req, res, next) => {
   if (req.url.endsWith(".js")) {
@@ -41,6 +36,11 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+// convert data to json format
+app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "public")));
 
 // template engine
 app.engine(
@@ -114,18 +114,62 @@ app.post("/register", async (req, res) => {
     // hash password using bcrypt
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(dataUser.password, saltRounds);
-
     dataUser.password = hashedPassword; //replace user pw with hashed one
 
-    const userdata = await clients.insertMany(dataUser); //add if user not in db
-    // const addressdata = await addresses.insertMany(dataAddress);
-    // const workplacedata = await workplaces.insertMany(dataWorkplace);
-    // const relativesdata = await relatives.insertMany(dataRelatives);
-    // const paymentdata = await payments.insertMany(dataPayment);
-    // const colleaguedata = await colleagues.insertMany(dataColleague);
+    const newUser = await clients.create(dataUser);
+    if (!newUser) {
+      return res.status(500).send("Failed to create user");
+    }
+    const userId = newUser._id;
 
+    const dataAddress = {
+      client_Id: userId,
+      province: req.body.province,
+      district: req.body.district,
+      village: req.body.village,
+      street: req.body.road,
+      homeAddress: req.body.home,
+      stayPeriod: req.body.addressTime,
+    };
+    const dataWorkplace = {
+      client_Id: userId,
+      workField: req.body.field,
+      company: req.body.company,
+      role: req.body.role,
+      exprerience: req.body.exp,
+      salary: req.body.income,
+    };
+    const dataRelatives = {
+      client_Id: userId,
+      name: req.body.relativesName,
+      relationship: req.body.relativesType,
+      phone: req.body.relativesPhone,
+    };
+    const dataColleague = {
+      client_Id: userId,
+      name: req.body.colleagueName,
+      phone: req.body.colleaguePhone,
+    };
+    const dataPayment = {
+      client_Id: userId,
+      paymentMethod: {
+        bank: {
+          bankName: req.body.bankName,
+          stk: req.body.bankNum,
+        },
+        momo: {
+          momoNumber: req.body.momoNum,
+        },
+      },
+    };
+
+    const addressdata = await addresses.create(dataAddress);
+    const workplacedata = await workplaces.create(dataWorkplace);
+    const relativesdata = await relatives.create(dataRelatives);
+    const paymentdata = await payments.create(dataPayment);
+    const colleaguedata = await colleagues.create(dataColleague);
     res.redirect(302, "/");
-    console.log("user: ", userdata);
+    // console.log("user: ", newUser);
     // console.log("address :", addressdata);
     // console.log("workplace: ", workplacedata);
     // console.log("relatives: ", relativesdata);
@@ -137,7 +181,7 @@ app.post("/register", async (req, res) => {
 //login
 app.post("/login", async (req, res) => {
   try {
-    const check = await collectionUser.findOne({ sdt: req.body.sdtNumber });
+    const check = await clients.findOne({ sdt: req.body.sdtNumber });
     if (!check) {
       res.send("User not found.");
     } else {

@@ -1,17 +1,18 @@
-const Client = require("../models/Client");
+const { Client } = require("../models/Client");
 const { multipleMongooseToObject } = require("../../util/mongoose");
 class SiteController {
   // GET /home
-  home(req, res, next) {
+  async home(req, res, next) {
     // res.render('home');
-    Client.findOne({})
-      .then((workplace) =>
-        res.render("home", {
-          style: "app.css",
-          workplace: multipleMongooseToObject(workplace),
-        })
-      )
-      .catch(next);
+    try {
+      const client = await Client.findOne({});
+      res.render("home", {
+        style: "app.css",
+        client: client ? multipleMongooseToObject(client) : null,
+      });
+    } catch (err) {
+      next(err);
+    }
   }
   // home(req, res, next) {
   //   res.render("home", {

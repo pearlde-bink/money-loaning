@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const Address = new mongoose.Schema({
+const Address = new Schema({
   client_Id: {
     type: Schema.Types.ObjectId,
     ref: "clients",

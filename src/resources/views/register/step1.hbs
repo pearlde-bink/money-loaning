@@ -153,18 +153,19 @@
             <div class="page">
                 <div class="address">
                     <h5>Địa chỉ cư trú</h5>
+
                     <div class="address__location mt-4 d-flex justify-content-between align-items-center">
                         <div class="address__location--province">
                             <label for="province">Tỉnh*</label>
-                            <select name="province" class="form-select form-select-sm provinceInput" id="province"
-                                aria-label=".form-select-sm">
+                            <select class="form-select form-select-sm provinceInput" id="province"
+                                aria-label=".form-select-sm" name="province">
                                 <option value="" selected>Chọn tỉnh thành</option>
                             </select>
                         </div>
 
                         <div class="address__location--district">
                             <label for="district">Quận huyện*</label>
-                            <select name="district" class="form-select form-select-sm districtInput" id="district"
+                            <select class="form-select form-select-sm districtInput" id="district" name="district"
                                 aria-label=".form-select-sm">
                                 <option value="" selected>Chọn quận huyện</option>
                             </select>
@@ -172,7 +173,7 @@
 
                         <div class="address__location--village">
                             <label for="village">Phường xã*</label>
-                            <select name="village" class="form-select form-select-sm villageInput" id="village"
+                            <select class="form-select form-select-sm villageInput" id="village" name="village"
                                 aria-label=".form-select-sm">
                                 <option value="" selected>Chọn phường xã</option>
                             </select>
@@ -181,7 +182,7 @@
 
                     <div class="address__road mt-4">
                         <label for="road">Đường*</label>
-                        <input name="road" required type="text" id="road" name="road" class="roadInput">
+                        <input required type="text" id="road" name="road" class="roadInput">
                     </div>
 
                     <div class="address__homeTime mt-4 d-flex justify-content-between align-items-center">
@@ -217,22 +218,22 @@
                     <div class="job__fieldCom mt-4 d-flex justify-content-between align-items-center">
                         <div class="job__field">
                             <label for="field">Lĩnh vực hoạt động*</label>
-                            <select name="field" class="form-select form-select-sm fieldInput" id="field"
-                                aria-label=".form-select-sm">
-                                <option value="" selected>Sinh viên</option>
-                                <option value="" selected>Thất nghiệp</option>
-                                <option value="" selected>Về hưu</option>
-                                <option value="" selected>Khác</option>
-                                <option value="" selected>Y tế và Dược phẩm</option>
-                                <option value="" selected>Công nghệ thông tin và Công nghệ</option>
-                                <option value="" selected>Tài chính và Kế toán</option>
-                                <option value="" selected>Giáo dục</option>
-                                <option value="" selected>Dịch vụ Khách hàng</option>
-                                <option value="" selected>Bán lẻ và Thương mại điện tử</option>
-                                <option value="" selected>Khoa học và Nghiên cứu</option>
-                                <option value="" selected>Nghệ thuật và Thiết kế</option>
-                                <option value="" selected>Xây dựng và Kiến trúc</option>
-                                <option value="" selected>Du lịch và Dịch vụ</option>
+                            <select class="form-select form-select-sm fieldInput" id="field"
+                                aria-label=".form-select-sm" name="field">
+                                <option value="sinhvien" selected>Sinh viên</option>
+                                <option value="thatnghiep" selected>Thất nghiệp</option>
+                                <option value="vehuu" selected>Về hưu</option>
+                                <option value="khac" selected>Khác</option>
+                                <option value="yte" selected>Y tế và Dược phẩm</option>
+                                <option value="cntt" selected>Công nghệ thông tin và Công nghệ</option>
+                                <option value="tckt" selected>Tài chính và Kế toán</option>
+                                <option value="giaoduc" selected>Giáo dục</option>
+                                <option value="dichvuKH" selected>Dịch vụ Khách hàng</option>
+                                <option value="TMDT" selected>Bán lẻ và Thương mại điện tử</option>
+                                <option value="KH&NC" selected>Khoa học và Nghiên cứu</option>
+                                <option value="NT&TK" selected>Nghệ thuật và Thiết kế</option>
+                                <option value="XD&KT" selected>Xây dựng và Kiến trúc</option>
+                                <option value="DL&DV" selected>Du lịch và Dịch vụ</option>
                             </select>
                         </div>
 
@@ -298,13 +299,13 @@
                     <div class="relatives__typeNum mt-4 d-flex justify-content-between align-items-center">
                         <div class="relatives__type">
                             <label for="relativesType">Kiểu quan hệ họ hàng*</label>
-                            <select name="relativesType" class="form-select form-select-sm relativesTypeInput"
-                                id="relativesType" aria-label=".form-select-sm">
-                                <option value="" selected>Khác</option>
-                                <option value="" selected>Mẹ / bố</option>
-                                <option value="" selected>Anh / em trai</option>
-                                <option value="" selected>Chị / em gái</option>
-                                <option value="" selected>Vợ / chồng</option>
+                            <select class="form-select form-select-sm relativesTypeInput" id="relativesType"
+                                aria-label=".form-select-sm" name="relativesType">
+                                <option value="khac" selected>Khác</option>
+                                <option value="bome" selected>Mẹ / bố</option>
+                                <option value="anhem" selected>Anh / em trai</option>
+                                <option value="chiem" selected>Chị / em gái</option>
+                                <option value="vochong" selected>Vợ / chồng</option>
                             </select>
                         </div>
 
@@ -365,8 +366,8 @@
                     <div class="bank">
                         <div class="bankName mt-3">
                             <label for="bankName">Ngân hàng*</label>
-                            <select name="bankName" class="form-select form-select-sm bankNameItemInput"
-                                id="bankNameItemInput" aria-label=".form-select-sm">
+                            <select class="form-select form-select-sm bankNameItemInput" id="bankNameItemInput"
+                                aria-label=".form-select-sm" name="bankName">
                                 <option value="" selected>Chọn ngân hàng</option>
                             </select>
                         </div>
@@ -378,15 +379,15 @@
 
                     <div class="purpose mt-5">
                         <label for="purpose">Mục đích khoản vay*</label>
-                        <select name="purpose" class="form-select form-select-sm purposeItemInput" id="purposeItem"
-                            aria-label=".form-select-sm">
-                            <option value="" selected>Khác</option>
-                            <option value="" selected>Kinh doanh</option>
-                            <option value="" selected>Sửa xe</option>
-                            <option value="" selected>Chăm sóc sức khỏe</option>
-                            <option value="" selected>Du lịch</option>
-                            <option value="" selected>Cần gấp</option>
-                            <option value="" selected>Sự kiện quan trọng</option>
+                        <select class="form-select form-select-sm purposeItemInput" id="purposeItem"
+                            aria-label=".form-select-sm" name="purpose">
+                            <option value="khac" selected>Khác</option>
+                            <option value="kinhdoand" selected>Kinh doanh</option>
+                            <option value="suaxe" selected>Sửa xe</option>
+                            <option value="chamsocsuckhoe" selected>Chăm sóc sức khỏe</option>
+                            <option value="dulich" selected>Du lịch</option>
+                            <option value="cangap" selected>Cần gấp</option>
+                            <option value="sukienquantrong" selected>Sự kiện quan trọng</option>
                         </select>
                     </div>
 
@@ -444,14 +445,17 @@
                     </div>
                 </div>
 
+                <p class="text-danger"><span style="font-size:larger">Lưu ý: </span> kiểm tra lại các thông tin ở trên
+                    trước khi gửi form.</p>
+
                 <!-- button -->
                 <div class="button6 d-flex flex-row justify-content-center">
                     <a href="">
                         <button class="fw-bold text-light prev-5 prev">Quay lại</button>
                     </a>
-                    {{!-- <a href=""> --}}
-                        <button class="fw-bold text-light submit" id="submitBtn" type="submit">Tiếp theo</button>
-                        {{!-- </a> --}}
+                    <a href="">
+                        <button class="fw-bold text-light submit" type="submit">Hoàn thành</button>
+                    </a>
                 </div>
             </div>
         </form>
