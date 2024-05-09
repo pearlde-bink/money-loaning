@@ -195,7 +195,10 @@ promise5
 
 function renderBank(data) {
   for (const x of data.data) {
-    bankName.options[bankName.options.length] = new Option(x.shortName, x.id);
+    bankName.options[bankName.options.length] = new Option(
+      x.shortName,
+      x.shortName
+    );
   }
 }
 
