@@ -8,9 +8,9 @@ const Relatives = new Schema({
     ref: "clients",
     require: true,
   },
-  name: { type: String, require: true },
-  relationship: { type: String, require: true },
-  phone: { type: String, require: true },
+  relativesName: { type: String, require: true },
+  relativesType: { type: String, require: true },
+  RelativesPhone: { type: String, require: true },
 });
 
-module.exports.Relatives = mongoose.model("Relatives", Relatives);
+module.exports = mongoose.model("Relatives", Relatives);

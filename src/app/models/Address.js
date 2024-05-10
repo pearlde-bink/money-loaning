@@ -16,4 +16,4 @@ const Address = new Schema({
   stayPeriod: { type: String, require: true },
 });
 
-module.exports.Address = mongoose.model("Address", Address);
+module.exports = mongoose.model("Address", Address);

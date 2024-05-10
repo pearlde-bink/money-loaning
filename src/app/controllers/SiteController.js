@@ -1,4 +1,4 @@
-const { Client } = require("../models/Client");
+const Client = require("../models/Client");
 const { multipleMongooseToObject } = require("../../util/mongoose");
 class SiteController {
   // GET /home
@@ -14,11 +14,6 @@ class SiteController {
       next(err);
     }
   }
-  // home(req, res, next) {
-  //   res.render("home", {
-  //     style: "app.css",
-  //   });
-  // }
 
   // GET /news/:slug
   // home(req, res) {

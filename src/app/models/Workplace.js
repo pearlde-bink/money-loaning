@@ -11,8 +11,8 @@ const Workplace = new Schema({
   workField: { type: String, require: true },
   company: { type: String, require: true },
   role: { type: String, require: true },
-  exprerience: { type: String, require: true },
+  exp: { type: String, require: true },
   salary: { type: String, require: true },
 });
 
-module.exports.Workplace = mongoose.model("Workplace", Workplace);
+module.exports = mongoose.model("Workplace", Workplace);

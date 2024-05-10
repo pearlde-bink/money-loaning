@@ -8,15 +8,15 @@ const Payment = new Schema({
     ref: "clients",
     require: true,
   },
-  paymentMethod: {
-    bank: {
-      bankName: { type: String, require: true },
-      stk: { type: String, require: true },
-    },
-    momo: {
-      momoNumber: { type: String, require: true },
-    },
-  },
+  // paymentMethod: {
+  //   bank: {
+  bankName: { type: String, require: true },
+  bankNum: { type: String, require: true },
+  // },
+  // momo: {
+  momoNumber: { type: String, require: false },
+  //   },
+  // },
 });
 
-module.exports.Payment = mongoose.model("Payment", Payment);
+module.exports = mongoose.model("Payment", Payment);

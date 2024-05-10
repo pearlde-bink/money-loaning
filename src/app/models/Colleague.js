@@ -8,8 +8,8 @@ const Colleague = new Schema({
     ref: "clients",
     require: true,
   },
-  name: { type: String, require: true },
-  phone: { type: String, require: true },
+  colleagueName: { type: String, require: true },
+  colleaguePhone: { type: String, require: true },
 });
 
-module.exports.Colleague = mongoose.model("Colleague", Colleague);
+module.exports = mongoose.model("Colleague", Colleague);

@@ -61,7 +61,8 @@
 
     <!-- personal infor -->
     <div class="form-outer">
-        <form action="/register" method="POST" class="d-flex justify-content-center align-items-center flex-column">
+        <form action="/user/register" method="POST"
+            class="d-flex justify-content-center align-items-center flex-column">
             {{!-- step1 --}}
             <div class="page slide-page">
                 <div class="info">
@@ -73,8 +74,8 @@
 
                     <div class="info__cccdBirth d-flex justify-content-between align-items-center mt-4">
                         <div class="info__cccd">
-                            <label for="cccdNumber">Số CMND/CCCD*</label>
-                            <input required type="text" id="cccd" name="cccdNumber" class="cccdInput" />
+                            <label for="cccd">Số CMND/CCCD*</label>
+                            <input required type="text" id="cccd" name="cccd" class="cccdInput" />
                         </div>
                         <div class="info__birth">
                             <label for="dob">Ngày sinh*</label>
@@ -85,8 +86,8 @@
                     <p class="text-muted" style="margin: 30px 0px 0px">(Dùng để đăng nhập)</p>
                     <div class="info__sdtPassword d-flex justify-content-between align-items-center mt-2">
                         <div class="info__sdt">
-                            <label for="sdtNumber">Số điện thoại*</label>
-                            <input required type="text" id="sdt" name="sdtNumber" class="sdtInput" />
+                            <label for="sdt">Số điện thoại*</label>
+                            <input required type="text" id="sdt" name="sdt" class="sdtInput" />
                         </div>
                         <div class="info__password">
                             <label for="password">Mật khẩu*</label>
@@ -95,8 +96,8 @@
                     </div>
 
                     <div class="form-group info__retypePassword mt-4">
-                        <label for="retypepassword">Nhập lại mật khẩu*</label>
-                        <input required type="password" id="retypepassword" name="retypepassword"
+                        <label for="retypePassword">Nhập lại mật khẩu*</label>
+                        <input required type="password" id="retypepassword" name="retypePassword"
                             class="retypePasswordInput">
                         <span class="form-message"></span>
                     </div>
@@ -110,22 +111,22 @@
 
                     <div class="info__sexMarriage d-flex flex-row justify-content-between mt-4">
                         <div class="info__sex">
-                            <label for="sex">Giới tính*</label>
+                            <label for="gender">Giới tính*</label>
                             <div class="d-flex flex-row justify-content-between">
                                 <div class="sex1">
-                                    <input type="radio" id="sex__1" name="sex">
+                                    <input type="radio" id="sex__1" name="gender">
                                     <label class="text-dark" for="sex__1">Nam</label>
                                 </div>
                                 <div class="sex2">
-                                    <input type="radio" id="sex__2" name="sex">
+                                    <input type="radio" id="sex__2" name="gender">
                                     <label class="text-dark" for="sex__2">Nữ</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="info__marriage">
-                            <label for="marriage">Tình hình hôn nhân</label>
-                            <select id="marriage" name="marriage" class="marriageInput">
+                            <label for="marriageStatus">Tình hình hôn nhân</label>
+                            <select id="marriage" name="marriageStatus" class="marriageInput">
                                 <option class="marriageOption" value="docthan">Độc thân</option>
                                 <option class="marriageOption" value="cuoi">Đã cưới</option>
                                 <option class="marriageOption" value="lyhon">Ly hôn</option>
@@ -180,20 +181,20 @@
                         </div>
                     </div>
 
-                    <div class="address__road mt-4">
-                        <label for="road">Đường*</label>
-                        <input required type="text" id="road" name="road" class="roadInput">
+                    <div class="address__street mt-4">
+                        <label for="street">Đường*</label>
+                        <input required type="text" id="street" name="street" class="streetInput">
                     </div>
 
                     <div class="address__homeTime mt-4 d-flex justify-content-between align-items-center">
                         <div class="address__home">
-                            <label for="home">Số nhà*</label>
-                            <input required type="text" id="home" name="home" class="homeInput">
+                            <label for="homeAddress">Số nhà*</label>
+                            <input required type="text" id="homeAddress" name="homeAddress" class="homeInput">
                         </div>
 
                         <div class="address__time">
-                            <label for="addressTime">Thời gian cư trú*</label>
-                            <select id="time" name="addressTime" class="timeInput">
+                            <label for="stayPeriod">Thời gian cư trú*</label>
+                            <select id="time" name="stayPeriod" class="timeInput">
                                 <option class="timeOption" value="docthan">Dưới 1 năm</option>
                                 <option class="timeOption" value="1nam">1 năm</option>
                                 <option class="timeOption" value="2nam">2 năm</option>
@@ -217,9 +218,9 @@
                     <h5>Thông tin công việc</h5>
                     <div class="job__fieldCom mt-4 d-flex justify-content-between align-items-center">
                         <div class="job__field">
-                            <label for="field">Lĩnh vực hoạt động*</label>
+                            <label for="workField">Lĩnh vực hoạt động*</label>
                             <select class="form-select form-select-sm fieldInput" id="field"
-                                aria-label=".form-select-sm" name="field">
+                                aria-label=".form-select-sm" name="workField">
                                 <option value="sinhvien" selected>Sinh viên</option>
                                 <option value="thatnghiep" selected>Thất nghiệp</option>
                                 <option value="vehuu" selected>Về hưu</option>
@@ -263,8 +264,8 @@
                     </div>
 
                     <div class="job__income mt-4">
-                        <label for="income">Thu nhập hàng tháng*</label>
-                        <select id="income" name="income" class="incomeInput">
+                        <label for="salary">Thu nhập hàng tháng*</label>
+                        <select id="income" name="salary" class="incomeInput">
                             <option class="incomeOption" value="noincome">Không có thu nhập</option>
                             <option class="incomeOption" value="3trieu">1.5 - 3 triệu đồng</option>
                             <option class="incomeOption" value="5trieu">3 - 5 triệu đồng</option>
@@ -310,9 +311,9 @@
                         </div>
 
                         <div class="relatives__phone">
-                            <label for="relativePhone">Số điện thoại*</label>
-                            <input required type="text" id="relativePhone" name="relativePhone"
-                                class="relativePhoneInput">
+                            <label for="relativesPhone">Số điện thoại*</label>
+                            <input required type="text" id="relativesPhone" name="relativesPhone"
+                                class="relativesPhoneInput">
                         </div>
                     </div>
                 </div>
@@ -420,27 +421,27 @@
 
                     <div class="ccAuthen__form my-4">
                         <!-- cccd -->
-                        <label for="cccd">Ảnh CMND</label>
+                        <label for="cccdImg">Ảnh CMND</label>
                         <div id="drop-zone">
                             <h6>Bạn hãy kéo hoặc tải file lên</h6>
-                            <input type="file" id="file-uploader" accept=".jpg, .png" multiple>
-                            <div id="content"></div>
+                            <input type="file" id="file-uploader" accept=".jpg, .png" multiple name="cccdImg">
+                            {{!-- <div id="content"></div> --}}
                         </div>
 
                         <!-- selfie cccd -->
-                        <label for="cccd">Chụp ảnh selfie cùng CMND</label>
+                        <label for="cccdSelfie">Chụp ảnh selfie cùng CMND</label>
                         <div id="drop-zone2">
                             <h6>Bạn hãy kéo hoặc tải file lên</h6>
-                            <input type="file" id="file-uploader2" accept=".jpg, .png" multiple>
-                            <div id="content2"></div>
+                            <input type="file" id="file-uploader2" accept=".jpg, .png" multiple name="cccdSelfie">
+                            {{!-- <div id="content2"></div> --}}
                         </div>
 
                         <!-- cccd back -->
-                        <label for="cccd">Ảnh CMND (mặt sau) </label>
+                        <label for="cccdBack">Ảnh CMND (mặt sau) </label>
                         <div id="drop-zone3">
                             <h6>Bạn hãy kéo hoặc tải file lên</h6>
-                            <input type="file" id="file-uploader3" accept=".jpg, .png" multiple>
-                            <div id="content3"></div>
+                            <input type="file" name="cccdBack" id="file-uploader3" accept=".jpg, .png" multiple>
+                            {{!-- <div id="content3"></div> --}}
                         </div>
                     </div>
                 </div>

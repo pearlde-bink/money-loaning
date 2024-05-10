@@ -13,20 +13,26 @@ const Client = new Schema(
     sdt: { type: String, require: true },
     email: { type: String, require: true },
     dob: { type: Date, require: true },
+    password: { type: String, require: true },
+    retypePassword: { type: String, require: true },
+    isAdmin: { type: Boolean, require: true, default: false },
     gender: { type: String, require: true },
     marriageStatus: { type: String, require: true },
-    cccd: {
-      cccdNum: { type: String, require: true },
-      cccdFore: { type: String, require: true },
-      cccdSelfie: { type: String, require: true },
-      cccdBack: { type: String, require: true },
-    },
+    // cccd: {
+    //   cccdNum: { type: String, require: true },
+    //   cccdFore: { type: String, require: true },
+    //   cccdSelfie: { type: String, require: true },
+    //   cccdBack: { type: String, require: true },
+    // },
+    cccd: { type: String, require: true },
     avatarLink: {
       type: String,
       default:
         "https://as2.ftcdn.net/v2/jpg/03/31/69/91/1000_F_331699188_lRpvqxO5QRtwOM05gR50ImaaJgBx68vi.jpg",
       unique: false,
     },
+    // accessToken: { type: String, required: true },
+    // refreshToken: { type: String, required: true },
     slug: { type: String, default: "hi", unique: false },
   },
   {
@@ -83,4 +89,5 @@ const Client = new Schema(
 //   return await collection.updateOne({ sdt: sdt }, { $set: user });
 // };
 
-module.exports.Client = mongoose.model("Client", Client);
+// module.exports.Client = mongoose.model("Client", Client);
+module.exports = mongoose.model("Client", Client);

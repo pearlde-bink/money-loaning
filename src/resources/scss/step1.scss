@@ -345,7 +345,7 @@ select {
 .address__location--province,
 .address__location--district,
 .address__location--village,
-.address__road,
+.address__street,
 .address__home,
 .address__time {
   position: relative;
@@ -371,7 +371,7 @@ select {
 .address__location--province .provinceInput,
 .address__location--district .districtInput,
 .address__location--village .villageInput,
-.address__road .roadInput,
+.address__street .streetInput,
 .address__home .homeInput,
 .address__time .timeInput {
   position: relative;
@@ -597,7 +597,7 @@ select {
 
 .relatives__name .relativesNameInput,
 .relatives__type .relativesTypeInput,
-.relatives__phone .relativePhoneInput,
+.relatives__phone .relativesPhoneInput,
 .colleague__name .colleagueNameInput,
 .colleague__phone .colleaguePhoneInput {
   position: relative;
