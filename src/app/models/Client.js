@@ -8,7 +8,7 @@ const ObjectId = Schema.ObjectId;
 
 const Client = new Schema(
   {
-    client_id: { type: Schema.Types.ObjectId, auto: true },
+    // client_id: { type: Schema.Types.ObjectId, auto: true },
     name: { type: String, require: true },
     sdt: { type: String, require: true },
     email: { type: String, require: true },
@@ -31,6 +31,7 @@ const Client = new Schema(
         "https://as2.ftcdn.net/v2/jpg/03/31/69/91/1000_F_331699188_lRpvqxO5QRtwOM05gR50ImaaJgBx68vi.jpg",
       unique: false,
     },
+    isBlocked: { type: Boolean, require: true, default: false },
     // accessToken: { type: String, required: true },
     // refreshToken: { type: String, required: true },
     slug: { type: String, default: "hi", unique: false },

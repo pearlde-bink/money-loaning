@@ -1,17 +1,20 @@
 const jwt = require("jsonwebtoken");
-const generalAccessToken = (payload) => {
+const dotenv = require("dotenv");
+
+dotenv.config();
+const generateAccessToken = (payload) => {
   console.log("payload: ", payload);
-  const access_token = jwt.sign({ payload }, "access_token", {
+  const access_token = jwt.sign({ payload }, process.env.ACCESS_TOKEN, {
     expiresIn: "1h",
   });
   return access_token;
 };
 
-const generalRefreshToken = (payload) => {
+const generateRefreshToken = (payload) => {
   console.log("payload: ", payload);
-  const refresh_token = jwt.sign({ payload }, "refresh_token", {
+  const refresh_token = jwt.sign({ payload }, process.env.REFRESH_TOKEN, {
     expiresIn: "365d",
   });
   return refresh_token;
 };
-module.exports = { generalAccessToken, generalRefreshToken };
+module.exports = { generateAccessToken, generateRefreshToken };

@@ -23,6 +23,7 @@
       .loaning-intro_download {
         .loaning-intro_download-app {
           flex-direction: row;
+          flex-wrap: wrap !important;
           margin-left: -10px;
           margin-top: -20px;
           button {
@@ -301,6 +302,7 @@
         margin-top: -5px;
       }
       .loaning-intro_download {
+        flex-wrap: wrap !important;
         margin-top: -30px;
         .loaning-intro_download-app {
           margin-top: -40px;
@@ -374,6 +376,9 @@
 }
 
 @media only screen and (max-width: 479px) {
+  #loaning .loaning .loaning-intro h1 {
+    font-size: 30px;
+  }
   .loaning {
     height: auto !important;
     display: flex !important;
@@ -388,6 +393,15 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      .loaning-intro_download {
+        display: none;
+      }
+    }
+    .loaning-form {
+      h3,
+      h4 {
+        font-size: 18px;
+      }
     }
   }
   #docs {
@@ -413,6 +427,9 @@
   }
   #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img2,
   #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img1 {
+    display: none;
+  }
+  #mortage .mortage__img .mortage__img-left .loaning-intro_download {
     display: none;
   }
 
@@ -469,6 +486,9 @@
   }
   #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img2,
   #mortage .mortage__img .mortage__img-phone .mortage__img-phone--img1 {
+    display: none;
+  }
+  #mortage .mortage__img .mortage__img-left .loaning-intro_download {
     display: none;
   }
 

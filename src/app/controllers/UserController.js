@@ -1,4 +1,14 @@
 const UserService = require("../../middleware/UserService");
+const Client = require("../models/Client");
+const {
+  multipleMongooseToObject,
+  singleMongooseToObject,
+} = require("../../util/mongoose");
+// const { generateAccessToken, generateRefreshToken } = require("./JwtService");
+// const asyncHandler = require("express-async-handler");
+// const jwt = require("jsonwebtoken");
+// const crypto = require("crypto");
+
 const createUser = async (req, res) => {
   try {
     // register;
@@ -130,13 +140,121 @@ const logIn = async (req, res) => {
     const response = await UserService.logIn(req.body);
     if (response.status === "OK") {
       res.redirect(302, "/");
-      //   return res.status(200).json(response);
+      // return res.status(200).json(response);
     } else {
       return res.status(400).json(response);
     }
   } catch (e) {
     console.log(e);
     return res.status(500).json({ messege: "Internal server error" });
+  }
+};
+
+const updateUser = async (req, res) => {
+  try {
+    const clientId = req.params.id;
+    const data = req.body;
+    if (!clientId) {
+      return res.status(200).json({
+        status: "error",
+        messege: "clientId is required",
+      });
+    }
+    const response = await UserService.updateUser(clientId, data);
+    return res.status(200).json(response);
+  } catch (e) {
+    return res.status(404).json({ messege: e });
+  }
+};
+
+const deleteUser = async (req, res) => {
+  try {
+    const clientId = req.params.id;
+    if (!clientId) {
+      return res.status(200).json({
+        status: "error",
+        messege: "clientId is required",
+      });
+    }
+    const response = await UserService.deleteUser(clientId);
+    return res.status(200).json(response);
+  } catch (e) {
+    return res.status(404).json({ messege: e });
+  }
+};
+
+//NO NEED
+const deleteManyUser = async (req, res) => {
+  try {
+    const clientIds = req.body.ids;
+    if (!clientIds) {
+      return res.status(200).json({
+        status: "error",
+        messege: "clientIds is required",
+      });
+    }
+    const response = await UserService.deleteManyUser(clientIds);
+    return res.status(200).json(response);
+  } catch (e) {
+    return res.status(404).json({ messege: e });
+  }
+};
+
+const getDetailsUser = async (req, res) => {
+  try {
+    const clientId = req.params.id;
+    if (!clientId) {
+      return res.status(200).json({
+        status: "ERR",
+        message: "User not found",
+      });
+    }
+    const response = await UserService.getDetailsUser(clientId);
+    return res.status(200).json(response);
+  } catch (e) {
+    return res.status(404).json({
+      message: e,
+    });
+  }
+};
+
+const getAllUser = async (req, res) => {
+  try {
+    const response = await UserService.getAllUser();
+    return res.status(200).json(response);
+  } catch (e) {
+    return res.status(404).json({
+      message: e,
+    });
+  }
+};
+
+const refreshToken = async (req, res) => {
+  try {
+    let token = req.headers.token.split(" ")[1];
+    if (!token) {
+      return res.status(200).json({
+        status: "ERR",
+        message: "The token is required",
+      });
+    }
+    const response = await JwtService.refreshTokenJwtService(token);
+    return res.status(200).json(response);
+  } catch (e) {
+    return res.status(404).json({
+      message: e,
+    });
+  }
+};
+
+const logoutUser = async (req, res) => {
+  try {
+    res.clearCookie("refresh_token");
+    res.redirect(302, "/");
+  } catch (e) {
+    return res.status(404).json({
+      message: e,
+    });
   }
 };
 
@@ -153,9 +271,97 @@ const indexRegister = async (req, res) => {
 };
 
 const getUser = async (req, res) => {
-  res.render("userInfo", {
-    style: "user.css",
-  });
+  console.log("hi");
+  try {
+    //
+    const client = await Client.findById(req.params._id);
+    res.render("userInfo", {
+      style: "user.css",
+      client: singleMongooseToObject(client),
+    });
+    console.log(client);
+  } catch (error) {
+    console.error("Error retrieving client:", error);
+    res.status(500).send("Internal Server Error");
+  }
 };
 
-module.exports = { createUser, getUser, indexRegister, indexLogIn, logIn };
+const updateBlock = async (req, res) => {
+  try {
+    const updatedClient = await Client.updateOne(
+      { _id: req.params.id },
+      { $set: { isBlocked: true } }
+    );
+
+    console.log("Update result:", updatedClient);
+    if (updatedClient.nModified > 0) {
+      return res
+        .status(200)
+        .json({ success: true, message: "User blocked successfully" });
+    } else {
+      return res
+        .status(400)
+        .json({ success: false, message: "User block failed" });
+    }
+  } catch (e) {
+    return res.status(500).json({ messege: e.message });
+  }
+};
+const unBlock = async (req, res) => {
+  try {
+    const updatedClient = await Client.updateOne(
+      { _id: req.params.id },
+      { $set: { isBlocked: false } }
+    );
+
+    console.log("Update result:", updatedClient);
+    if (updatedClient.nModified > 0) {
+      return res
+        .status(200)
+        .json({ success: true, message: "Unblocked user successfully" });
+    } else {
+      return res
+        .status(400)
+        .json({ success: false, message: "Unblock user failed" });
+    }
+  } catch (e) {
+    return res.status(500).json({ messege: e.message });
+  }
+};
+
+const getBlocked = async (req, res) => {
+  try {
+    const blocked = await Client.find({ isBlocked: true });
+    return res.status(200).json(blocked);
+  } catch (e) {
+    return res.status(500).json({ messege: e.message });
+  }
+};
+
+const getUnblocked = async (req, res) => {
+  try {
+    const unblocked = Client.find({ isBlock: false });
+    return res.status(200).json(unblocked);
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
+
+module.exports = {
+  createUser,
+  getUser,
+  indexRegister,
+  indexLogIn,
+  logIn,
+  updateUser,
+  deleteUser,
+  getAllUser,
+  getDetailsUser,
+  deleteManyUser,
+  refreshToken,
+  logoutUser,
+  updateBlock,
+  unBlock,
+  getBlocked,
+  getUnblocked,
+};
