@@ -9,114 +9,27 @@
     <!-- news -->
     <div class="container news">
         <div class="row">
+            {{#each news}}
             <div class="col-xs-11 col-sm-6 col-md-4">
                 <div class="news__post">
-                    <a href="">
-                        <img src="/img/news1.png" alt="news1">
+                    <a href="/news/{{this._id}}">
+                        <img src="{{this.img}}" alt="news6">
+                        {{!-- <p>{{this._id}}</p> --}}
                     </a>
                     <header class="news__title mt-4">
-                        <p>30.10.2023</p>
+                        <p>{{this.created}}</p>
                         <h4>
-                            <a href="">Vay tiền HD SAISON có thẩm định người thân không?</a>
-                        </h4>
-                    </header>
-                    <div class="news__preview">
-                        <p>Vay tiêu dùng đã trở thành một hình thức hỗ trợ tài chính phổ biến, được cung cấp bởi các
-                            tổ chức hay ngân hàng cho vay. HD Saison là …</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-11 col-sm-6 col-md-4">
-                <div class="news__post">
-                    <a href="">
-                        <img src="/img/news2.png" alt="news2">
-                    </a>
-                    <header class="news__title mt-4">
-                        <p>30.10.2023</p>
-                        <h4>
-                            <a href="">Biên độ lãi suất là gì? Hướng dẫn công thức tính chi tiết</a>
-                        </h4>
-                    </header>
-                    <div class="news__preview">
-                        <p>Biên độ lãi suất là yếu tố giúp các ngân hàng quyết định mức lãi suất cho từng gói cho
-                            vay. Bài viết dưới đây, Takomo sẽ cho bạn biết …</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-11 col-sm-6 col-md-4">
-                <div class="news__post">
-                    <a href="">
-                        <img src="/img/news3.png" alt="news3">
-                    </a>
-                    <header class="news__title mt-4">
-                        <p>30.10.2023</p>
-                        <h4>
-                            <a href="">Ngân hàng nào cho vay tiền theo Sim Viettel?</a>
-                        </h4>
-                    </header>
-                    <div class="news__preview">
-                        <p>Vay tiền theo sim Viettel là một trong những hình thức vay tín chấp phổ biến hiện nay khi
-                            bất kỳ ai đang có nhu cầu cần một số tiền …</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-11 col-sm-6 col-md-4">
-                <div class="news__post">
-                    <a href="">
-                        <img src="/img/news4.png" alt="news4">
-                    </a>
-                    <header class="news__title mt-4">
-                        <p>30.10.2023</p>
-                        <h4>
-                            <a href="">Vay 200 triệu không cần thế chấp có được không?</a>
-                        </h4>
-                    </header>
-                    <div class="news__preview">
-                        <p>200 triệu là một số tiền lớn, chỉ phù hợp cho những mục đích đầu tư, kinh doanh nhỏ. Vì
-                            vậy, bạn cần cân nhắc kỹ trước khi ra quyết …</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-11 col-sm-6 col-md-4">
-                <div class="news__post">
-                    <a href="">
-                        <img src="/img/news5.png" alt="news5">
-                    </a>
-                    <header class="news__title mt-4">
-                        <p>30.10.2023</p>
-                        <h4>
-                            <a href="">Ân hạn nợ gốc là gì? Cách tính lãi và lưu ý về thời gian ân hạn</a>
-                        </h4>
-                    </header>
-                    <div class="news__preview">
-                        <p>Khi phát sinh khoản vay tại ngân hàng, ân hạn nợ gốc là khoảng thời gian tính từ ngày mà
-                            khách hàng nhận được tiền giải ngân cho đến khi …</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-11 col-sm-6 col-md-4">
-                <div class="news__post">
-                    <a href="">
-                        <img src="/img/news6.png" alt="news6">
-                    </a>
-                    <header class="news__title mt-4">
-                        <p>30.10.2023</p>
-                        <h4>
-                            <a href="">Vay ngắn hạn là gì? Điều kiện, thủ tục và một số lưu ý
+                            <a href="/news/{{this.id}}">{{this.title}}
                             </a>
                         </h4>
                     </header>
                     <div class="news__preview">
-                        <p>Trước đây, đăng ký hồ sơ vay chỉ áp dụng cho những khoản vay trung hạn và dài hạn – dành
-                            cho những nhu cầu đầu tư, mua nhà hay …</p>
+                        <p>{{this.preview}}</p>
                     </div>
                 </div>
             </div>
+            {{/each}}
+
         </div>
     </div>
 
@@ -144,7 +57,7 @@
         <div class="banner2__img my-5 ">
             <div class="banner2__img-left text-light">
                 <h3 class="">Hoàn tất hồ sơ
-                    nhanh chóng tại Takomo</h3>
+                    nhanh chóng tại Binkomo</h3>
                 <p>Tải app ngay.
                     Hồ sơ duyệt nhanh hơn 50%.</p>
                 <div class="loaning-intro_download">

@@ -9,6 +9,6 @@ module.exports = {
   },
 
   singleMongooseToObject: function (mongoose) {
-    return mongoose.toObject();
+    return mongoose ? mongoose.toObject() : mongoose;
   },
 };

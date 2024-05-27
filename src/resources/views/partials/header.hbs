@@ -13,6 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <!-- Nav -->
             <div class="navbar-nav mx-lg-auto">
+                <a class="nav-item nav-link text-light mx-2" href="/" aria-current="page">Trang chủ</a>
                 <a class="nav-item nav-link text-light mx-2" href="/about" aria-current="page">Về chúng tôi</a>
                 <a class="nav-item nav-link text-light mx-2" href="/loan-step">Các bước vay</a>
                 <a class="nav-item nav-link text-light mx-2" href="/payment">Cách thanh toán</a>
@@ -27,16 +28,18 @@
                 </a>
                 <div class="nav-item dropdown">
                     <a class="navbar-user dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="/img/logo.png" alt="Logo" width="30" height="24"
-                            class="d-inline-block align-text-top">
+                        <i class="fa-solid fa-user"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/user">Trang cá nhân</a></li>
-                        <li><a class="dropdown-item" href="#">Hồ sơ vay</a></li>
+                        <li><a class="dropdown-item" href="/getUser/{{user._id}}">Trang cá nhân</a></li>
+                        <li><a class="dropdown-item" href="/loan/{{loan._id}}">Hồ sơ vay</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        {{#if user.isAdmin}}
+                        <label><a class="dropdown-item" href="/admin">Quản lí</a></label>
+                        {{/if}}
+                        <li><a class="dropdown-item" href="/user/logout">Đăng xuất</a></li>
                     </ul>
                 </div>
 

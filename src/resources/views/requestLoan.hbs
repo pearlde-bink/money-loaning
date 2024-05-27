@@ -1,0 +1,44 @@
+<h1>Đăng ký vay</h1>
+<div class="note" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+    <ul>
+        <li>Nếu người dùng vay dưới <span>10 triệu</span>, lãi suất sẽ là <span>2%/tháng (24%/năm)</span>, ngày đáo
+            hạn là sau <span>6 tháng</span> kể từ
+            khi yêu cầu vay được chấp nhận.
+        </li>
+        <li>Nếu người dùng vay dưới <span>20 triệu </span>, lãi suất sẽ là <span>2.2%/tháng (26.4%/năm)</span>, ngày
+            đáo hạn là sau 1<span>2 tháng</span> kể
+            từ khi yêu cầu vay được chấp nhận.</li>
+        <li>Nếu người dùng vay dưới <span>30 triệu </span>, lãi suất sẽ là <span>2.5%/tháng (30%/năm)</span>, ngày
+            đáo hạn là sau 1<span>8 tháng</span> kể
+            từ khi yêu cầu vay được chấp nhận.</li>
+    </ul>
+</div>
+<form action="/loan/requestLoan" method="POST">
+    <div class="form-group">
+        <label for="loanAmount">Số tiền vay </label>
+        <input type="number" id="loanAmount" name="loanAmount" min="1000000" max="30000000" step="100000" class="loan"
+            placeholder="Khách hàng không thể vay số tiền nhỏ hơn 1 triệu và lớn hơn 30 triệu" required>
+    </div>
+    <div class="form-group">
+        <label for="loanDay">Ngày yêu cầu</label>
+        <input title="Giá trị được tính theo chính sách doanh nghiệp. Khách hàng không chỉnh sửa" id="loanDay"></input>
+    </div>
+    <div class="form-group">
+        <label for="loanPayday">Ngày đáo hạn (tính từ ngày khách hàng nhận được tiền)</label>
+        <input title="Giá trị được tính theo chính sách doanh nghiệp. Khách hàng không chỉnh sửa"
+            id="loanPayday"></input>
+    </div>
+    <div class="form-group">
+        <label for="loanInterest">Tổng tiền lãi</label>
+        <input title="Giá trị được tính theo chính sách doanh nghiệp. Khách hàng không chỉnh sửa" class="loan"
+            id="loanInterest"></input>
+    </div>
+    <div class="form-group">
+        <label for="loanTotal">Tổng tiền phải trả</label>
+        <input title="Giá trị được tính theo chính sách doanh nghiệp. Khách hàng không chỉnh sửa" class="loan"
+            id="loanTotal"></input>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<script src="/js/requestLoan.js"></script>

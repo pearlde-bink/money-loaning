@@ -24,6 +24,10 @@
             </div>
         </div>
 
+        {{!-- <ul>
+            <li>{{this.email}}</li>
+        </ul>
+        <p>{{client.name}}</p> --}}
         <div class="col-12 col-md-9 user__right">
             {{!-- account --}}
             <div class="form" id="form__account">
@@ -39,7 +43,12 @@
                             class="form__main--left col-12 col-sm-8 d-flex justify-content-center align-items-center flex-column">
                             <div class="form__main--name d-flex justify-content-between flex-row">
                                 <label>Tên người dùng</label>
-                                <input type="text" value="" id="name" name="name">
+                                <input type="text" value="" id="name" name="name" value="{{client.name}}">
+                                {{!-- <ul>
+                                    {{#each client}}
+                                    <li>{{this.name}}</li>
+                                    {{/each}}
+                                </ul> --}}
                             </div>
                             <div class="form__main--email d-flex justify-content-between flex-row">
                                 <label>Email</label>
@@ -55,7 +64,7 @@
                             </div>
                             <div class="form__main--password d-flex justify-content-between flex-row">
                                 <label>Nhập mật khẩu mới</label>
-                                <input type="password" value="" id="password" name="password">
+                                <input type="password" value="" id="password2" name="password">
                             </div>
                             <div class="form__main--dob d-flex justify-content-between flex-row">
                                 <label>Ngày sinh</label>
@@ -137,15 +146,27 @@
                     <div class="row form__main d-flex justify-content-center align-items-center flex-column">
                         <div class="form__main--province d-flex justify-content-between flex-row">
                             <label>Thành phố / Tỉnh</label>
-                            <input type="text" value="" id="province" name="province">
+                            {{!-- <input type="text" value="" id="province" name="province"> --}}
+                            <select class="form-select form-select-sm provinceInput" id="province"
+                                aria-label=".form-select-sm" name="province">
+                                <option value="" selected>Chọn tỉnh thành</option>
+                            </select>
                         </div>
                         <div class="form__main--district d-flex justify-content-between flex-row">
                             <label>Quận / Huyện</label>
-                            <input type="text" value="" id="district" name="district">
+                            {{!-- <input type="text" value="" id="district" name="district"> --}}
+                            <select class="form-select form-select-sm districtInput" id="district" name="district"
+                                aria-label=".form-select-sm">
+                                <option value="" selected>Chọn quận huyện</option>
+                            </select>
                         </div>
                         <div class="form__main--village d-flex justify-content-between flex-row">
                             <label>Phường / Xã</label>
-                            <input type="text" value="" id="village" name="village">
+                            {{!-- <input type="text" value="" id="village" name="village"> --}}
+                            <select class="form-select form-select-sm villageInput" id="village" name="village"
+                                aria-label=".form-select-sm">
+                                <option value="" selected>Chọn phường xã</option>
+                            </select>
                         </div>
                         <div class="form__main--road d-flex justify-content-between flex-row">
                             <label>Đường</label>
@@ -361,6 +382,8 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+{{!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script> --}}
 <script>
     //colorize chosen info section's bg
     document.addEventListener("DOMContentLoaded", function () {
@@ -375,26 +398,70 @@
         });
     })
 
-    //bankin method toggle
-    /*const method = document.getElementById("methodItem");
+
+    //step2
+    var provinces = document.getElementById("province");
+    var districts = document.getElementById("district");
+    var villages = document.getElementById("village");
+    var Parameter2 = {
+        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+        method: "GET",
+        responseType: "application/json",
+    };
+    var promise2 = axios(Parameter2);
+    promise2.then(function (result) {
+        renderCity(result.data);
+    });
+
+    function renderCity(data) {
+        for (const x of data) {
+            provinces.options[provinces.options.length] = new Option(x.Name, x.Id);
+        }
+        provinces.onchange = function () {
+            districts.length = 1;
+            villages.length = 1;
+            if (this.value != "") {
+                const result = data.filter((n) => n.Id === this.value);
+
+                for (const k of result[0].Districts) {
+                    districts.options[district.options.length] = new Option(k.Name, k.Id);
+                }
+            }
+        };
+        districts.onchange = function () {
+            villages.length = 1;
+            const dataCity = data.filter((n) => n.Id === provinces.value);
+            if (this.value != "") {
+                const dataWards = dataCity[0].Districts.filter(
+                    (n) => n.Id === this.value
+                )[0].Wards;
+
+                for (const w of dataWards) {
+                    villages.options[villages.options.length] = new Option(w.Name, w.Id);
+                }
+            }
+        };
+    }
+    /*//bankin method toggle
+    const method = document.getElementById("methodItem");
     const momoNum = document.getElementById("momo");
-    const bank = document.getElementById("bankInfo");*/
+    const bank = document.getElementById("bankInfo");
 
     //hide momo at first
-    /* momoNum.style.display = "none";
-     bank.style.display = "block";
- 
-     method.addEventListener("change", function () {
-         if (method.value === "Vi momo") {
-             momoNum.style.display = "block";
-             bank.style.display = "none";
-             console.log("hide bank")
-         } else {
-             console.log("hide momo");
-             momoNum.style.display = "none";
-             bank.style.display = "block";
-         }
-     });*/
+    momoNum.style.display = "none";
+    bank.style.display = "block";
+
+    method.addEventListener("change", function () {
+        if (method.value === "Vi momo") {
+            momoNum.style.display = "block";
+            bank.style.display = "none";
+            console.log("hide bank")
+        } else {
+            console.log("hide momo");
+            momoNum.style.display = "none";
+            bank.style.display = "block";
+        }
+    });*/
     document.addEventListener("DOMContentLoaded", function () {
         const method = document.getElementById("methodItem");
         const momo = document.getElementById("momo");
