@@ -1,0 +1,395 @@
+<header>
+    <div class="logosec">
+        <div class="logo">Binkomo Admin</div>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+            class="icn menuicn" id="menuicn" alt="menu-icon">
+    </div>
+
+    <div class="searchbar">
+        <input type="text" placeholder="Search">
+        <div class="searchbtn">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+                class="icn srchicn" alt="search-icon">
+        </div>
+    </div>
+
+    <div class="message">
+        <div class="circle"></div>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png" class="icn" alt="">
+    </div>
+
+</header>
+<div class="admin main-container">
+    <div class="navcontainer">
+        <nav class="nav">
+            <div class="nav-upper-options">
+                <div class="nav-option option1">
+                    <img src="https://icons.veryicon.com/png/o/miscellaneous/domain-icons/my-account-login.png"
+                        alt="client" class="nav-img">
+                    <h6>Khách hàng</h6>
+                </div>
+
+                <div class="nav-option option7">
+                    <img src="https://icons.veryicon.com/png/o/miscellaneous/domain-icons/my-account-login.png"
+                        alt="client" class="nav-img">
+                    <h6>Khách hàng bị chặn</h6>
+                </div>
+
+                <div class="option2 nav-option">
+                    <img src="https://static.thenounproject.com/png/2931154-200.png" class="nav-img" alt="pending loan">
+                    <h6>Khoản vay chờ duyệt</h6>
+                </div>
+
+                <div class="nav-option option3">
+                    <img src="https://icons.veryicon.com/png/o/miscellaneous/my_fontico/confirm-22.png" class="nav-img"
+                        alt="confirmed loan">
+                    <h6>Khoản vay đã duyệt</h6>
+                </div>
+
+                <div class="nav-option option4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6536/6536309.png" class="nav-img" alt="interest">
+                    <h6>Lãi suất</h6>
+                </div>
+
+                <div class="nav-option option5">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqrn4pjyjlZi5chN4vlxIcI-MBjS87bELqLW2iXWMXbw&s"
+                        class="nav-img" alt="payment method">
+                    <h6>Phương thức thanh toán</h6>
+                </div>
+
+                <div class="nav-option option6">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqqmfzf3ag7FaOAduBWd9u1Y4ll5UeBpaa9xp7aPmNug&s"
+                        class="nav-img" alt="news">
+                    <h6>Tin tức</h6>
+                </div>
+
+                <div class="nav-option logout">
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img"
+                        alt="logout">
+                    <h6>Đăng xuất</h6>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+
+        <div class="box-container">
+
+            <div class="box box1">
+                <div class="text">
+                    <h2 class="topic-heading">3.5k</h2>
+                    <h2 class="topic">Khách hàng</h2>
+                </div>
+
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
+                    alt="Views">
+            </div>
+
+            <div class="box box2">
+                <div class="text">
+                    <h2 class="topic-heading">No 20</h2>
+                    <h2 class="topic">Ứng dụng vay tiền yêu thích</h2>
+                </div>
+
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" alt="likes">
+            </div>
+
+            <div class="box box3">
+                <div class="text">
+                    <h2 class="topic-heading">520</h2>
+                    <h2 class="topic">Phản hồi tích cực</h2>
+                </div>
+
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
+                    alt="comments">
+            </div>
+
+            <div class="box box4">
+                <div class="text">
+                    <h2 class="topic-heading">70</h2>
+                    <h2 class="topic">năm phát triển</h2>
+                </div>
+
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published">
+            </div>
+        </div>
+
+        {{!-- client --}}
+        <div class="client report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Danh sách khách hàng</h1>
+                <button class="view">Xem tất cả</button>
+            </div>
+
+            <div class="report-body">
+                <div class="items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Họ tên</th>
+                                <th>Số điện thoại</th>
+                                <th>CCCD</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each client}}
+                            {{#unless isBlocked}}
+                            <tr>
+                                <td class="t-op-nextlvl">{{this._id}}</td>
+                                <td class="t-op-nextlvl">{{this.name}}</td>
+                                <td class="t-op-nextlvl">{{this.sdt}}</td>
+                                <td class="t-op-nextlvl">{{this.cccd}}</td>
+                                <td class="t-op-nextlvl ">
+                                    <button class="label-tag block" data-id="{{this._id}}">Chặn</button>
+                                </td>
+                            </tr>
+                            {{/unless}}
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        {{!-- client --}}
+        <div class="blockedClient report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Danh sách khách hàng</h1>
+                <button class="view">Xem tất cả</button>
+            </div>
+
+            <div class="report-body">
+                <div class="items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Họ tên</th>
+                                <th>Số điện thoại</th>
+                                <th>CCCD</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each client}}
+                            {{#if isBlocked}}
+                            <tr>
+                                <td class="t-op-nextlvl">{{this._id}}</td>
+                                <td class="t-op-nextlvl">{{this.name}}</td>
+                                <td class="t-op-nextlvl">{{this.sdt}}</td>
+                                <td class="t-op-nextlvl">{{this.cccd}}</td>
+                                <td class="t-op-nextlvl ">
+                                    <button class="label-tag unblock" data-id="{{this._id}}">Bỏ chặn</button>
+                                </td>
+                            </tr>
+                            {{/if}}
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        {{!-- pendingLoan --}}
+        <div class="pendingLoan report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Danh sách khoản vay chờ duyệt</h1>
+                <button class="view">Xem tất cả</button>
+            </div>
+
+            <div class="report-body">
+                <div class="items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên khách hàng</th>
+                                <th>Khoản vay</th>
+                                <th>Ngày vay</th>
+                                <th>Hạn trả</th>
+                                <th>Tổng tiền</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each loan}}
+                            {{#if pending}}
+                            <tr>
+                                <td class="t-op-nextlvl">{{this._id}}</td>
+                                <td class="t-op-nextlvl">{{this.name}}</td>
+                                <td class="t-op-nextlvl">{{this.loanAmount}}</td>
+                                <td class="t-op-nextlvl">{{this.loanRequest}}</td>
+                                <td class="t-op-nextlvl">{{this.loanPayday}}</td>
+                                <td class="t-op-nextlvl">{{this.loanTotal}}</td>
+                                <td class="t-op-nextlvl">
+                                    <button class="label-tag accept" data-id="{{this._id}}">Xác nhận</button>
+                                </td>
+                            </tr>
+                            {{/if}}
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        {{!-- confirmedLoan --}}
+        <div class="confirmedLoan report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Danh sách khoản vay đã duyệt</h1>
+                <button class="view">Xem tất cả</button>
+            </div>
+
+            <div class="report-body">
+                <div class="items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên khách hàng</th>
+                                <th>Khoản vay</th>
+                                <th>Ngày vay</th>
+                                <th>Hạn trả</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each loan}}
+                            {{#unless pending}}
+                            <tr>
+                                <td class="t-op-nextlvl">{{this._id}}</td>
+                                <td class="t-op-nextlvl">{{this.name}}</td>
+                                <td class="t-op-nextlvl">{{this.loanAmount}}</td>
+                                <td class="t-op-nextlvl">{{this.loanRequest}}</td>
+                                <td class="t-op-nextlvl">{{this.loanPayday}}</td>
+                                <td class="t-op-nextlvl">{{this.loanTotal}}</td>
+                                <td class="t-op-nextlvl paidStatus" style="font-size: 14px;">
+                                    {{!-- <button class="label-tag detail">Chi tiết</button> --}}
+                                    {{this.isPaid}}
+                                </td>
+                            </tr>
+                            {{/unless}}
+
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        {{!-- pay method --}}
+        <div class="payMethod report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Danh sách phương thức thanh toán</h1>
+                <button class="view">Xem tất cả</button>
+            </div>
+
+            <div class="report-body">
+                <div class="items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Phương thức</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each paymethod}}
+                            <tr>
+                                <td class="t-op-nextlvl">{{this._id}}</td>
+                                <td class="t-op-nextlvl">{{this.method}}</td>
+                                <td class="t-op-nextlvl">
+                                    <button class="label-tag deletePay" data-id="{{this._id}}">Xóa</button>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        {{!-- interest --}}
+        <div class="interest report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Chính sách lãi suất</h1>
+                <button class="view">Xem tất cả</button>
+            </div>
+
+            <div class="report-body">
+                <div class="items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Hạn mức vay</th>
+                                <th>Thời hạn (tháng)</th>
+                                <th>Lãi suất / tháng</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each interest}}
+                            <tr>
+                                <td class="t-op-nextlvl">{{this._id}}</td>
+                                <td class="t-op-nextlvl"><input type="text" value="{{this.amount}}"></td>
+                                <td class="t-op-nextlvl"><input type="text" value="{{this.duration}}"></td>
+                                <td class="t-op-nextlvl"><input type="text" value="{{this.interestRate}}"></td>
+                                <td class="t-op-nextlvl">
+                                    <button class="label-tag adjust" data-id="{{this._id}}">Chỉnh sửa</button>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        {{!-- news --}}
+        <div class="news report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Danh sách tin tức</h1>
+                <button class="view">Xem tất cả</button>
+            </div>
+
+            <div class="report-body">
+                <div class="items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tiêu đề</th>
+                                <th>Xem truớc</th>
+                                <th>Thời gian</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each news}}
+                            <tr>
+                                <td class="t-op-nextlvl">{{this._id}}</td>
+                                <td class="t-op-nextlvl">{{this.title}}</td>
+                                <td class="t-op-nextlvl">{{this.preview}}</td>
+                                <td class="t-op-nextlvl">{{this.created}}</td>
+                                <td class="t-op-nextlvl">
+                                    <button class="label-tag deleteNews" data-id="{{this._id}}">Xóa</button>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/admin.js">
+</script>

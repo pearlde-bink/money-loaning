@@ -4,14 +4,9 @@ const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const path = require("path");
 const port = 3000;
-// const initAPIs = require("../src/routes/api");
 // const bcrypt = require("bcrypt");
-// const { clients } = require("./config/db");
-// const { addresses } = require("./config/db");
-// const { workplaces } = require("./config/db");
-// const { relatives } = require("./config/db");
-// const { payments } = require("./config/db");
-// const { colleagues } = require("./config/db");
+// const cookieParser = require("cookie-parser");
+// app.use(cookieParser());
 
 const db = require("./config/db");
 // connect DB
@@ -40,9 +35,6 @@ app.use((req, res, next) => {
 
 // convert data to json format
 app.use(express.json());
-
-// init API
-// initAPIs(app);
 
 app.use(express.static(path.join(__dirname, "public")));
 

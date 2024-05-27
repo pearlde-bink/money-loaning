@@ -15,6 +15,25 @@ body {
   * {
     box-sizing: border-box;
   }
+  // position: relative;
+  .note {
+    width: 400px;
+    background-color: white;
+    position: absolute;
+    left: 10px;
+    border-radius: 20px;
+    ul {
+      li {
+        margin-top: 10px;
+        font-size: 13px;
+        span {
+          color: black;
+          color: #{$text};
+          font-size: 14px;
+        }
+      }
+    }
+  }
   .top {
     // background: #14213d;
     background-color: #{$violet};

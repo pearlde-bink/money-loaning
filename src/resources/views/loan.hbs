@@ -1,0 +1,78 @@
+<!-- BREADCRUMB -->
+<div id="breadcrumb" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb-tree mt-4">
+                    <li><a href="/" class="text-decoration-none">Trang chủ</a></li>
+                    <li><a href="#" class="text-decoration-none">Khoản vay của tôi</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            {{#if loan}}
+            {{#each loan}}
+            <h3>Mã phiếu vay: {{this._id}}</h3>
+            <p>Ngày đặt hàng: {{this.loanRequest}}</p>
+            {{!-- <p>Người vay: {{this.name}}</p> --}}
+            <p>Số tiền vay: {{this.loanAmount}}đồng</p>
+            <p>Tổng tiền: {{this.loanTotal}}đồng</p>
+            <p>Trạng thái vay: {{this.isPaid}}</p>
+            <br>
+            <!-- STORE -->
+            <div id="store" class="col-md-12">
+                <!-- store products -->
+                <div class="row">
+                    {{!-- {{#each this.cccd}}
+                    <!-- product -->
+                    <div class="col-md-3 col-xs-6">
+                        <div class="product">
+                            <div class="product-img">
+                                <img src="{{this.cccd}}" alt="">
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">{{this.cccd}}</p>
+                                <h3 class="product-name"><a href="/product/info/{{this._id}}">{{this.name}}</a></h3>
+                                <h4 class="product-price">{{this.cccd}} VNĐ</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /product -->
+                    <div class="clearfix visible-md visible-sm visible-xs"></div>
+                    {{/each}} --}}
+                </div>
+                <!-- /store products -->
+            </div>
+            <!-- /STORE -->
+            {{!-- {{#if this.trangThai}}
+            <h4>Trang thái: Đã nhận hàng</h4>
+            {{else}}
+            <h4>Trang thái: Đặt hàng thành công</h4><br>
+            <div class="add-to-cart">
+                <a href="/cart/deleteOrders/{{this._id}}" class="primary-btn order-submit">Hủy bỏ đơn hàng</a>
+                <a href="/cart/editAddress/{{this._id}}" class="primary-btn order-submit">Thay đổi địa chỉ nhận hàng</a>
+            </div><br>
+            {{/if}} --}}
+
+
+            <hr>
+            {{/each}}
+            {{/if}}
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->

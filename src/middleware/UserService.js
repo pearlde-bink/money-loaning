@@ -5,7 +5,7 @@ const Relatives = require("../app/models/Relatives");
 const Workplace = require("../app/models/Workplace");
 // const Payment = require("../app/models/Payment");
 const bcrypt = require("bcrypt");
-const { generalAccessToken, generalRefreshToken } = require("./JwtService");
+const { generateAccessToken, generateRefreshToken } = require("./JwtService");
 const createUser = (newUser) => {
   return new Promise(async (resolve, reject) => {
     const {
@@ -48,9 +48,10 @@ const createUser = (newUser) => {
       } else {
         // hash password using bcrypt
         const saltRounds = 10;
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
+        const hashedPassword = await bcrypt.hashSync(password, saltRounds);
         newUser.password = hashedPassword; //replace user pw with hashed one
         newUser.retypePassword = hashedPassword; //replace user pw with hashed one
+
         const createdUser = await Client.create({
           name,
           cccd,
@@ -139,33 +140,35 @@ const logIn = (userLogin) => {
       const checkUser = await Client.findOne({ sdt: sdt });
       if (checkUser === null) {
         resolve({
-          status: "OK",
+          status: "No",
           message: "No user found",
         });
       } else {
-        const comparePassword = await bcrypt.compareSync(
+        const comparePassword = await bcrypt.compare(
           password,
           checkUser.password
         );
         if (!comparePassword) {
           resolve({
-            status: "OK",
+            status: "No",
             message: "Wrong password",
           });
         }
-        const access_token = await generalAccessToken({
+        const access_token = await generateAccessToken({
           id: checkUser.id,
           isAdmin: checkUser.isAdmin,
         });
 
-        const refresh_token = await generalRefreshToken({
+        const refresh_token = await generateRefreshToken({
           id: checkUser.id,
           isAdmin: checkUser.isAdmin,
         });
 
+        const id = checkUser.id;
         resolve({
           status: "OK",
           message: "Success",
+          id,
           access_token,
           refresh_token,
         });
@@ -176,4 +179,117 @@ const logIn = (userLogin) => {
   });
 };
 
-module.exports = { createUser, logIn };
+const updateUser = (id, data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const checkUser = await Client.findOne({ _id: id });
+      if (checkUser === null) {
+        resolve({
+          status: "OK",
+          message: "No user found",
+        });
+      }
+      const updatedUser = await Client.findByIdAndUpdate(id, data, {
+        new: true,
+      });
+      if (!updatedUser) {
+        resolve({
+          status: "OK",
+          message: "No user found",
+        });
+      } else {
+        resolve({
+          status: "OK",
+          message: "success",
+          data: updatedUser,
+        });
+      }
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+const deleteUser = (id) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const checkUser = await Client.findOne({ _id: id });
+      if (checkUser === null) {
+        resolve({
+          status: "OK",
+          message: "No user found",
+        });
+      }
+
+      const deletedUser = await Client.findByIdAndDelete(id);
+      resolve({
+        status: "OK",
+        message: "success",
+        data: deletedUser,
+      });
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+//NO NEED
+const deleteManyUser = (ids) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      await Client.deleteMany({ _id: ids });
+      resolve({
+        status: "OK",
+        message: "Delete user success",
+      });
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+const getAllUser = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const users = await Client.find().sort({ createdAt: -1, updatedAt: -1 }); //descending
+      resolve({
+        status: "OK",
+        message: "success",
+        data: users,
+      });
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+const getDetailsUser = (id) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const client = await Client.findOne({ _id: id });
+      if (client === null) {
+        resolve({
+          status: "ERR",
+          message: "User not found",
+        });
+      }
+      resolve({
+        status: "OK",
+        message: "SUCCESS",
+        data: client,
+      });
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+module.exports = {
+  createUser,
+  logIn,
+  updateUser,
+  deleteUser,
+  getAllUser,
+  getDetailsUser,
+  deleteManyUser,
+};
